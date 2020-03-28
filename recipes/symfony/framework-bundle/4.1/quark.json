@@ -1,0 +1,6 @@
+{
+    "merge-symfony-recipe": true,
+    "copy-from-recipe": {
+        "src/": "%SRC_DIR%/"
+    }
+}
