@@ -1,7 +1,7 @@
 Klipper Recipes
 ===============
 
-Klipper recipes allow the automation of Composer packages configuration via the Klipper Quark Composer plugin.
+Klipper recipes allow the automation of Composer packages configuration via the Klipper Rope Composer plugin.
 
 Resources
 ---------

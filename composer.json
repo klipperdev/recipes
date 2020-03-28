@@ -10,7 +10,7 @@
         }
     ],
     "extra": {
-        "klipper-quark-recipes": true,
+        "klipper-rope-recipes": true,
         "branch-alias": {
             "dev-master": "2.0-dev"
         }
