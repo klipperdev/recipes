@@ -1,7 +1,7 @@
 {
     "name": "klipper/recipes",
     "type": "library",
-    "description": "The recipes repository of Klipper",
+    "description": "Klipper Recipes Repository",
     "license": "MIT",
     "authors": [
         {
