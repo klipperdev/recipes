@@ -1,0 +1,5 @@
+klipper_functional_test:
+    cache_db: true
+    authentication:
+        username: "user.test"
+        password: "test"
