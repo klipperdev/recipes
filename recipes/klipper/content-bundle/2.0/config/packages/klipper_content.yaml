@@ -1,0 +1,8 @@
+klipper_content:
+    image_manipulator:
+        engine: 'gd'
+        engine_options:
+            interlace: !php/const Imagine\Image\ImageInterface::INTERLACE_PLANE
+            jpeg_quality: 80
+            png_compression_level: 5
+            webp_quality: 70
