@@ -1,0 +1,61 @@
+# Standard Fields
+standard.fields.id: Id
+standard.fields.created_at: Créé le
+standard.fields.updated_at: Modifié le
+standard.fields.deleted_at: Supprimé le
+standard.fields.name: Nom
+standard.fields.label: Etiquette
+standard.fields.description: Description
+standard.fields.email: Email
+standard.fields.roles: Rôles
+standard.fields.enabled: Activé
+standard.fields.externalIds: Ids externes
+standard.fields.imagePath: Chemin de l'image
+standard.fields.timezone: Fuseau horaire
+standard.fields.locale: Langue
+standard.fields.currency: Devise
+standard.fields.position: Position
+standard.fields.started_at: Commencé à
+standard.fields.ended_at: Terminé à
+standard.fields.Status: Statut
+
+# Group
+group.name: Groupe
+group.name.plural: Groupes
+
+# Organization
+organization.name: Organisation
+organization.name.plural: Organisations
+organization.associations.organization_roles: Rôles
+organization.associations.organization_groups: Groupes
+
+# Organization user
+organization_user.name: Utilisateur de l'organisation
+organization_user.name.plural: Utilisateurs de l'organisation
+
+# Permission
+permission.name: Authorisation
+permission.name.plural: Authorisations
+permission.fields.contexts: Contextes
+permission.fields.class: Classe
+permission.fields.field: Champs
+permission.fields.operation: Opération
+permission.associations.sharing_entries: Entrées de partage
+
+# Role
+role.name: Rôle
+role.name.plural: Rôles
+role.associations.parents: Parents du rôle
+role.associations.children: Enfants du rôles
+
+# Sharing
+sharing.name: Partage
+sharing.name.plural: Partages
+sharing.fields.subject_class: Classe du sujet
+sharing.fields.subject_id: Id du sujet
+sharing.fields.identity_class: Classe de l'identité
+sharing.fields.identity_name: Nom de l'identité
+
+# User
+user.name: Utilisateur
+user.name.plural: Utilisateurs

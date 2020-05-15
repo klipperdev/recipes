@@ -1,0 +1,61 @@
+# Standard Fields
+standard.fields.id: Id
+standard.fields.created_at: Created at
+standard.fields.updated_at: Updated at
+standard.fields.deleted_at: Deleted at
+standard.fields.name: Name
+standard.fields.label: Label
+standard.fields.description: Description
+standard.fields.email: Email
+standard.fields.roles: Roles
+standard.fields.enabled: Enabled
+standard.fields.externalIds: External Ids
+standard.fields.imagePath: Image path
+standard.fields.timezone: Timezone
+standard.fields.locale: Locale
+standard.fields.currency: Currency
+standard.fields.position: Position
+standard.fields.started_at: Started at
+standard.fields.ended_at: Ended at
+standard.fields.Status: Status
+
+# Group
+group.name: Group
+group.name.plural: Groups
+
+# Organization
+organization.name: Organization
+organization.name.plural: Organizations
+organization.associations.organization_roles: Roles
+organization.associations.organization_groups: Groups
+
+# Organization user
+organization_user.name: Organization user
+organization_user.name.plural: Organization users
+
+# Permission
+permission.name: Permission
+permission.name.plural: Permissions
+permission.fields.contexts: Contexts
+permission.fields.class: Class
+permission.fields.field: Field
+permission.fields.operation: Operation
+permission.associations.sharing_entries: Sharing entries
+
+# Role
+role.name: Role
+role.name.plural: Roles
+role.associations.parents: Parents of role
+role.associations.children: Children of role
+
+# Sharing
+sharing.name: Sharing
+sharing.name.plural: Sharings
+sharing.fields.subject_class: Subject class
+sharing.fields.subject_id: Subject id
+sharing.fields.identity_class: Identity class
+sharing.fields.identity_name: Identity name
+
+# User
+user.name: User
+user.name.plural: Users

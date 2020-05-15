@@ -1,0 +1,95 @@
+# Symfony constraint
+'This value is not a valid phone number.': 'This value is not a valid phone number.'
+'This value is not a valid fixed-line number.': 'This value is not a valid fixed-line number.'
+'This value is not a valid mobile number.': 'This value is not a valid mobile number.'
+'This value is not a valid pager number.': 'This value is not a valid pager number.'
+'This value is not a valid personal number.': 'This value is not a valid personal number.'
+'This value is not a valid premium-rate number.': 'This value is not a valid premium-rate number.'
+'This value is not a valid shared-cost number.': 'This value is not a valid shared-cost number.'
+'This value is not a valid toll-free number.': 'This value is not a valid toll-free number.'
+'This value is not a valid UAN.': 'This value is not a valid UAN.'
+'This value is not a valid VoIP number.': 'This value is not a valid VoIP number.'
+'This value is not a valid voicemail access number.': 'This value is not a valid voicemail access number.'
+
+# Resource
+'Insufficient privilege to view the entity': 'Insufficient privilege to view the entity'
+'Insufficient privilege to create the entity': 'Insufficient privilege to create the entity'
+'Insufficient privilege to update the entity': 'Insufficient privilege to update the entity'
+'Insufficient privilege to upsert the entity': 'Insufficient privilege to create or update the entity'
+'Insufficient privilege to delete the entity': 'Insufficient privilege to delete the entity'
+'Insufficient privilege to undelete the entity': 'Insufficient privilege to undelete the entity'
+
+# Global
+field.not_editable: 'This field cannot be edited'
+field.no_edit_authorization: 'You are not authorized to edit this field'
+
+# Permission
+permission.manipulation.access_deny: 'You do not have the privileges to manage permissions'
+permission.already_exists: 'This permission already exist'
+
+# Sharing
+sharing.identity.not_found: 'The identity "{{ identity }}" does not exist'
+sharing.manipulation.access_deny: 'You do not have the privileges to manage sharings'
+sharing.already_exists: 'This sharing entry already exist'
+
+# Group
+group.no_delete_used_in_user: 'The group "%name%" does not be deleted because it''s used by many users (%count%)'
+group.no_delete_used_in_org_user: 'The group "%name%" does not be deleted because it''s used by many organization users (%count%)'
+group.name.not_use_double_underscore: 'The group name cannot contain a double underscore'
+group.name.not_use_special_character_at_end: 'The group name cannot use a special character at the end'
+
+# Organizational
+organizational.only_used_in_organization: '%name% can only used in organization'
+
+# Role
+role.cannot_be_edited: 'This role cannot be edited'
+role.cannot_be_deleted: 'This role cannot be deleted'
+role.no_delete_used_in_group: 'The role "%name%" does not be deleted because it''s used by many groups (%count%)'
+role.no_delete_used_in_user: 'The role "%name%" does not be deleted because it''s used by many users (%count%)'
+role.no_delete_used_in_org_user: 'The role "%name%" does not be deleted because it''s used by many organization users (%count%)'
+role.name.not_use_double_underscore: 'The role name cannot contain a double underscore'
+role.name.not_use_special_character_at_end: 'The role name cannot use a special character at the end'
+
+# User
+user.password.not_blank: 'The user password is required'
+user.email.primary_email_must_be_confirmed: 'The email "{{ email }}" must be confirmed to be used as the primary email'
+user.email.not_resend_confirmation_email: 'The confirmation cannot be sent for this email'
+user.email.confirmation_not_found: 'The email with confirmation token "{{ token }}" does not exist'
+user.email.already_used: 'This email is already used'
+user.username.already_used: 'This username is already used'
+user.not_delete_account: 'The user account "{{ username }}" can not be deleted because it is still associated with organizations. Please detach or remove organizations before'
+
+# Organization
+organization.not_delete_account.property_exist: 'The organization "{{ name }}" cannot be deleted because there is at least one property'
+
+# Organization User
+organization_user.email.user_email_not_exist: 'The email "{{ email }}" does not exist'
+organization_user.email.user_email_require_confirmation: 'The email "{{ email }}" must be confirmed to associate this email with an organization'
+organization_user.not_leave_organization: 'You can not leave the organization "{{ organization }}", because you are the last administrator. Please define another user as administrator or delete the account organization "{{ organization }}"'
+organization_user.not_demote_last_admin: 'You can not demote the user "{{ username }}" of the role "{{ role }}", because he''s the last administrator of the organization "{{ organization }}"'
+organization_user.not_disable_last_admin: 'You can not disable the user "{{ username }}", because he''s the last administrator of the organization "{{ organization }}"'
+organization_user.user.not_blank: 'The user is required'
+organization_user.user.already_exist: 'The user already exist in organization'
+
+# Doctrine Request Filterable
+doctrine_filterable.invalid_field: 'The field "{{ field }}" doesn''t exist'
+doctrine_filterable.invalid_field_operator: 'The operator "{{ operator }}" of the field "{{ field }}" isn''t compatible'
+
+# Doctrine Request Filterable Parser
+doctrine_filterable.parser.invalid_format: 'The query filter is not a valid JSON format'
+doctrine_filterable.parser.invalid_condition_type: 'The condition of filter "{{ path }}" can only be "{{ expected_values }}". Given "{{ value }}"'
+doctrine_filterable.parser.invalid_rule_type: 'The operator of filter rule "{{ path }}" can only be "{{ expected_values }}". Given "{{ value }}"'
+doctrine_filterable.parser.invalid_node_type: 'The node of filter "{{ path }}" must be an object'
+doctrine_filterable.parser.require_parameter: 'The parameter of filter "{{ parameter }}" of "{{ path }}" is required'
+doctrine_filterable.parser.unexpected_type: 'The value of filter "{{ path }}" can only be "{{ expected_values }}". Given "{{ value }}"'
+
+# Expression Language
+expression_language.parser.unexpected_token: 'Unexpected token with the type "{0}" of value "{1}" around position {2} for expression `{3}`.'
+expression_language.parser.function_not_exist: 'The function "{0}" does not exist around position {1} for expression `{2}`.'
+expression_language.parser.variable_not_valid: 'Variable "{0}" is not valid around position {1} for expression `{2}`.'
+expression_language.parser.hash_quoted_string: 'A hash key must be a quoted string, a number, a name, or an expression enclosed in parentheses (unexpected token with the type "{0}" of value "{1}" around position {2} for expression `{3}`.'
+expression_language.parser.expected_name: 'Expected name around position {0} for expression `{1}`.'
+expression_language.token_stream.unexpected_end: 'Unexpected end of expression around position {0} for expression `{1}`.'
+expression_language.lexer.unexpected: 'Unexpected "{0}" around position {1} for expression `{2}`.'
+expression_language.lexer.unclosed: 'Unclosed "{0}" around position {1} for expression `{2}`.'
+expression_language.lexer.unexpected_character: 'Unexpected character "{0}" around position {1} for expression `{2}`.'

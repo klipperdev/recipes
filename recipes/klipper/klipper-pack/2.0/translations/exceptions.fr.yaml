@@ -1,0 +1,8 @@
+bad_request: 'La demande ne peut être satisfaite en raison de la mauvaise syntaxe'
+unauthorized: 'L''authentification est requise'
+forbidden: 'Vous n''êtes pas autorisé à accèder à cette ressource'
+not_found: 'Cette ressource n’est pas disponible'
+unsupported_media_type: 'Le type de support n''est pas pris en charge'
+unprocessable_entity: 'Impossible de traiter la demande car la requête est incomplète'
+metadata_not_found: 'Le metadata n''existe pas'
+unsupported_format: 'Le type mime n''est pas supporté'

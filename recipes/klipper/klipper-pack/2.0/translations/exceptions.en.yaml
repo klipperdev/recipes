@@ -1,0 +1,8 @@
+bad_request: 'The request cannot be fulfilled due to bad syntax'
+unauthorized: 'The authentication is required'
+forbidden: 'You are not authorized to view this resource'
+not_found: 'This resource is not available.'
+unsupported_media_type: 'The media type is not supported'
+unprocessable_entity: 'Unable to process the request because it''s incomplete'
+metadata_not_found: 'The metadata does not exist'
+unsupported_format: 'The type mime isn''t supported'

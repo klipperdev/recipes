@@ -1,0 +1,95 @@
+# Symfony constraint
+'This value is not a valid phone number.': 'Cette valeur n''est pas un numéro de téléphone valide.'
+'This value is not a valid fixed-line number.': 'Cette valeur n''est pas un numéro de ligne fixe valide.'
+'This value is not a valid mobile number.': 'Cette valeur n''est pas un numéro de téléphone portable valide.'
+'This value is not a valid pager number.': 'Cette valeur n''est pas un numéro de pager valide.'
+'This value is not a valid personal number.': 'Cette valeur n''est un numéro personnel valide.'
+'This value is not a valid premium-rate number.': 'Cette valeur n''est pas un numéro surtaxé valide.'
+'This value is not a valid shared-cost number.': 'Cette valeur n''est pas un numéro court valide.'
+'This value is not a valid toll-free number.': 'Cette valeur n''est pas un numéro surtaxé valide.'
+'This value is not a valid UAN.': 'Cette valeur n''est pas un UAN valide.'
+'This value is not a valid VoIP number.': 'Cette valeur n''est pas un numéro VoIP valide.'
+'This value is not a valid voicemail access number.': 'Cette valeur n''est pas un numéro d''accès à la messagerie vocale valide.'
+
+# Resource
+'Insufficient privilege to view the entity': 'Privilège insuffisant pour visualiser l''entité'
+'Insufficient privilege to create the entity': 'Privilège insuffisant pour créer l''entité'
+'Insufficient privilege to update the entity': 'Privilège insuffisant pour mettre à jour l''entité'
+'Insufficient privilege to upsert the entity': 'Privilège insuffisant pour créer ou mettre à jour l''entité'
+'Insufficient privilege to delete the entity': 'Privilège insuffisant pour supprimer l''entité'
+'Insufficient privilege to undelete the entity': 'Privilège insuffisant pour restaurer l''entité'
+
+# Global
+field.not_editable: 'Ce champ ne peut-être édité'
+field.no_edit_authorization: 'Vous n''êtes pas autorisé à modifier ce champ'
+
+# Permission
+permission.manipulation.access_deny: 'Vous n''avez pas les privilèges pour gérer les permissions'
+permission.already_exists: 'Cette permission existe déjà'
+
+# Sharing
+sharing.identity.not_found: 'L''identité "{{ identity }}" n''existe pas'
+sharing.manipulation.access_deny: 'Vous n''avez pas les privilèges pour gérer les partages'
+sharing.already_exists: 'Cette entrée de partage existe déjà'
+
+# Group
+group.no_delete_used_in_user: 'Le groupe "%name%" ne peut pas être supprimé car il est utilisé par plusieurs utilisateurs (%count%)'
+group.no_delete_used_in_org_user: 'Le groupe "%name%" ne peut pas être supprimé car il est utilisé par plusieurs utilisateurs de l''organisation (%count%)'
+group.name.not_use_double_underscore: 'Le nom du groupe ne peut pas contenir une double soulignement'
+group.name.not_use_special_character_at_end: 'Le nom du groupe ne peut pas utiliser de caractère spécial à la fin'
+
+# Organizational
+organizational.only_used_in_organization: '%name% ne peut-être utilisé uniquement dans une organisation'
+
+# Role
+role.cannot_be_edited: 'Ce rôle ne peut pas être modifié'
+role.cannot_be_deleted: 'Ce rôle ne peut pas être supprimé'
+role.no_delete_used_in_group: 'Le rôle "%name%" ne peut pas être supprimé car il est utilisé par plusieurs groupes (%count%)'
+role.no_delete_used_in_user: 'Le rôle "%name%" ne peut pas être supprimé car il est utilisé par plusieurs utilisateurs (%count%)'
+role.no_delete_used_in_org_user: 'Le rôle "%name%" ne peut pas être supprimé car il est utilisé par plusieurs utilisateurs de l''organisation (%count%)'
+role.name.not_use_double_underscore: 'Le nom du rôle ne peut pas contenir une double soulignement'
+role.name.not_use_special_character_at_end: 'Le nom du rôle ne peut pas utiliser de caractère spécial à la fin'
+
+# User
+user.password.not_blank: 'Le mot de passe de l''utilisateur est requis'
+user.email.primary_email_must_be_confirmed: 'L''email "{{ email }}" doit-être confirmé pour être utilisé comme l''e-mail principale'
+user.email.not_resend_confirmation_email: 'La confirmation ne peut pas être envoyé pour cette email'
+user.email.confirmation_not_found: 'L''email avec le jeton de confirmation "{{ token }}" n''existe pas'
+user.email.already_used: 'Cet e-mail est déjà utilisé'
+user.username.already_used: 'Ce nom d''utilisateur est déjà utilisé'
+user.not_delete_account: 'Le compte utilisateur "{{ username }}" ne peut pas être supprimé car il est encore associé à des organisations. Veuillez détacher ou supprimer les organisations avant'
+
+# Organization
+organization.not_delete_account.property_exist: 'L''organisation "{{ name }}" ne peut pas être supprimée car il y a au moins une propriété'
+
+# Organization User
+organization_user.email.user_email_not_exist: 'L''email "{{ email }}" n''existe pas'
+organization_user.email.user_email_require_confirmation: 'L''email "{{ email }}" doit-être confirmé pour qu''il puisse-être associé à une organization'
+organization_user.not_leave_organization: 'Vous ne pouvez pas quitter l''organisation "{{ organization }}", car vous êtes le dernier administrateur. Veuillez définir un autre utilisateur en tant qu''administrateur ou supprimer le compte organisation "{{ organization }}"'
+organization_user.not_demote_last_admin: 'Vous ne pouvez pas rétrograder l''utilisateur "{{ username }}" du rôle "{{ role }}", parce qu''il est le dernier administrateur de l''organisation "{{ organization }}"'
+organization_user.not_disable_last_admin: 'Vous ne pouvez pas désactiver l''utilisateur "{{ username }}", parce qu''il est le dernier administrateur de l''organisation "{{ organization }}"'
+organization_user.user.not_blank: 'L''utilisateur est requis'
+organization_user.user.already_exist: 'L''utilisateur existe déjà dans l''organisation'
+
+# Doctrine Request Filterable
+doctrine_filterable.invalid_field: 'Le champs "{{ field }}" n''existe pas'
+doctrine_filterable.invalid_field_operator: 'L''operateur "{{ operator }}" du champs "{{ field }}" n''est pas compatible'
+
+# Doctrine Request Filterable Parser
+doctrine_filterable.parser.invalid_format: 'Le filtre de requête n''est pas un format JSON valide'
+doctrine_filterable.parser.invalid_condition_type: 'La condition du filtre "{{ path }}" ne peut-être que "{{ expected_values }}". Valeur donnée "{{ value }}"'
+doctrine_filterable.parser.invalid_rule_type: 'L''opérateur de la règle du filtre "{{ path }}" ne peut-être que "{{ expected_values }}". Valeur donnée "{{ value }}"'
+doctrine_filterable.parser.invalid_node_type: 'Le noeud du filtre "{{ path }}" doit être un objet'
+doctrine_filterable.parser.require_parameter: 'Le paramètre du filtre "{{ parameter }}" de "{{ path }}" est requis'
+doctrine_filterable.parser.unexpected_type: 'La valeur du filtre "{{ path }}" ne peut-être que "{{ expected_values }}". Valeur donnée "{{ value }}"'
+
+# Expression Language
+expression_language.parser.unexpected_token: 'Jeton inattendu de type "{0}" avec la valeur "{1}" à la position {2} pour l''expression `{3}`.'
+expression_language.parser.function_not_exist: 'La fonction "{0}" n''existe pas à la position {1} pour l''expression `{2}`.'
+expression_language.parser.variable_not_valid: 'La variable "{0}" n''est pas valide à la position {1} pour l''expression `{2}`.'
+expression_language.parser.hash_quoted_string: 'Une clé hash doit être une chaîne citée, un nombre, un nom ou une expression entre parenthèses (Jeton inattendu de type "{0}" avec la valeur "{1}" à la position {2} pour l''expression `{3}`.'
+expression_language.parser.expected_name: 'Un nom est attendu à la position {0} pour l''expression `{1}`.'
+expression_language.token_stream.unexpected_end: 'Fin d''expression inattendue à la position {0} pour l''expression `{1}`.'
+expression_language.lexer.unexpected: 'Type inattendu "{0}" à la position {1} pour l''expression `{2}`.'
+expression_language.lexer.unclosed: 'Type non déclaré "{0}" à la position {1} pour l''expression `{2}`.'
+expression_language.lexer.unexpected_character: 'Caractère inattendu "{0}" à la position {1} pour l''expression `{2}`.'
