@@ -1,0 +1,9 @@
+klipper_routing:
+    host_auto_config:
+        '*':
+            requirements:
+                organization: 'user|[a-zA-Z0-9\.\-\_]+'
+                id: '[a-z0-9\-]+'
+                '*_id': '[a-z0-9\-]+'
+                ext: 'jpg|png|webp|gif'
+                position: '\d+'
