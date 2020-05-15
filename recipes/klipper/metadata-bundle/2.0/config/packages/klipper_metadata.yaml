@@ -1,0 +1,27 @@
+klipper_metadata:
+    defaults:
+        global:
+            translation_domain: entities
+            public: false
+            sortable: true
+            multi_sortable: true
+            filterable: true
+            searchable: true
+        fields:
+            id:
+                read_only: true
+                searchable: false
+            createdAt:
+                read_only: true
+                searchable: false
+            updatedAt:
+                read_only: true
+                searchable: false
+            enabled:
+                searchable: false
+            roles:
+                sortable: false
+                searchable: false
+            availableLocales:
+                sortable: false
+                searchable: false
