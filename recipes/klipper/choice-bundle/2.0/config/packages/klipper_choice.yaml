@@ -1,0 +1,4 @@
+klipper_choice:
+    extendable_choices:
+        Klipper\Component\User\Choice\LocaleAvailable:
+            - fr
