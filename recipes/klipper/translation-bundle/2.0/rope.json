@@ -1,0 +1,8 @@
+{
+    "container": {
+        "locale": "en"
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    }
+}
