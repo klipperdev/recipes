@@ -1,0 +1,45 @@
+# Services
+services:
+    App\Sharing\LabelBuilder\:
+        resource: '../../src/Sharing/LabelBuilder'
+        tags: ['klipper_security_extra.sharing_entry_label_builder']
+
+# Doctrine
+doctrine:
+    orm:
+        filters:
+            role:
+                class: Klipper\Component\SecurityExtra\Doctrine\Filter\RoleFilter
+                enabled: true
+            organization:
+                class: Klipper\Component\SecurityExtra\Doctrine\Filter\OrganizationFilter
+                enabled: true
+            organizational:
+                class: Klipper\Component\SecurityExtra\Doctrine\Filter\OrganizationalFilter
+                enabled: true
+            organization_user:
+                class: Klipper\Component\SecurityExtra\Doctrine\Filter\OrganizationUserFilter
+                enabled: true
+            userable:
+                class: Klipper\Component\SecurityExtra\Doctrine\Filter\UserableFilter
+                enabled: true
+
+
+# Klipper Security Extra
+klipper_security_extra:
+    role_filter:
+        excluded_roles:
+            - ROLE_SUPER_ADMIN
+            - ROLE_ADMIN_PLATFORM
+            - ROLE_ANONYMOUS
+
+    doctrine:
+        orm:
+            permissions:
+                disable_filters:
+                    - role
+                    - organization
+                    - organizational
+                    - organization_user
+                    - userable
+                    - sharing

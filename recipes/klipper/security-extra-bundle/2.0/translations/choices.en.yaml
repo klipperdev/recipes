@@ -1,0 +1,10 @@
+# Permission Context
+permission.context.role: Role
+permission.context.organization_role: Organization role
+permission.context.sharing: Sharing
+
+# Sharing Identity Type
+sharing.identity_type.user: 'User'
+sharing.identity_type.role: 'Role'
+sharing.identity_type.group: 'Group'
+sharing.identity_type.invitation: 'Invitation'
