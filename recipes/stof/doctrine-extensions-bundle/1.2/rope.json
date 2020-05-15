@@ -1,0 +1,6 @@
+{
+    "merge-symfony-recipe": true,
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    }
+}
