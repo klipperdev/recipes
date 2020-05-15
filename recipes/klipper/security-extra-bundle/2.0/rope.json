@@ -2,6 +2,6 @@
     "copy-from-recipe": {
         "config/": "%CONFIG_DIR%/",
         "src/": "%SRC_DIR%/",
-        "translations/": "%ROOT_DIR%/translations"
+        "translations/": "translations/"
     }
 }
