@@ -1,0 +1,4 @@
+doctrine:
+    dbal:
+        types:
+            phone: Klipper\Component\Phone\Doctrine\DBAL\Types\PhoneType
