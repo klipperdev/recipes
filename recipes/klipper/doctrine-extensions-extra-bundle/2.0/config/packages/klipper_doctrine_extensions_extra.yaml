@@ -1,0 +1,19 @@
+# Doctrine
+doctrine:
+    dbal:
+        types:
+            datetime: Klipper\Component\DoctrineExtensionsExtra\DBAL\Types\UtcDateTimeType
+            date: Klipper\Component\DoctrineExtensionsExtra\DBAL\Types\UtcDateType
+            time: Klipper\Component\DoctrineExtensionsExtra\DBAL\Types\UtcTimeType
+            guid: Klipper\Component\DoctrineExtensionsExtra\DBAL\Types\GuidType
+    orm:
+        dql:
+            datetime_functions:
+                timestamp: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\SimpleFunction
+            string_functions:
+                cast: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\Cast
+                unaccent: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\Unaccent
+                json_get: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\JsonGet
+                find_in_set: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\FindInSet
+            numeric_functions:
+                convert_surface: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\Numeric\ConvertSurface
