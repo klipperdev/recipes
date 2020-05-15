@@ -1,0 +1,15 @@
+# Framework
+framework:
+    cache:
+        pools:
+            cache.app.expression:
+                adapter:          cache.app
+                default_lifetime: 31536000
+                public:           true
+
+# Klipper API
+klipper_api:
+    versioning:
+        default_version: '1.0'
+        available_versions:
+            - '1.0'
