@@ -1,0 +1,11 @@
+# Doctrine Migrations
+doctrine:
+    dbal:
+        schema_filter: '~^(?!%env(resolve:APP_PREFIX)%_sessions)(%env(resolve:APP_PREFIX)%_)~'
+
+# Klipper Doctrine Extensions
+klipper_doctrine_extensions:
+    locale_fallback: '%locale_fallback%'
+
+    orm:
+        table_prefix: '%env(resolve:APP_PREFIX)%_'

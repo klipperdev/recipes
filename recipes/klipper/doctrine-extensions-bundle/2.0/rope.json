@@ -1,0 +1,11 @@
+{
+    "env": {
+        "APP_PREFIX": "app"
+    },
+    "container": {
+        "locale_fallback": "en"
+    },
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    }
+}
