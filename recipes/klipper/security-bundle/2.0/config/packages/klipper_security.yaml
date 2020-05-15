@@ -1,0 +1,26 @@
+# Framework
+framework:
+    cache:
+        pools:
+            cache.app.role_hierarchy:
+                adapter:          cache.app
+                default_lifetime: 31536000
+                public:           true
+
+# Doctrine
+doctrine:
+    orm:
+        filters:
+            sharing:
+                class: Klipper\Component\Security\Doctrine\ORM\Filter\SharingFilter
+                enabled: true
+
+        resolve_target_entities:
+            Symfony\Component\Security\Core\User\UserInterface: App\Entity\User
+            Klipper\Component\Security\Model\UserInterface: App\Entity\User
+            Klipper\Component\Security\Model\RoleInterface: App\Entity\Role
+            Klipper\Component\Security\Model\GroupInterface: App\Entity\Group
+            Klipper\Component\Security\Model\OrganizationInterface: App\Entity\Organization
+            Klipper\Component\Security\Model\OrganizationUserInterface: App\Entity\OrganizationUser
+            Klipper\Component\Security\Model\PermissionInterface: App\Entity\Permission
+            Klipper\Component\Security\Model\SharingInterface: App\Entity\Sharing
