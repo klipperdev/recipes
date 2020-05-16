@@ -1,0 +1,5 @@
+klipper_session:
+    pdo:
+        db_options:
+            db_table: '%env(resolve:APP_PREFIX)%_sessions'
+            lock_mode: !php/const Symfony\Component\HttpFoundation\Session\Storage\Handler\PdoSessionHandler::LOCK_NONE
