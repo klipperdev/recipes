@@ -33,6 +33,24 @@ klipper_security_extra:
             - ROLE_ADMIN_PLATFORM
             - ROLE_ANONYMOUS
 
+    organizational_filter:
+        optional_all_filter_classes:
+            - Klipper\Component\Security\Model\RoleInterface
+
+    sharing_entries:
+        App\Entity\User:
+            field:             username
+            repository_method: findByUsernames
+        App\Entity\Role:
+            field:             name
+            repository_method: findByNames
+        App\Entity\Group:
+            field:             name
+            repository_method: findByNames
+        App\Entity\Organization:
+            field:             name
+            repository_method: findByNames
+
     doctrine:
         orm:
             permissions:

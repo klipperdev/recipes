@@ -28,6 +28,22 @@ class OrganizationRepository extends ServiceEntityRepository implements Organiza
     /**
      * {@inheritdoc}
      */
+    public function findByNames(array $names): array
+    {
+        $qb = $this->createQueryBuilder('o');
+        $alias = current($qb->getRootAliases());
+
+        $qb
+            ->andWhere("{$alias}.name IN (:names)")
+            ->setParameter('names', $names)
+        ;
+
+        return $qb->getQuery()->getResult();
+    }
+
+    /**
+     * {@inheritdoc}
+     */
     protected function getInsensitiveFields(): array
     {
         return [
