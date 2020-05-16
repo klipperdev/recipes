@@ -24,3 +24,99 @@ doctrine:
             Klipper\Component\Security\Model\OrganizationUserInterface: App\Entity\OrganizationUser
             Klipper\Component\Security\Model\PermissionInterface: App\Entity\Permission
             Klipper\Component\Security\Model\SharingInterface: App\Entity\Sharing
+
+# Klipper Security
+klipper_security:
+    host_role:
+        enabled: true
+    anonymous_role:
+        enabled: true
+    object_filter:
+        enabled: true
+    role_hierarchy:
+        enabled: true
+        cache: cache.app.role_hierarchy
+    security_voter:
+        role: true
+        group: true
+    organizational_context:
+        enabled: true
+    expression:
+        override_voter: true
+        functions:
+            is_basic_auth: true
+            is_granted: true
+            is_organization: true
+    doctrine:
+        orm:
+            object_filter_voter: true
+            listeners:
+                permission_checker: true
+                object_filter: true
+                role_hierarchy: true
+                private_sharing: true
+                sharing_delete: true
+            filters:
+                sharing: true
+    sharing:
+        identity_types:
+            App\Entity\User:
+                roleable: true
+                permissible: true
+            App\Entity\Role:
+                permissible: true
+            App\Entity\Group:
+                permissible: true
+            App\Entity\Organization:
+                permissible: true
+    default_permissions:
+        fields:
+            id: [read]
+            externalIds:
+                editable: true
+                operations: [read]
+            createdAt: [read]
+            updatedAt: [read]
+        master_mapping_permissions:
+            view: read
+            update: edit
+            create: edit
+            delete: edit
+    permissions:
+        App\Entity\User:
+            operations: [view, create, update, delete]
+            fields:
+                username: [read, edit]
+                email: [read, edit]
+                roles: [read]
+        App\Entity\Organization:
+            build_fields: false
+            fields:
+                name: [read, edit]
+                label: [read, edit]
+                enabled: [read]
+                roles: [read]
+        App\Entity\OrganizationUser:
+            build_fields: false
+            mapping_permissions:
+                create: invite
+                delete: revoke
+            fields:
+                enabled: [read, edit]
+                roles: [read, edit]
+                groups: [read, edit]
+                organization: [read]
+        App\Entity\Role:
+            build_fields: false
+            fields:
+                name: [read, edit]
+                label: [read, edit]
+                organization: [read]
+                children: [read, edit]
+        App\Entity\Group:
+            build_fields: false
+            fields:
+                name: [read, edit]
+                label: [read, edit]
+                organization: [read]
+                roles: [read, edit]
