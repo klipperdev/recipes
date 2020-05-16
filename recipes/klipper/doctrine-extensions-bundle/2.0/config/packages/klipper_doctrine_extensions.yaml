@@ -9,3 +9,8 @@ klipper_doctrine_extensions:
 
     orm:
         table_prefix: '%env(resolve:APP_PREFIX)%_'
+
+        listeners:
+            default:
+                htmlable: true
+                auto_numberable: true
