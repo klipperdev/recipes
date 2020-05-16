@@ -1,6 +1,9 @@
 # Doctrine
 doctrine:
     dbal:
+        # Doctrine Migrations
+        schema_filter: '~^(?!%env(resolve:APP_PREFIX)%_sessions)(%env(resolve:APP_PREFIX)%_)~'
+
         types:
             datetime: Klipper\Component\DoctrineExtensionsExtra\DBAL\Types\UtcDateTimeType
             date: Klipper\Component\DoctrineExtensionsExtra\DBAL\Types\UtcDateType
@@ -17,3 +20,15 @@ doctrine:
                 find_in_set: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\FindInSet
             numeric_functions:
                 convert_surface: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\Numeric\ConvertSurface
+
+# Klipper Doctrine Extensions Extra
+klipper_doctrine_extensions_extra:
+    locale_fallback: '%locale_fallback%'
+
+    orm:
+        table_prefix: '%env(resolve:APP_PREFIX)%_'
+
+        listeners:
+            default:
+                htmlable: true
+                auto_numberable: true
