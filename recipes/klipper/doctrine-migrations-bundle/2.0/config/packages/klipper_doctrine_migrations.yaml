@@ -1,0 +1,3 @@
+klipper_doctrine_migrations:
+    default:
+        schema_namespace_fix: public
