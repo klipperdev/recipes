@@ -24,12 +24,14 @@ security:
             stateless:      true
             anonymous:      true
             anonymous_role: true
+            org_context:    ~
 
         main:
             provider: app_user_provider
             anonymous: lazy
             anonymous_role: true
             locale_session: true
+            org_context:    ~
 
             # activate different ways to authenticate
             # https://symfony.com/doc/current/security.html#firewalls-authentication
