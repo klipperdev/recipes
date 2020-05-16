@@ -1,5 +1,9 @@
 klipper_routing:
     host_auto_config:
+        '*/{organization}':
+            defaults:
+                _organizational: organization
+
         '*':
             requirements:
                 organization: 'user|[a-zA-Z0-9\.\-\_]+'
