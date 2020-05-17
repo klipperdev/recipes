@@ -1,0 +1,173 @@
+permission_templates:
+    view:
+        label:              permission.name.view
+        detail_label:       permission.name.view.detail
+        translation_domain: config
+        contexts:           [role, organization_role]
+
+    create:
+        label:              permission.name.create
+        detail_label:       permission.name.create.detail
+        translation_domain: config
+        contexts:           [role, organization_role]
+
+    update:
+        label:              permission.name.update
+        detail_label:       permission.name.update.detail
+        translation_domain: config
+        contexts:           [role, organization_role]
+
+    delete:
+        label:              permission.name.delete
+        detail_label:       permission.name.delete.detail
+        translation_domain: config
+        contexts:           [role, organization_role]
+
+    read:
+        label:              permission.name.read
+        detail_label:       permission.name.read.detail
+        translation_domain: config
+        contexts:           [role, organization_role]
+
+    edit:
+        label:              permission.name.edit
+        detail_label:       permission.name.edit.detail
+        translation_domain: config
+        contexts:           [role, organization_role]
+
+    invite:
+        label:              permission.name.invite
+        detail_label:       permission.name.invite.detail
+        translation_domain: config
+        contexts:           [organization_role]
+
+    revoke:
+        label:              permission.name.revoke
+        detail_label:       permission.name.revoke.detail
+        translation_domain: config
+        contexts:           [organization_role]
+
+permissions:
+    manage-permissions:
+        label:              permission.name.manage_permissions
+        detail_label:       permission.name.manage_permissions.detail
+        translation_domain: config
+        contexts:           [role, organization_role]
+        attached_roles:     [ROLE_ADMIN]
+
+    manage-sharings:
+        label:              permission.name.manage_sharings
+        detail_label:       permission.name.manage_sharings.detail
+        translation_domain: config
+        contexts:           [role, organization_role, sharing]
+        attached_roles:     [ROLE_ADMIN]
+
+permission_classes:
+    _config_class:
+        permissions:
+            view:     []
+            create:   []
+            update:   []
+            delete:   []
+        fields:
+            _config_field:
+                read: []
+                edit: []
+
+    App\Entity\Organization:
+        permissions:
+            view:     [ROLE_USER]
+            create:   [ROLE_USER, ROLE_ANONYMOUS]
+            update:   [ROLE_ADMIN]
+            delete:   [ROLE_ADMIN]
+        fields:
+            enabled:
+                read: [ROLE_ADMIN_PLATFORM]
+                edit: [ROLE_ADMIN_PLATFORM]
+            label:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            name:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            roles:
+                read: [ROLE_ADMIN_PLATFORM]
+                edit: [ROLE_ADMIN_PLATFORM]
+
+    App\Entity\OrganizationUser:
+        permissions:
+            view:     [ROLE_USER]
+            invite:   [ROLE_ADMIN]
+            update:   [ROLE_ADMIN]
+            revoke:   [ROLE_ADMIN]
+        fields:
+            enabled:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            groups:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            organization:
+                read: [ROLE_USER]
+            roles:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            user:
+                read: [ROLE_USER]
+
+    App\Entity\User:
+        permissions:
+            view:     [ROLE_USER]
+            create:   [ROLE_ADMIN_PLATFORM, ROLE_ANONYMOUS]
+            update:   [ROLE_USER]
+            delete:   [ROLE_USER]
+        fields:
+            email:
+                read: [ROLE_USER]
+                edit: [ROLE_USER]
+            roles:
+                read: [ROLE_ADMIN_PLATFORM]
+                edit: [ROLE_ADMIN_PLATFORM]
+            username:
+                read: [ROLE_USER]
+                edit: [ROLE_USER]
+
+    App\Entity\Role:
+        permissions:
+            view:     [ROLE_USER]
+            create:   [ROLE_ADMIN]
+            update:   [ROLE_ADMIN]
+            delete:   [ROLE_ADMIN]
+        fields:
+            children:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            label:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            name:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            organization:
+                read: [ROLE_USER]
+            parents:
+                read: [ROLE_USER]
+
+    App\Entity\Group:
+        permissions:
+            view:     [ROLE_USER]
+            create:   [ROLE_ADMIN]
+            update:   [ROLE_ADMIN]
+            delete:   [ROLE_ADMIN]
+        fields:
+            label:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            name:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            organization:
+                read: [ROLE_USER]
+            roles:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]

@@ -1,0 +1,28 @@
+-   name:  ROLE_ANONYMOUS
+    label: Anonymous
+    translations:
+        fr: { label: Anonyme }
+
+-   name:  ROLE_USER
+    label: User
+    translations:
+        fr: { label: Utilisateur }
+
+-   name:  ROLE_ADMIN
+    label: Administrator
+    children:
+        -   ROLE_USER
+    translations:
+        fr: { label: Administrateur }
+
+-   name:  ROLE_ADMIN_PLATFORM
+    label: Admin Platform
+    translations:
+        fr: { label: Administrateur Plateforme }
+
+-   name:  ROLE_SUPER_ADMIN
+    label: Super administrator
+    children:
+        -   ROLE_ADMIN_PLATFORM
+    translations:
+        fr: { label: Super administrateur }
