@@ -3,11 +3,11 @@
 namespace App\Repository;
 
 use App\Entity\Organization;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Klipper\Component\DoctrineExtensionsExtra\Entity\Repository\Traits\InsensitiveTrait;
 use Klipper\Component\SecurityExtra\Entity\Repository\OrganizationRepositoryInterface;
 use Klipper\Component\SecurityExtra\Entity\Repository\Traits\OrganizationRepositoryTrait;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method null|Organization find($id, $lockMode = null, $lockVersion = null)

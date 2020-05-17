@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
+use JMS\Serializer\Annotation as Serializer;
 use Klipper\Component\DoctrineExtensionsExtra\Mapping\Annotation as KlipperMetadata;
 use Klipper\Component\Model\Traits\IdInterface;
 use Klipper\Component\Model\Traits\IdTrait;
@@ -16,13 +19,10 @@ use Klipper\Component\Model\Traits\TimestampableInterface;
 use Klipper\Component\Model\Traits\TimestampableTrait;
 use Klipper\Component\Model\Traits\TranslatableInterface;
 use Klipper\Component\Model\Traits\TranslatableTrait;
-use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
-use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
-use Doctrine\ORM\Mapping as ORM;
 use Klipper\Component\Security\Annotation as KlipperSecurity;
 use Klipper\Component\Security\Model\RoleHierarchicalInterface;
-use Gedmo\Mapping\Annotation as Gedmo;
-use JMS\Serializer\Annotation as Serializer;
+use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
+use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RoleRepository")

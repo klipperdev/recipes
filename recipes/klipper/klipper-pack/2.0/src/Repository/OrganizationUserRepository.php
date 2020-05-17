@@ -3,10 +3,10 @@
 namespace App\Repository;
 
 use App\Entity\OrganizationUser;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Klipper\Component\SecurityExtra\Entity\Repository\OrganizationUserRepositoryInterface;
 use Klipper\Component\SecurityExtra\Entity\Repository\Traits\OrganizationUserRepositoryTrait;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method null|OrganizationUser find($id, $lockMode = null, $lockVersion = null)

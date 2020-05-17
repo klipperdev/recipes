@@ -2,13 +2,13 @@
 
 namespace App\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use Klipper\Component\DoctrineExtensions\Validator\Constraints as KlipperAssert;
 use Klipper\Component\Model\Traits\IdInterface;
 use Klipper\Component\Model\Traits\IdTrait;
 use Klipper\Component\Model\Traits\SharingTrait;
-use Klipper\Component\SecurityExtra\Validator\Constraints as KlipperSecurityExtraAssert;
-use Doctrine\ORM\Mapping as ORM;
-use Klipper\Component\DoctrineExtensions\Validator\Constraints as KlipperAssert;
 use Klipper\Component\Security\Model\SharingInterface;
+use Klipper\Component\SecurityExtra\Validator\Constraints as KlipperSecurityExtraAssert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\SharingRepository")

@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
+use Klipper\Component\DoctrineExtensions\Validator\Constraints as KlipperAssert;
 use Klipper\Component\DoctrineExtensionsExtra\Mapping\Annotation as KlipperMetadata;
 use Klipper\Component\DoctrineExtensionsExtra\Validator\Constraints as KlipperDoctrineExtensionsExtraAssert;
 use Klipper\Component\Model\Traits\EnableInterface;
@@ -20,12 +23,9 @@ use Klipper\Component\Model\Traits\RoleableInterface;
 use Klipper\Component\Model\Traits\RoleableTrait;
 use Klipper\Component\Model\Traits\TimestampableInterface;
 use Klipper\Component\Model\Traits\TimestampableTrait;
-use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
-use Doctrine\ORM\Mapping as ORM;
-use Klipper\Component\DoctrineExtensions\Validator\Constraints as KlipperAssert;
 use Klipper\Component\Security\Annotation as KlipperSecurity;
 use Klipper\Component\Security\Model\OrganizationInterface;
-use JMS\Serializer\Annotation as Serializer;
+use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OrganizationRepository")

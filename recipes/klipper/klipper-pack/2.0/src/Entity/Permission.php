@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
 use Klipper\Component\Model\Traits\IdInterface;
 use Klipper\Component\Model\Traits\IdTrait;
 use Klipper\Component\Model\Traits\LabelableInterface;
@@ -11,7 +12,6 @@ use Klipper\Component\Model\Traits\PermissionSharingEntryTrait;
 use Klipper\Component\Model\Traits\PermissionTrait;
 use Klipper\Component\Model\Traits\TranslationDomainInterface;
 use Klipper\Component\Model\Traits\TranslationDomainTrait;
-use Doctrine\ORM\Mapping as ORM;
 use Klipper\Component\Security\Model\PermissionInterface;
 
 /**

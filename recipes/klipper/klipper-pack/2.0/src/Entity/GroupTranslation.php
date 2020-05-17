@@ -2,8 +2,8 @@
 
 namespace App\Entity;
 
-use Klipper\Component\DoctrineExtensionsExtra\Model\BaseTranslation;
 use Doctrine\ORM\Mapping as ORM;
+use Klipper\Component\DoctrineExtensionsExtra\Model\BaseTranslation;
 
 /**
  * @ORM\Entity

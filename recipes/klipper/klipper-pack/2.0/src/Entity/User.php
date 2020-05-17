@@ -2,6 +2,9 @@
 
 namespace App\Entity;
 
+use Doctrine\ORM\Mapping as ORM;
+use JMS\Serializer\Annotation as Serializer;
+use Klipper\Component\DoctrineExtensions\Validator\Constraints as KlipperAssert;
 use Klipper\Component\DoctrineExtensionsExtra\Mapping\Annotation as KlipperMetadata;
 use Klipper\Component\DoctrineExtensionsExtra\Validator\Constraints as KlipperDoctrineExtensionsAssert;
 use Klipper\Component\Model\Traits\EditGroupableInterface;
@@ -20,14 +23,11 @@ use Klipper\Component\Model\Traits\TimezoneableInterface;
 use Klipper\Component\Model\Traits\UserOrganizationUsersInterface;
 use Klipper\Component\Model\Traits\UserOrganizationUsersTrait;
 use Klipper\Component\Model\Traits\UserTrait;
+use Klipper\Component\Security\Annotation as KlipperSecurity;
+use Klipper\Component\Security\Model\UserInterface;
 use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
 use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Klipper\Component\SecurityExtra\Validator\Constraints as KlipperSecurityAssert;
-use Doctrine\ORM\Mapping as ORM;
-use Klipper\Component\DoctrineExtensions\Validator\Constraints as KlipperAssert;
-use Klipper\Component\Security\Annotation as KlipperSecurity;
-use Klipper\Component\Security\Model\UserInterface;
-use JMS\Serializer\Annotation as Serializer;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -68,7 +68,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     repositoryMethod="findByUsernames"
  * )
  *
- * @KlipperMetadata\MetadataObject()
+ * @KlipperMetadata\MetadataObject
  *
  * @Serializer\ExclusionPolicy("all")
  */

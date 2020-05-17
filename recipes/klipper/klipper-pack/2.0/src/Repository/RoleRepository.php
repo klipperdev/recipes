@@ -3,12 +3,12 @@
 namespace App\Repository;
 
 use App\Entity\Role;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Klipper\Component\DoctrineExtensionsExtra\Entity\Repository\Traits\InsensitiveTrait;
 use Klipper\Component\DoctrineExtensionsExtra\Entity\Repository\Traits\TranslatableRepositoryInterface;
 use Klipper\Component\DoctrineExtensionsExtra\Entity\Repository\Traits\TranslatableRepositoryTrait;
 use Klipper\Component\SecurityExtra\Entity\Repository\RoleRepositoryInterface;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method null|Role find($id, $lockMode = null, $lockVersion = null)

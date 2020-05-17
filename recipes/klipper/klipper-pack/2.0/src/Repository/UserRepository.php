@@ -3,11 +3,11 @@
 namespace App\Repository;
 
 use App\Entity\User;
+use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Klipper\Component\DoctrineExtensionsExtra\Entity\Repository\Traits\InsensitiveTrait;
 use Klipper\Component\SecurityExtra\Entity\Repository\Traits\UserRepositoryTrait;
 use Klipper\Component\SecurityExtra\Entity\Repository\UserRepositoryInterface;
-use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 
 /**
  * @method null|User find($id, $lockMode = null, $lockVersion = null)
