@@ -119,7 +119,7 @@ class User implements
      *
      * @KlipperSecurityAssert\IsReservedName
      */
-    protected ?string $username;
+    protected ?string $username = null;
 
     /**
      * @ORM\Column(type="json")
@@ -137,7 +137,7 @@ class User implements
      *
      * @Assert\NotBlank(groups={"edit"})
      */
-    protected ?string $password;
+    protected ?string $password = null;
 
     /**
      * @see LocaleableInterface::getLocale()
