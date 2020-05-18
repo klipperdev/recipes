@@ -1,0 +1,4 @@
+controllers:
+    resource: '@KlipperApiSearchBundle/Controller/'
+    type: annotation
+    prefix: '/{organization}'
