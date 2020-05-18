@@ -1,0 +1,4 @@
+controllers:
+    resource: '@KlipperApiMetadataBundle/Controller/'
+    type: annotation
+    prefix: '/{organization}'
