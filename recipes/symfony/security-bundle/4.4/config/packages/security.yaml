@@ -4,10 +4,9 @@ security:
             algorithm: auto
     # https://symfony.com/doc/current/security.html#where-do-users-come-from-user-providers
     providers:
-        app_user_provider:
+        users:
             entity:
                 class: App\Entity\User
-                property: email
     firewalls:
         dev:
             pattern: ^/(_(profiler|wdt)|css|images|js)/
@@ -17,6 +16,7 @@ security:
             pattern:        '^/'
             host:           null
             methods:        [HEAD, GET, POST, PATCH, PUT, DELETE]
+            provider:       users
             form_login:     false
             form_csrf:      false
             form_permission_checker: true
@@ -27,8 +27,8 @@ security:
             org_context:    ~
 
         main:
-            provider: app_user_provider
-            anonymous: lazy
+            provider:       users
+            anonymous:      lazy
             anonymous_role: true
             locale_session: true
             org_context:    ~
