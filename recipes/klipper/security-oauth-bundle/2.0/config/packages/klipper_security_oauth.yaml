@@ -1,0 +1,12 @@
+# Doctrine
+doctrine:
+    orm:
+        resolve_target_entities:
+            Klipper\Component\SecurityOauth\Model\OauthClientInterface: App\Entity\OauthClient
+            Klipper\Component\SecurityOauth\Model\OauthAccessTokenInterface: App\Entity\OauthAccessToken
+            Klipper\Component\SecurityOauth\Model\OauthRefreshTokenInterface: App\Entity\OauthRefreshToken
+            Klipper\Component\SecurityOauth\Model\OauthAuthCodeInterface: App\Entity\OauthAuthCode
+
+# Klipper Security Oauth
+klipper_security_oauth:
+    user_provider: users

@@ -1,0 +1,14 @@
+{
+    "env": {
+        "OAUTH2_PRIVATE_KEY": "%kernel.project_dir%/oauth_private.key",
+        "OAUTH2_PRIVATE_KEY_PASSPHRASE": "",
+        "#1": "Generate the encryption key with the command 'bin/console generate:oauth:encryption-key'",
+        "OAUTH2_ENCRYPTION_KEY": ""
+    },
+    "gitignore": [
+        "/oauth_*.key"
+    ],
+    "copy-from-recipe": {
+        "config/": "%CONFIG_DIR%/"
+    }
+}
