@@ -29,7 +29,7 @@ class OauthRefreshTokenRepository extends ServiceEntityRepository implements
         $em = $this->getEntityManager();
         $filters = SqlFilterUtil::disableFilters($em, [], true);
 
-        /* @var OauthAccessTokenInterface $iAccessToken */
+        /** @var OauthAccessTokenInterface $iAccessToken */
         $iAccessToken = $em->getRepository(OauthAccessTokenInterface::class)->findOneBy([
             'token' => $accessToken,
         ]);

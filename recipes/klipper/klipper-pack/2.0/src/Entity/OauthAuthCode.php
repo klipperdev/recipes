@@ -18,8 +18,6 @@ use Klipper\Component\SecurityOauth\Model\Traits\OauthAuthCodeTrait;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OauthAuthCodeRepository")
  *
- *
- *
  * @KlipperMetadata\MetadataObject
  *
  * @Serializer\ExclusionPolicy("all")

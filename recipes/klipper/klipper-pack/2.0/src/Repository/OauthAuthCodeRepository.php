@@ -30,11 +30,11 @@ class OauthAuthCodeRepository extends ServiceEntityRepository implements
         $em = $this->getEntityManager();
         $filters = SqlFilterUtil::disableFilters($em, [], true);
 
-        /* @var UserInterface $user */
+        /** @var UserInterface $user */
         $user = $em->getRepository(UserInterface::class)->findOneBy([
             'username' => $username,
         ]);
-        /* @var OauthClientInterface $client */
+        /** @var OauthClientInterface $client */
         $client = $em->getRepository(OauthClientInterface::class)->findOneBy([
             'token' => $clientToken,
         ]);
