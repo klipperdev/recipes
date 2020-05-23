@@ -9,4 +9,5 @@ doctrine:
 
 # Klipper Security Oauth
 klipper_security_oauth:
+    private_key_permissions_check: false
     user_provider: users
