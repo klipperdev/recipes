@@ -52,7 +52,7 @@ klipper_security:
             object_filter_voter: true
             listeners:
                 permission_checker: true
-                object_filter: true
+                object_filter: false
                 role_hierarchy: true
                 private_sharing: true
                 sharing_delete: true
