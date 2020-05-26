@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use JMS\Serializer\Annotation as Serializer;
@@ -21,6 +22,7 @@ use Klipper\Component\Model\Traits\TranslatableInterface;
 use Klipper\Component\Model\Traits\TranslatableTrait;
 use Klipper\Component\Security\Annotation as KlipperSecurity;
 use Klipper\Component\Security\Model\GroupInterface;
+use Klipper\Component\Security\Model\OrganizationInterface;
 use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
 use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -81,8 +83,6 @@ class Group implements
     use TranslatableTrait;
 
     /**
-     * @var null|string
-     *
      * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @Gedmo\Translatable
@@ -93,7 +93,7 @@ class Group implements
      *
      * @Serializer\Expose
      */
-    protected $label;
+    protected ?string $label = null;
 
     /**
      * @ORM\Column(type="json")
@@ -102,7 +102,7 @@ class Group implements
      *
      * @Serializer\Expose
      */
-    protected $roles = [];
+    protected array $roles = [];
 
     /**
      * @ORM\ManyToOne(
@@ -115,7 +115,7 @@ class Group implements
      * @Serializer\Expose
      * @Serializer\ReadOnly
      */
-    protected $organization;
+    protected ?OrganizationInterface $organization = null;
 
     /**
      * @ORM\OneToMany(
@@ -126,5 +126,5 @@ class Group implements
      *     cascade={"persist"}
      * )
      */
-    protected $translations;
+    protected ?Collection $translations = null;
 }

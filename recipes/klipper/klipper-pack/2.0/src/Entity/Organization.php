@@ -74,15 +74,13 @@ class Organization implements
     use TimestampableTrait;
 
     /**
-     * @var bool
-     *
      * @ORM\Column(type="boolean")
      *
      * @Assert\Type(type="boolean")
      *
      * @Serializer\Expose
      */
-    protected $enabled = true;
+    protected bool $enabled = true;
 
     /**
      * @ORM\Column(type="json")
@@ -91,5 +89,5 @@ class Organization implements
      *
      * @Serializer\Expose
      */
-    protected $roles = [];
+    protected array $roles = [];
 }

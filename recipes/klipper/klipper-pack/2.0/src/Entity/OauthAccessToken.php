@@ -12,6 +12,7 @@ use Klipper\Component\Model\Traits\OrganizationalRequiredTrait;
 use Klipper\Component\Model\Traits\OwnerableTrait;
 use Klipper\Component\Model\Traits\TimestampableInterface;
 use Klipper\Component\Model\Traits\TimestampableTrait;
+use Klipper\Component\Security\Model\OrganizationInterface;
 use Klipper\Component\SecurityOauth\Model\OauthAccessTokenInterface;
 use Klipper\Component\SecurityOauth\Model\Traits\OauthAccessTokenTrait;
 
@@ -44,5 +45,5 @@ class OauthAccessToken implements
      * @Serializer\Expose
      * @Serializer\ReadOnly
      */
-    protected $organization;
+    protected ?OrganizationInterface $organization = null;
 }

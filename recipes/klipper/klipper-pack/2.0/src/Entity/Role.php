@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use JMS\Serializer\Annotation as Serializer;
@@ -20,6 +21,7 @@ use Klipper\Component\Model\Traits\TimestampableTrait;
 use Klipper\Component\Model\Traits\TranslatableInterface;
 use Klipper\Component\Model\Traits\TranslatableTrait;
 use Klipper\Component\Security\Annotation as KlipperSecurity;
+use Klipper\Component\Security\Model\OrganizationInterface;
 use Klipper\Component\Security\Model\RoleHierarchicalInterface;
 use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
 use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
@@ -87,8 +89,6 @@ class Role implements
     use TranslatableTrait;
 
     /**
-     * @var null|string
-     *
      * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @Gedmo\Translatable
@@ -98,7 +98,7 @@ class Role implements
      *
      * @Serializer\Expose
      */
-    protected $label;
+    protected ?string $label = null;
 
     /**
      * @ORM\ManyToOne(
@@ -111,7 +111,7 @@ class Role implements
      * @Serializer\Expose
      * @Serializer\ReadOnly
      */
-    protected $organization;
+    protected ?OrganizationInterface $organization = null;
 
     /**
      * @ORM\OneToMany(
@@ -122,5 +122,5 @@ class Role implements
      *     cascade={"persist"}
      * )
      */
-    protected $translations;
+    protected ?Collection $translations = null;
 }

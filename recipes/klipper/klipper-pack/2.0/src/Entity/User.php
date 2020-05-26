@@ -24,6 +24,7 @@ use Klipper\Component\Model\Traits\UserOrganizationUsersInterface;
 use Klipper\Component\Model\Traits\UserOrganizationUsersTrait;
 use Klipper\Component\Model\Traits\UserTrait;
 use Klipper\Component\Security\Annotation as KlipperSecurity;
+use Klipper\Component\Security\Model\OrganizationInterface;
 use Klipper\Component\Security\Model\UserInterface;
 use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
 use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
@@ -107,7 +108,7 @@ class User implements
      * @Serializer\Expose
      * @Serializer\ReadOnly
      */
-    protected $organization;
+    protected ?OrganizationInterface $organization = null;
 
     /**
      * @ORM\Column(type="string", length=50, unique=true)
@@ -128,7 +129,7 @@ class User implements
      *
      * @Serializer\Expose
      */
-    protected $roles = [];
+    protected array $roles = [];
 
     /**
      * @var null|string The hashed password

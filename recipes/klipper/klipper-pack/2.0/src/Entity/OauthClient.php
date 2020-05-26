@@ -2,6 +2,7 @@
 
 namespace App\Entity;
 
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use JMS\Serializer\Annotation as Serializer;
@@ -18,6 +19,7 @@ use Klipper\Component\Model\Traits\TimestampableInterface;
 use Klipper\Component\Model\Traits\TimestampableTrait;
 use Klipper\Component\Model\Traits\TranslatableInterface;
 use Klipper\Component\Model\Traits\TranslatableTrait;
+use Klipper\Component\Security\Model\OrganizationInterface;
 use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Klipper\Component\SecurityOauth\Model\OauthClientInterface;
 use Klipper\Component\SecurityOauth\Model\Traits\OauthClientTrait;
@@ -67,19 +69,16 @@ class OauthClient implements
     use TranslatableTrait;
 
     /**
-     * @var null|string
-     *
      * @ORM\Column(type="string", length=255, nullable=true)
      *
      * @Gedmo\Translatable
      *
      * @Assert\Type(type="string")
      * @Assert\Length(max=255)
-     * @Assert\NotBlank
      *
      * @Serializer\Expose
      */
-    protected $label;
+    protected ?string $label = null;
 
     /**
      * @ORM\ManyToOne(
@@ -91,7 +90,7 @@ class OauthClient implements
      * @Serializer\Expose
      * @Serializer\ReadOnly
      */
-    protected $organization;
+    protected ?OrganizationInterface $organization = null;
 
     /**
      * @ORM\OneToMany(
@@ -102,5 +101,5 @@ class OauthClient implements
      *     cascade={"persist"}
      * )
      */
-    protected $translations;
+    protected ?Collection $translations = null;
 }
