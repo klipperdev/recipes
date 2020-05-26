@@ -12,7 +12,6 @@ use Klipper\Component\Model\Traits\OrganizationalRequiredTrait;
 use Klipper\Component\Model\Traits\OwnerableTrait;
 use Klipper\Component\Model\Traits\TimestampableInterface;
 use Klipper\Component\Model\Traits\TimestampableTrait;
-use Klipper\Component\Security\Model\OrganizationInterface;
 use Klipper\Component\SecurityOauth\Model\OauthAuthCodeInterface;
 use Klipper\Component\SecurityOauth\Model\Traits\OauthAuthCodeTrait;
 
@@ -34,16 +33,4 @@ class OauthAuthCode implements
     use OwnerableTrait;
     use TimestampableTrait;
     use OauthAuthCodeTrait;
-
-    /**
-     * @ORM\ManyToOne(
-     *     targetEntity="App\Entity\Organization",
-     *     fetch="EXTRA_LAZY"
-     * )
-     * @ORM\JoinColumn(onDelete="CASCADE")
-     *
-     * @Serializer\Expose
-     * @Serializer\ReadOnly
-     */
-    protected ?OrganizationInterface $organization = null;
 }

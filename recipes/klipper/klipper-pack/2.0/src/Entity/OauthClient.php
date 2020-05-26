@@ -20,7 +20,6 @@ use Klipper\Component\Model\Traits\TimestampableInterface;
 use Klipper\Component\Model\Traits\TimestampableTrait;
 use Klipper\Component\Model\Traits\TranslatableInterface;
 use Klipper\Component\Model\Traits\TranslatableTrait;
-use Klipper\Component\Security\Model\OrganizationInterface;
 use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Klipper\Component\SecurityOauth\Model\OauthClientInterface;
 use Klipper\Component\SecurityOauth\Model\Traits\OauthClientTrait;
@@ -87,18 +86,6 @@ class OauthClient implements
      * @Serializer\Expose
      */
     protected ?string $label = null;
-
-    /**
-     * @ORM\ManyToOne(
-     *     targetEntity="App\Entity\Organization",
-     *     fetch="EXTRA_LAZY"
-     * )
-     * @ORM\JoinColumn(onDelete="CASCADE")
-     *
-     * @Serializer\Expose
-     * @Serializer\ReadOnly
-     */
-    protected ?OrganizationInterface $organization = null;
 
     /**
      * @ORM\OneToMany(
