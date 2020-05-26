@@ -171,3 +171,32 @@ permission_classes:
             roles:
                 read: [ROLE_USER]
                 edit: [ROLE_ADMIN]
+
+    App\Entity\OauthClient:
+        permissions:
+            view:     [ROLE_USER]
+            create:   [ROLE_ADMIN]
+            update:   [ROLE_ADMIN]
+            delete:   [ROLE_ADMIN]
+        fields:
+            clientId:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            enabled:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            grantTypes:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            label:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            name:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            redirectUri:
+                read: [ROLE_USER]
+                edit: [ROLE_ADMIN]
+            secret:
+                read: [ROLE_ADMIN]
+                edit: [ROLE_ADMIN]

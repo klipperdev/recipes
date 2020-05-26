@@ -120,3 +120,14 @@ klipper_security:
                 label: [read, edit]
                 organization: [read]
                 roles: [read, edit]
+        App\Entity\OauthClient:
+            operations: [view, create, update, delete]
+            build_fields: false
+            fields:
+                clientId: [read]
+                enabled: [read, edit]
+                grantTypes: [read, edit]
+                label: [read, edit]
+                name: [read, edit]
+                redirectUri: [read, edit]
+                secret: [read, edit]
