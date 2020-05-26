@@ -6,6 +6,7 @@ use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Gedmo\Mapping\Annotation as Gedmo;
 use JMS\Serializer\Annotation as Serializer;
+use Klipper\Component\DoctrineExtensions\Validator\Constraints as KlipperDoctrineAssert;
 use Klipper\Component\DoctrineExtensionsExtra\Mapping\Annotation as KlipperMetadata;
 use Klipper\Component\Model\Traits\EnableTrait;
 use Klipper\Component\Model\Traits\IdInterface;
@@ -30,7 +31,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @ORM\Table(
  *     uniqueConstraints={
- *         @ORM\UniqueConstraint(name="uniq_oauth_client_organization_name", columns={"organization_id", "name"})
+ *         @ORM\UniqueConstraint(name="uniq_oauth_client_organization_name", columns={"organization_id", "name"}),
+ *         @ORM\UniqueConstraint(name="uniq_oauth_client_organization_client_id", columns={"client_id"})
  *     }
  * )
  *
@@ -43,6 +45,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
  *     fields={"name"},
  *     repositoryMethod="findByInsensitive",
+ *     ignoreNull=false,
+ *     allFilters=true
+ * )
+ *
+ * @KlipperDoctrineAssert\UniqueEntity(
+ *     fields={"clientId"},
  *     ignoreNull=false,
  *     allFilters=true
  * )
