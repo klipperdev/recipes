@@ -1,5 +1,6 @@
 {
     "env": {
+        "OAUTH2_PUBLIC_KEY": "%kernel.project_dir%/oauth_public.key",
         "OAUTH2_PRIVATE_KEY": "%kernel.project_dir%/oauth_private.key",
         "OAUTH2_PRIVATE_KEY_PASSPHRASE": "",
         "#1": "Generate the encryption key with the command 'bin/console generate:oauth:encryption-key'",
