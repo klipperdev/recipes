@@ -1,0 +1,4 @@
+klipper_security_oauth_token:
+    resource: '@KlipperSecurityOauthBundle/Resources/config/routes_token.xml'
+    defaults:
+        _priority: 1024
