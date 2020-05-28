@@ -10,6 +10,11 @@ doctrine:
             time: Klipper\Component\DoctrineExtensionsExtra\DBAL\Types\UtcTimeType
             guid: Klipper\Component\DoctrineExtensionsExtra\DBAL\Types\GuidType
     orm:
+        filters:
+            expirable:
+                class: Klipper\Component\DoctrineExtensionsExtra\Filter\ExpirableFilter
+                enabled: true
+
         dql:
             datetime_functions:
                 timestamp: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\SimpleFunction
