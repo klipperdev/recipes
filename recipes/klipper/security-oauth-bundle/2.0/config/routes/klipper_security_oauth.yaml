@@ -1,3 +1,8 @@
+klipper_security_oauth_authorize:
+    resource: '@KlipperSecurityOauthBundle/Resources/config/routes_authorize.xml'
+    defaults:
+        _priority: 1024
+
 klipper_security_oauth_token:
     resource: '@KlipperSecurityOauthBundle/Resources/config/routes_token.xml'
     defaults:
