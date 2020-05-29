@@ -36,7 +36,7 @@ class OauthAccessTokenRepository extends ServiceEntityRepository implements
         ]);
         /** @var OauthClientInterface $client */
         $client = $em->getRepository(OauthClientInterface::class)->findOneBy([
-            'id' => $clientToken,
+            'clientId' => $clientToken,
         ]);
 
         $iAccessToken = (new OauthAccessToken())
