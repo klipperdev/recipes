@@ -1,4 +1,4 @@
-bad_request: 'The request cannot be fulfilled due to bad syntax'
+bad_request: 'The request cannot be fulfilled due to bad syntax or because the request is incomplete'
 unauthorized: 'The authentication is required'
 forbidden: 'You are not authorized to view this resource'
 not_found: 'This resource is not available.'
