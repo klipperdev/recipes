@@ -29,7 +29,8 @@ security:
 
         main:
             provider:       users
-            anonymous:      lazy
+            anonymous:      true
+            lazy:           true
             anonymous_role: true
             locale_session: true
             org_context:    ~
