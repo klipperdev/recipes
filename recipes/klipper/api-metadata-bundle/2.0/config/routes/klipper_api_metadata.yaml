@@ -1,4 +1,4 @@
-controllers:
-    resource: '@KlipperApiMetadataBundle/Controller/'
+metadata:
+    resource: '@KlipperApiMetadataBundle/Controller/MetadataController.php'
     type: annotation
     prefix: '/{organization}'
