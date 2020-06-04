@@ -1,0 +1,8 @@
+role_permissions:
+    resource: '@KlipperApiSecurityBundle/Controller/RolePermissionController.php'
+    type: annotation
+    prefix: '/{organization}'
+    defaults:
+        _organizational_type: org
+    requirements:
+        organization: '[\w\.\-\_]+'
