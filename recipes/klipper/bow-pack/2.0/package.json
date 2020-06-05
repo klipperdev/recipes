@@ -1,0 +1,13 @@
+{
+    "name": "@klipper/skeleton-pwa",
+    "version": "1.0.0",
+    "description": "A minimal Klipper project recommended to create PWA",
+    "license": "MIT",
+    "private": true,
+    "dependencies": {
+        "@klipper/bow": "github:klipperdev/bow#master"
+    },
+    "devDependencies": {
+        "@klipper/bow-dev-pack": "github:klipperdev/bow-dev-pack#master"
+    }
+}
