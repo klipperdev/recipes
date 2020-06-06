@@ -1,12 +1,8 @@
 {
     "extends": "./node_modules/@klipper/bow/tsconfig.json",
     "compilerOptions": {
-        "outDir": "var/cache/dist-ts/",
-        "paths": {
-            "@app/*": [
-                "assets/app/*"
-            ]
-        }
+        "baseUrl": ".",
+        "outDir": "var/cache/dist-ts/"
     },
     "include": [
         "node_modules/@klipper/bow/**/*.ts",
