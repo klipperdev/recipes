@@ -1,6 +1,25 @@
 {
     "extends": "./node_modules/@klipper/bow/tslint.json",
     "linterOptions": {
-        "exclude": []
+        "exclude": [
+            "bin/**",
+            "config/**",
+            "node_modules/**",
+            "public/**",
+            "src/**",
+            "var/**",
+            "**/*.cmd",
+            "**/*.ico",
+            "**/*.jpg",
+            "**/*.js",
+            "**/*.json",
+            "**/*.lock",
+            "**/*.md",
+            "**/*.png",
+            "**/*.scss",
+            "**/*.svg",
+            "**/*.yaml",
+            "**/*.yml"
+        ]
     }
 }
