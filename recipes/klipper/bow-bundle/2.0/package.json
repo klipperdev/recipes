@@ -13,6 +13,7 @@
         "@klipper/bow": "github:klipperdev/bow#master"
     },
     "devDependencies": {
-        "@klipper/bow-dev-pack": "github:klipperdev/bow-dev-pack#master"
+        "@klipper/bow-dev-pack": "github:klipperdev/bow-dev-pack#master",
+        "@vue/cli-plugin-typescript": "^4.3.1"
     }
 }
