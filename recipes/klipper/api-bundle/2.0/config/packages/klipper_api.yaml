@@ -9,6 +9,8 @@ framework:
 
 # Klipper API
 klipper_api:
+    base_host: null
+    base_path: '/api'
     versioning:
         default_version: '1.0'
         available_versions:
