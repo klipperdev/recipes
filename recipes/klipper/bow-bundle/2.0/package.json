@@ -4,6 +4,11 @@
     "description": "A minimal Klipper project recommended to create PWA",
     "license": "MIT",
     "private": true,
+    "scripts": {
+        "serve": "vue-cli-service serve",
+        "build": "vue-cli-service build",
+        "lint": "vue-cli-service lint"
+    },
     "dependencies": {
         "@klipper/bow": "github:klipperdev/bow#master"
     },

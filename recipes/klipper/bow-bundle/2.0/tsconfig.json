@@ -1,0 +1,27 @@
+{
+    "extends": "./node_modules/@klipper/bow/tsconfig.json",
+    "compilerOptions": {
+        "outDir": "var/cache/dist-ts/",
+        "paths": {
+            "@app/*": [
+                "assets/app/*"
+            ]
+        }
+    },
+    "include": [
+        "node_modules/@klipper/bow/**/*.ts",
+        "assets/app/**/*.ts",
+        "assets/app/**/*.vue"
+    ],
+    "exclude": [
+        "bin",
+        "config",
+        "public",
+        "src",
+        "templates",
+        "tests",
+        "translations",
+        "var",
+        "vendor"
+    ]
+}

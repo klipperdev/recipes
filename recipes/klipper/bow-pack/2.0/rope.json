@@ -1,8 +1,0 @@
-{
-    "gitignore": [
-        "/node_modules/"
-    ],
-    "copy-from-recipe": {
-        "package.json": "package.json"
-    }
-}
