@@ -1,0 +1,4 @@
+app:
+    resource: '@KlipperBowBundle/Controller/AppController.php'
+    type: annotation
+    trailing_slash_on_root: false
