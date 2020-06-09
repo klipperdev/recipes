@@ -5,7 +5,7 @@
         "outDir": "var/cache/dist-ts/"
     },
     "include": [
-        "node_modules/@klipper/bow/**/*.ts",
+        "node_modules/@klipper/**/*.ts",
         "assets/app/**/*.ts",
         "assets/app/**/*.vue"
     ],
