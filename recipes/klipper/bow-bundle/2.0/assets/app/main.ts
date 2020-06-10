@@ -17,6 +17,7 @@ import appLocaleFr from '@app/translations/fr';
 import vuetifyLocaleFr from 'vuetify/src/locale/fr';
 import vuetifyBowPreset from '@klipper/bow/vuetify/bowPreset';
 import '@klipper/bow/registerServiceWorker';
+import '@app/styles/fonts.scss';
 import '@app/styles/app.scss';
 
 Vue.config.productionTip = false;
