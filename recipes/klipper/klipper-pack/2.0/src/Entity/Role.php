@@ -25,6 +25,7 @@ use Klipper\Component\Security\Model\OrganizationInterface;
 use Klipper\Component\Security\Model\RoleHierarchicalInterface;
 use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
 use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\RoleRepository")
