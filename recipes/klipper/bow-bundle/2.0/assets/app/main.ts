@@ -27,6 +27,7 @@ import {CurrencyFormatter} from '@klipper/bow/i18n/CurrencyFormatter';
 import {RootState} from '@app/store/RootState';
 import {addAuthGuard} from '@klipper/bow/routers/authGuard';
 import {addDefaultToolbarComponentGuard} from '@klipper/bow/routers/defaultToolbarComponentGuard';
+import {createRoutes} from '@klipper/bow/routers/router';
 import bowLocaleEn from '@klipper/bow/translations/en';
 import bowLocaleFr from '@klipper/bow/translations/fr';
 import appLocaleEn from '@app/translations/en';
@@ -63,7 +64,14 @@ const i18n = new VueI18n({
 
 const router = new Router({
     mode: 'history',
-    routes: [],
+    routes: createRoutes([
+        {
+            path: '/home',
+            name: 'home',
+            meta: {requiresAuth: false},
+            component: () => import(/* webpackChunkName: "views-home" */ '@app/views/Home.vue'),
+        },
+    ], 'home'),
 });
 
 const store = new Vuex.Store<RootState>({
