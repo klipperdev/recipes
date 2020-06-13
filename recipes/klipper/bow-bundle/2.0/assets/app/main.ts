@@ -25,6 +25,7 @@ import {AuthModule} from '@klipper/bow/stores/auth/AuthModule';
 import {NullAuthManager} from '@klipper/bow/auth/NullAuthManager';
 import {CurrencyFormatter} from '@klipper/bow/i18n/CurrencyFormatter';
 import {RootState} from '@app/store/RootState';
+import {deepMerge} from '@klipper/bow/utils/object';
 import {addAuthGuard} from '@klipper/bow/routers/authGuard';
 import {addDefaultToolbarComponentGuard} from '@klipper/bow/routers/defaultToolbarComponentGuard';
 import {createRoutes} from '@klipper/bow/routers/router';
@@ -45,7 +46,7 @@ Vue.use(Vuetify);
 Vue.use(Vuex);
 Vue.use(Router);
 
-const vuetify = new Vuetify(Object.assign({}, vuetifyBowPreset, {
+const vuetify = new Vuetify(deepMerge(vuetifyBowPreset, {
     lang: {
         locales: {
             fr: vuetifyLocaleFr,
@@ -68,7 +69,7 @@ const router = new Router({
         {
             path: '/home',
             name: 'home',
-            meta: {requiresAuth: false},
+            meta: {requiresAuth: true},
             component: () => import(/* webpackChunkName: "views-home" */ '@app/views/Home.vue'),
         },
     ], 'home'),
