@@ -1,4 +1,9 @@
 {
+    "env": {
+        "APP_API_BASE_URL": "",
+        "APP_OAUTH_BASE_URL": "",
+        "APP_OAUTH_CLIENT_ID": ""
+    },
     "gitignore": [
         "/node_modules/",
         "/public/assets/"

@@ -25,6 +25,8 @@ import {DrawerModule} from '@klipper/bow/stores/drawer/DrawerModule';
 import {AuthModule} from '@klipper/bow/stores/auth/AuthModule';
 import {NullAuthManager} from '@klipper/bow/auth/NullAuthManager';
 import {CurrencyFormatter} from '@klipper/bow/i18n/CurrencyFormatter';
+import {KlipperClient} from '@klipper/sdk/KlipperClient';
+import {OauthConfig} from '@klipper/sdk/OauthConfig';
 import {RootState} from '@app/store/RootState';
 import {deepMerge} from '@klipper/bow/utils/object';
 import {addAuthGuard} from '@klipper/bow/routers/authGuard';
@@ -76,6 +78,15 @@ const router = new Router({
     ], 'home'),
 });
 
+const apiClient = new KlipperClient({
+    baseUrl: APP_CONFIG.api.baseUrl,
+    oauth: {
+        baseUrl: APP_CONFIG.api.oauth.baseUrl,
+        clientId: APP_CONFIG.api.oauth.clientId,
+        scope: APP_CONFIG.api.oauth.scope,
+    } as OauthConfig,
+});
+
 const store = new Vuex.Store<RootState>({
     state: {} as RootState,
     modules: {
@@ -93,7 +104,7 @@ Vue.use(new VueValidator(new I18nValidator([RequiredRule], i18n)));
 Vue.use(new VueThemer(store));
 Vue.use(new VueSnackbar());
 Vue.use(new VueFormatter());
-Vue.use(new VueApi());
+Vue.use(new VueApi(apiClient));
 
 addAuthGuard(router, store);
 addDefaultToolbarComponentGuard(router, 'toolbar', KSimpleSpacer);
