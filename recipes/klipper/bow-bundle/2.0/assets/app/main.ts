@@ -12,6 +12,7 @@ import VueFormatter from '@klipper/bow/formatter/VueFormatter';
 import VueI18nExtra from '@klipper/bow/i18n/VueI18nExtra';
 import VueValidator from '@klipper/bow/validator/VueValidator';
 import VueThemer from '@klipper/bow/themer/VueThemer';
+import VueApi from '@klipper/bow/api/VueApi';
 import Router from 'vue-router';
 import App from '@app/components/App.vue';
 import KSimpleSpacer from '@klipper/bow/components/KSimpleSpacer/KSimpleSpacer.vue';
@@ -92,6 +93,7 @@ Vue.use(new VueValidator(new I18nValidator([RequiredRule], i18n)));
 Vue.use(new VueThemer(store));
 Vue.use(new VueSnackbar());
 Vue.use(new VueFormatter());
+Vue.use(new VueApi());
 
 addAuthGuard(router, store);
 addDefaultToolbarComponentGuard(router, 'toolbar', KSimpleSpacer);
