@@ -13,8 +13,8 @@ security:
             security: false
 
         api:
-            pattern:        '^/'
-            host:           null
+            pattern:        '^%api_base_path%'
+            host:           '%api_base_host%'
             methods:        [HEAD, GET, POST, PATCH, PUT, DELETE]
             provider:       users
             form_login:     false

@@ -1,3 +1,7 @@
+parameters:
+    api_base_host: null
+    api_base_path: '/api'
+
 # Framework
 framework:
     cache:
@@ -9,8 +13,8 @@ framework:
 
 # Klipper API
 klipper_api:
-    base_host: null
-    base_path: '/api'
+    base_host: '%api_base_host%'
+    base_path: '%api_base_path%'
     versioning:
         default_version: '1.0'
         available_versions:
