@@ -27,6 +27,20 @@ security:
             org_context:    ~
             oauth:          true
 
+        oauth:
+            pattern:        '^/oauth'
+            host:           null
+            methods:        [GET, POST]
+            provider:       users
+            form_login:     false
+            form_csrf:      false
+            form_permission_checker: true
+            http_basic:     true
+            stateless:      true
+            anonymous:      true
+            anonymous_role: true
+            org_context:    ~
+
         main:
             provider:       users
             anonymous:      true
