@@ -29,9 +29,10 @@ import {KlipperClient} from '@klipper/sdk/KlipperClient';
 import {OauthConfig} from '@klipper/sdk/OauthConfig';
 import {RootState} from '@app/store/RootState';
 import {deepMerge} from '@klipper/bow/utils/object';
+import {createRoutes} from '@klipper/bow/routers/router';
 import {addAuthGuard} from '@klipper/bow/routers/authGuard';
 import {addDefaultToolbarComponentGuard} from '@klipper/bow/routers/defaultToolbarComponentGuard';
-import {createRoutes} from '@klipper/bow/routers/router';
+import {addAuthInterceptor, addLocaleInterceptor} from '@klipper/bow/api/apiInterceptors';
 import bowLocaleEn from '@klipper/bow/translations/en';
 import bowLocaleFr from '@klipper/bow/translations/fr';
 import appLocaleEn from '@app/translations/en';
@@ -108,6 +109,8 @@ Vue.use(new VueApi(apiClient));
 
 addAuthGuard(router, store);
 addDefaultToolbarComponentGuard(router, 'toolbar', KSimpleSpacer);
+addLocaleInterceptor(apiClient, store);
+addAuthInterceptor(apiClient, store);
 
 new Vue({
     i18n,
