@@ -1,3 +1,9 @@
+klipper_api_security_logout:
+    resource: '@KlipperApiSecurityBundle/Controller/LogoutController.php'
+    type: annotation
+    defaults:
+        _priority: 1000
+
 role_permissions:
     resource: '@KlipperApiSecurityBundle/Controller/RolePermissionController.php'
     type: annotation
