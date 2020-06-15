@@ -29,7 +29,7 @@ import {KlipperClient} from '@klipper/sdk/KlipperClient';
 import {OauthConfig} from '@klipper/sdk/OauthConfig';
 import {RootState} from '@app/store/RootState';
 import {deepMerge} from '@klipper/bow/utils/object';
-import {createRoutes} from '@klipper/bow/routers/router';
+import {createRouterBase, createRoutes} from '@klipper/bow/routers/router';
 import {addAuthGuard} from '@klipper/bow/routers/authGuard';
 import {addDefaultToolbarComponentGuard} from '@klipper/bow/routers/defaultToolbarComponentGuard';
 import {addAuthInterceptor, addLocaleInterceptor} from '@klipper/bow/api/apiInterceptors';
@@ -69,6 +69,7 @@ const i18n = new VueI18n({
 
 const router = new Router({
     mode: 'history',
+    base: createRouterBase(APP_CONFIG.assets.baseUrl, APP_CONFIG.api.baseUrl),
     routes: createRoutes([
         {
             path: '/home',
