@@ -23,7 +23,7 @@ import {I18nModule} from '@klipper/bow/stores/i18n/I18nModule';
 import {DarkModeModule} from '@klipper/bow/stores/darkMode/DarkModeModule';
 import {DrawerModule} from '@klipper/bow/stores/drawer/DrawerModule';
 import {AuthModule} from '@klipper/bow/stores/auth/AuthModule';
-import {NullAuthManager} from '@klipper/bow/auth/NullAuthManager';
+import {KlipperAuthManager} from '@klipper/bow/auth/KlipperAuthManager';
 import {CurrencyFormatter} from '@klipper/bow/i18n/CurrencyFormatter';
 import {KlipperClient} from '@klipper/sdk/KlipperClient';
 import {OauthConfig} from '@klipper/sdk/OauthConfig';
@@ -32,7 +32,7 @@ import {deepMerge} from '@klipper/bow/utils/object';
 import {createRouterBase, createRoutes} from '@klipper/bow/routers/router';
 import {addAuthGuard} from '@klipper/bow/routers/authGuard';
 import {addDefaultToolbarComponentGuard} from '@klipper/bow/routers/defaultToolbarComponentGuard';
-import {addAuthInterceptor, addLocaleInterceptor} from '@klipper/bow/api/apiInterceptors';
+import {addAuthInterceptor, addAuthRedirectInterceptor, addLocaleInterceptor} from '@klipper/bow/api/apiInterceptors';
 import bowLocaleEn from '@klipper/bow/translations/en';
 import bowLocaleFr from '@klipper/bow/translations/fr';
 import appLocaleEn from '@app/translations/en';
@@ -95,7 +95,7 @@ const store = new Vuex.Store<RootState>({
         i18n: new I18nModule(i18n, vuetify),
         darkMode: new DarkModeModule(),
         drawer: new DrawerModule(),
-        auth: new AuthModule(router, new NullAuthManager()),
+        auth: new AuthModule(router, new KlipperAuthManager(apiClient)),
     },
 });
 
@@ -112,6 +112,7 @@ addAuthGuard(router, store);
 addDefaultToolbarComponentGuard(router, 'toolbar', KSimpleSpacer);
 addLocaleInterceptor(apiClient, store);
 addAuthInterceptor(apiClient, store);
+addAuthRedirectInterceptor(apiClient, store);
 
 new Vue({
     i18n,
