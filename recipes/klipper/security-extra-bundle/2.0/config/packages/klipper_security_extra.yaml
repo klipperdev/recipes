@@ -11,6 +11,9 @@ doctrine:
             role:
                 class: Klipper\Component\SecurityExtra\Doctrine\Filter\RoleFilter
                 enabled: true
+            organization_only:
+                class: Klipper\Component\SecurityExtra\Doctrine\Filter\OrganizationOnlyFilter
+                enabled: true
             organization:
                 class: Klipper\Component\SecurityExtra\Doctrine\Filter\OrganizationFilter
                 enabled: true
@@ -56,6 +59,7 @@ klipper_security_extra:
             permissions:
                 disable_filters:
                     - role
+                    - organization_only
                     - organization
                     - organizational
                     - organization_user
