@@ -40,6 +40,7 @@ security:
             anonymous:      true
             anonymous_role: true
             org_context:    ~
+            oauth:          true
 
         main:
             provider:       users
