@@ -1,0 +1,5 @@
+# Doctrine
+doctrine:
+    orm:
+        resolve_target_entities:
+            Klipper\Component\User\Model\ProfileInterface: App\Entity\Profile

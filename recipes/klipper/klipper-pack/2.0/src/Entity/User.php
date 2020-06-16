@@ -29,6 +29,8 @@ use Klipper\Component\Security\Model\UserInterface;
 use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
 use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Klipper\Component\SecurityExtra\Validator\Constraints as KlipperSecurityAssert;
+use Klipper\Component\User\Model\Traits\ProfileableInterface;
+use Klipper\Component\User\Model\Traits\ProfileableTrait;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -82,6 +84,7 @@ class User implements
     OrganizationalRequiredInterface,
     TimestampableInterface,
     TimezoneableInterface,
+    ProfileableInterface,
     UserOrganizationUsersInterface
 {
     use IdTrait;
@@ -92,6 +95,7 @@ class User implements
     use UserOrganizationUsersTrait;
     use RoleableTrait;
     use TimestampableTrait;
+    use ProfileableTrait;
 
     /**
      * @ORM\OneToOne(
