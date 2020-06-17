@@ -21,4 +21,14 @@ class Profile implements ProfileInterface
     use ProfileTrait;
     use TimestampableTrait;
     use ImagePathTrait;
+
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="integer")
+     *
+     * @Serializer\Exclude
+     * @Serializer\ReadOnly
+     */
+    protected ?int $id = null;
 }
