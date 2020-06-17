@@ -1,5 +1,12 @@
 {
+    "env": {
+        "CONTENT_BASE_PATH": "%kernel.project_dir%/contents"
+    },
+    "gitignore": [
+        "/contents/"
+    ],
     "copy-from-recipe": {
-        "config/": "%CONFIG_DIR%/"
+        "config/": "%CONFIG_DIR%/",
+        "contents/": "contents/"
     }
 }
