@@ -31,7 +31,10 @@ class OauthClientRepository extends ServiceEntityRepository implements
 
     public function findEnabled($identifier, ?string $locale = null): ?OauthClientInterface
     {
-        return $this->findOneBy(['clientId' => $identifier, 'enabled' => true]);
+        /** @var OauthClientInterface|null $res **/
+        $res = $this->findOneTranslatedBy(['clientId' => $identifier, 'enabled' => true]);
+
+        return $res;
     }
 
     /**
