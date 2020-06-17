@@ -1,0 +1,8 @@
+# Klipper Content
+klipper_content:
+    uploader:
+        configurations:
+            user_profile_image:
+                path: '%kernel.project_dir%/var/contents/user-profile'
+                max_size: 5 Mb
+                namer: uuid
