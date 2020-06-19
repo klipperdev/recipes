@@ -26,6 +26,7 @@ use Klipper\Component\Model\Traits\TimestampableTrait;
 use Klipper\Component\Security\Annotation as KlipperSecurity;
 use Klipper\Component\Security\Model\OrganizationInterface;
 use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OrganizationRepository")
@@ -88,6 +89,8 @@ class Organization implements
      * @KlipperDoctrineExtensionsExtraAssert\EntityChoice("App\Entity\Role", multiple=true)
      *
      * @Serializer\Expose
+     * @Serializer\ReadOnly
+     * @Serializer\Groups({"ROLE_ADMIN_PLATFORM"})
      */
     protected array $roles = [];
 }
