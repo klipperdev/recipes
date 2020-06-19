@@ -27,6 +27,40 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
     }
 
     /**
+     * @see UserRepositoryInterface::findByUsernames
+     */
+    public function findByUsernames(array $usernames): array
+    {
+        $qb = $this->createQueryBuilder('u')
+            ->select('u, p, o, g')
+            ->leftJoin('u.profile', 'p')
+            ->leftJoin('u.organization', 'o')
+            ->leftJoin('u.groups', 'g')
+            ->andWhere('u.username IN (:usernames)')
+            ->setParameter('usernames', $usernames)
+        ;
+
+        return $qb->getQuery()->getResult();
+    }
+
+    /**
+     * @see UserRepositoryInterface::findByUsernameOrHavingEmails
+     */
+    public function findByUsernameOrHavingEmails(array $usernames): array
+    {
+        $qb = $this->createQueryBuilder('u')
+            ->select('u, p, o, g')
+            ->leftJoin('u.profile', 'p')
+            ->leftJoin('u.organization', 'o')
+            ->leftJoin('u.groups', 'g')
+            ->andWhere('u.username IN (:usernames) OR e.email IN (:usernames)')
+            ->setParameter('usernames', $usernames)
+        ;
+
+        return $qb->getQuery()->getResult();
+    }
+
+    /**
      * {@inheritdoc}
      */
     protected function getInsensitiveFields(): array
