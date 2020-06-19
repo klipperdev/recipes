@@ -1,3 +1,9 @@
+klipper_api_user_user:
+    resource: '@KlipperApiUserBundle/Controller/UserController.php'
+    type: annotation
+    defaults:
+        _priority: 500
+
 klipper_api_user_profile:
     resource: '@KlipperApiUserBundle/Controller/ProfileController.php'
     type: annotation
