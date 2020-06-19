@@ -129,9 +129,16 @@ class User implements
     /**
      * @ORM\Column(type="json")
      *
-     * @KlipperDoctrineExtensionsAssert\EntityChoice("App\Entity\Role", namePath="name", multiple=true)
+     * @KlipperDoctrineExtensionsAssert\EntityChoice(
+     *     "App\Entity\Role",
+     *     namePath="name",
+     *     multiple=true,
+     *     filters={"role"}
+     * )
      *
      * @Serializer\Expose
+     * @Serializer\ReadOnly
+     * @Serializer\Groups({"ROLE_ADMIN_PLATFORM", "CurrentUser"})
      */
     protected array $roles = [];
 
