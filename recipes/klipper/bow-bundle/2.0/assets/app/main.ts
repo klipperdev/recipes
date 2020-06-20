@@ -4,7 +4,6 @@ import appLocaleEn from '@app/translations/en';
 import appLocaleFr from '@app/translations/fr';
 import {RootState} from '@app/store/RootState';
 import {createApp} from '@klipper/bow/bow';
-import {createRoutes} from '@klipper/bow/routers/router';
 import '@app/styles/fonts.scss';
 import '@app/styles/app.scss';
 
@@ -15,15 +14,16 @@ const app = createApp<RootState>({
             fr: appLocaleFr,
         },
     },
+    rootRedirectRoute: 'home',
     router: {
-        routes: createRoutes([
+        routes: [
             {
                 path: '/home',
                 name: 'home',
                 meta: {requiresAuth: true},
                 component: () => import(/* webpackChunkName: "views-home" */ '@app/views/Home.vue'),
             },
-        ], 'home'),
+        ],
     },
 });
 
