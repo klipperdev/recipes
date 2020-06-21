@@ -1,5 +1,9 @@
 {
+    "gitignore": [
+        "/.php_cs.cache"
+    ],
     "copy-from-recipe": {
+        ".php_cs.dist": ".php_cs.dist",
         "src/": "%SRC_DIR%/",
         "tests/": "tests/",
         "translations/": "translations/"
