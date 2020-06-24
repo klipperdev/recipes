@@ -18,7 +18,7 @@ const app = createApp<RootState>({
     router: {
         routes: [
             {
-                path: '/home',
+                path: '/:org([\\w-]+)/home',
                 name: 'home',
                 meta: {requiresAuth: true},
                 component: () => import(/* webpackChunkName: "views-home" */ '@app/views/Home.vue'),
