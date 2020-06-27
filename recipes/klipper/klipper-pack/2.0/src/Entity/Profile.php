@@ -42,7 +42,7 @@ class Profile implements ProfileInterface
      * @Serializer\Expose
      * @Serializer\ReadOnly
      * @Serializer\SerializedName("image_url")
-     * @Serializer\Type("Url<'klipper_apiuser_profile_downloadimage', 'ext=`jpg`'>")
+     * @Serializer\Type("Url<'klipper_apiuser_profile_downloadimage', 'ext=`{{imageExtension}}`'>")
      */
     protected ?string $imagePath = null;
 }
