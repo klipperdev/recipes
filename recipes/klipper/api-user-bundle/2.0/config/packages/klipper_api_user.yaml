@@ -6,3 +6,7 @@ klipper_content:
                 path: '%env(resolve:CONTENT_BASE_PATH)%/profiles'
                 max_size: 5 Mb
                 namer: uuid
+            organization_image:
+                path: '%env(resolve:CONTENT_BASE_PATH)%/organizations'
+                max_size: 5 Mb
+                namer: uuid

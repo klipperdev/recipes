@@ -9,3 +9,12 @@ klipper_api_user_profile:
     type: annotation
     defaults:
         _priority: 500
+
+klipper_api_user_organization:
+    resource: '@KlipperApiUserBundle/Controller/OrganizationController.php'
+    type: annotation
+    prefix: '/{organization}'
+    defaults:
+        _organizational_type: org
+    requirements:
+        organization: '[\w\.\-\_]+'
