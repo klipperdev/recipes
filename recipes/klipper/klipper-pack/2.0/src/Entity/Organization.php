@@ -11,6 +11,8 @@ use Klipper\Component\Model\Traits\EnableInterface;
 use Klipper\Component\Model\Traits\EnableTrait;
 use Klipper\Component\Model\Traits\IdInterface;
 use Klipper\Component\Model\Traits\IdTrait;
+use Klipper\Component\Model\Traits\ImagePathInterface;
+use Klipper\Component\Model\Traits\ImagePathTrait;
 use Klipper\Component\Model\Traits\LabelableInterface;
 use Klipper\Component\Model\Traits\LabelableTrait;
 use Klipper\Component\Model\Traits\NameableInterface;
@@ -57,6 +59,7 @@ use Symfony\Component\Validator\Constraints as Assert;
 class Organization implements
     EnableInterface,
     IdInterface,
+    ImagePathInterface,
     LabelableInterface,
     NameableInterface,
     OrganizationInterface,
@@ -73,6 +76,7 @@ class Organization implements
     use OrganizationRolesTrait;
     use RoleableTrait;
     use TimestampableTrait;
+    use ImagePathTrait;
 
     /**
      * @ORM\Column(type="boolean")
@@ -93,4 +97,17 @@ class Organization implements
      * @Serializer\Groups({"ROLE_ADMIN_PLATFORM"})
      */
     protected array $roles = [];
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @Assert\Type(type="string")
+     * @Assert\Length(max=255)
+     *
+     * @Serializer\Expose
+     * @Serializer\ReadOnly
+     * @Serializer\SerializedName("image_url")
+     * @Serializer\Type("Url<'klipper_apiuser_organization_downloadimage', 'ext=`{{preferredImageExtension}}`'>")
+     */
+    protected ?string $imagePath = null;
 }
