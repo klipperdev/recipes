@@ -71,7 +71,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     repositoryMethod="findByUsernameOrHavingEmails"
  * )
  *
- * @KlipperMetadata\MetadataObject
+ * @KlipperMetadata\MetadataObject(
+ *     buildDefaultActions=false
+ * )
  *
  * @Serializer\ExclusionPolicy("all")
  */
