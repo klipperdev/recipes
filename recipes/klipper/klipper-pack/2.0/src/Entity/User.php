@@ -68,7 +68,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @KlipperSecurityExtra\SharingEntry(
  *     field="username",
- *     repositoryMethod="findByUsernames"
+ *     repositoryMethod="findByUsernameOrHavingEmails"
  * )
  *
  * @KlipperMetadata\MetadataObject

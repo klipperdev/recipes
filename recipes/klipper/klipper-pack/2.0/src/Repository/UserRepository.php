@@ -6,6 +6,7 @@ use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
 use Klipper\Component\DoctrineExtensionsExtra\Entity\Repository\Traits\InsensitiveTrait;
+use Klipper\Component\Security\Model\UserInterface;
 use Klipper\Component\SecurityExtra\Entity\Repository\Traits\UserRepositoryTrait;
 use Klipper\Component\SecurityExtra\Entity\Repository\UserRepositoryInterface;
 use Symfony\Bridge\Doctrine\Security\User\UserLoaderInterface;
@@ -24,6 +25,13 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, User::class);
+    }
+
+    public function loadUserByUsername($username): ?UserInterface
+    {
+        $res = $this->findByUsernameOrHavingEmails([$username]);
+
+        return 1 === \count($res) ? $res[0] : null;
     }
 
     /**
@@ -53,7 +61,7 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
             ->leftJoin('u.profile', 'p')
             ->leftJoin('u.organization', 'o')
             ->leftJoin('u.groups', 'g')
-            ->andWhere('u.username IN (:usernames) OR e.email IN (:usernames)')
+            ->andWhere('u.username IN (:usernames) OR u.email IN (:usernames)')
             ->setParameter('usernames', $usernames)
         ;
 

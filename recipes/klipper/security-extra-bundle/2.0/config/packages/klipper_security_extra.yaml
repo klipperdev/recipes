@@ -43,7 +43,7 @@ klipper_security_extra:
     sharing_entries:
         App\Entity\User:
             field:             username
-            repository_method: findByUsernames
+            repository_method: findByUsernameOrHavingEmails
         App\Entity\Role:
             field:             name
             repository_method: findByNames
