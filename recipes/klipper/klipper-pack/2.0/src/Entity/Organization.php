@@ -51,7 +51,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  * )
  *
  * @KlipperMetadata\MetadataObject(
- *     availableContexts={"user"}
+ *     availableContexts={"user"},
+ *     buildDefaultActions=false,
+ *     actions={
+ *         @KlipperMetadata\MetadataAction(name="list"),
+ *         @KlipperMetadata\MetadataAction(name="create")
+ *     }
  * )
  *
  * @Serializer\ExclusionPolicy("all")
