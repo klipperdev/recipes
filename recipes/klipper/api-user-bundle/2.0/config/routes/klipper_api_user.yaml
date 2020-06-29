@@ -18,3 +18,10 @@ klipper_api_user_organization:
         _organizational_type: org
     requirements:
         organization: '[\w\.\-\_]+'
+
+klipper_api_user_connected_user:
+    resource: '@KlipperApiUserBundle/Controller/ConnectedUserController.php'
+    type: annotation
+    prefix: '/{organization}'
+    requirements:
+        organization: 'user|[\w\.\-\_]+'
