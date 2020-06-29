@@ -112,7 +112,7 @@ class Organization implements
      * @Serializer\Expose
      * @Serializer\ReadOnly
      * @Serializer\SerializedName("image_url")
-     * @Serializer\Type("OrgUrl<'klipper_apiuser_organization_downloadimage', 'ext=`{{preferredImageExtension}}`'>")
+     * @Serializer\Type("OrgUrl<'klipper_apiuser_organization_downloadimage', 'organization=`{{name}}`', 'ext=`{{preferredImageExtension}}`'>")
      */
     protected ?string $imagePath = null;
 }
