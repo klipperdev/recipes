@@ -25,6 +25,11 @@ use Klipper\Component\Security\Model\UserInterface;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OrganizationUserRepository")
+ * @ORM\Table(
+ *     uniqueConstraints={
+ *         @ORM\UniqueConstraint(name="uniq_organization_user", columns={"organization_id", "user_id"})
+ *     }
+ * )
  *
  * @ORM\AssociationOverrides({
  *     @ORM\AssociationOverride(
