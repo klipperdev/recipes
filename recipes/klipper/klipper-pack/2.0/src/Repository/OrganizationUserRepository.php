@@ -4,6 +4,7 @@ namespace App\Repository;
 
 use App\Entity\OrganizationUser;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 use Klipper\Component\SecurityExtra\Entity\Repository\OrganizationUserRepositoryInterface;
 use Klipper\Component\SecurityExtra\Entity\Repository\Traits\OrganizationUserRepositoryTrait;
@@ -21,5 +22,14 @@ class OrganizationUserRepository extends ServiceEntityRepository implements Orga
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, OrganizationUser::class);
+    }
+
+    public function createQueryForList(string $alias = 'o'): QueryBuilder
+    {
+        return $this->createQueryBuilder($alias)
+            ->select($alias.', u, p')
+            ->join($alias.'.user', 'u')
+            ->leftJoin('u.profile', 'p')
+        ;
     }
 }

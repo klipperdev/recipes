@@ -52,7 +52,15 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @KlipperMetadata\MetadataObject(
  *     availableContexts={"organization"},
- *     formType="Klipper\Bundle\ApiUserBundle\Form\Type\OrganizationUserType"
+ *     formType="Klipper\Bundle\ApiUserBundle\Form\Type\OrganizationUserType",
+ *     actions={
+ *         @KlipperMetadata\MetadataAction(
+ *             name="list",
+ *             defaults={
+ *                 "_method_repository": "createQueryForList"
+ *             }
+ *         )
+ *     }
  * )
  *
  * @Serializer\ExclusionPolicy("all")
