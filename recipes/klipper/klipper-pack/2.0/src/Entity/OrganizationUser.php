@@ -22,6 +22,8 @@ use Klipper\Component\Security\Annotation as KlipperSecurity;
 use Klipper\Component\Security\Model\OrganizationInterface;
 use Klipper\Component\Security\Model\OrganizationUserInterface;
 use Klipper\Component\Security\Model\UserInterface;
+use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OrganizationUserRepository")
@@ -38,12 +40,19 @@ use Klipper\Component\Security\Model\UserInterface;
  *     )
  * })
  *
+ * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
+ *     fields={"user"},
+ *     ignoreNull=false,
+ *     allFilters=true
+ * )
+ *
  * @KlipperSecurity\Permission(
  *     mappingPermissions={"create": "invite", "delete": "revoke"}
  * )
  *
  * @KlipperMetadata\MetadataObject(
- *     availableContexts={"organization"}
+ *     availableContexts={"organization"},
+ *     formType="Klipper\Bundle\ApiUserBundle\Form\Type\OrganizationUserType"
  * )
  *
  * @Serializer\ExclusionPolicy("all")
@@ -94,6 +103,8 @@ class OrganizationUser implements
      *     cascade={"persist"}
      * )
      * @ORM\JoinColumn(onDelete="CASCADE")
+     *
+     * @Assert\NotNull
      *
      * @Serializer\Expose
      * @Serializer\ReadOnly
