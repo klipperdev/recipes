@@ -14,7 +14,9 @@ const app = createApp<RootState>({
             fr: appLocaleFr,
         },
     },
-    rootRedirectRoute: 'home',
+    rootRedirectRoute: {name: 'home', params: {org: '_'}},
+    rootRoute: {name: 'home', params: {org: '_'}},
+    userContextRedirectRoute: {name: 'home', params: {org: '_'}},
     router: {
         routes: [
             {
