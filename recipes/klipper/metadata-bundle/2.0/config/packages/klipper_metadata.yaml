@@ -25,3 +25,8 @@ klipper_metadata:
             availableLocales:
                 sortable: false
                 searchable: false
+            imagePath:
+                read_only: true
+                filterable: false
+                sortable: false
+                searchable: false
