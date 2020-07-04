@@ -1,5 +1,8 @@
 <template>
     <k-app :drawer-items="drawerItems">
+        <template v-slot:drawer.append>
+            <k-drawer-section-settings></k-drawer-section-settings>
+        </template>
     </k-app>
 </template>
 
