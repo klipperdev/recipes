@@ -1,0 +1,6 @@
+# Doctrine
+doctrine:
+    orm:
+        resolve_target_entities:
+            Klipper\Component\DoctrineChoice\Model\ChoiceInterface: App\Entity\Choice
+            Klipper\Component\DoctrineChoice\Model\ChoiceGroupInterface: App\Entity\ChoiceGroup
