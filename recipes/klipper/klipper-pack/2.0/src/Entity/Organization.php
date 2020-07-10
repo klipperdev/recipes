@@ -95,7 +95,7 @@ class Organization implements
     /**
      * @ORM\Column(type="json")
      *
-     * @KlipperDoctrineExtensionsExtraAssert\EntityChoice("App\Entity\Role", multiple=true)
+     * @KlipperDoctrineExtensionsExtraAssert\EntityChoice("App\Entity\Role", namePath="name", multiple=true)
      *
      * @Serializer\Expose
      * @Serializer\ReadOnly
