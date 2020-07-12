@@ -41,7 +41,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * })
  *
  * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
- *     fields={"user"},
+ *     fields={"organization", "user"},
  *     ignoreNull=false,
  *     allFilters=true
  * )
