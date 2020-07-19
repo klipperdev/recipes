@@ -18,6 +18,13 @@ standard.fields.position: Position
 standard.fields.started_at: Started at
 standard.fields.ended_at: Ended at
 standard.fields.Status: Status
+standard.fields.external_ids: External ids
+standard.fields.last_update_dates: Last update dates
+
+# Standard Associations
+standard.associations.created_by: Created by
+standard.associations.updated_by: Updated by
+standard.associations.owner: Owner
 
 # Group
 group.name: Group
