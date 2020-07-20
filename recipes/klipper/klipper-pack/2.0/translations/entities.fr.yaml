@@ -9,22 +9,38 @@ standard.fields.description: Description
 standard.fields.email: Email
 standard.fields.roles: Rôles
 standard.fields.enabled: Activé
-standard.fields.externalIds: Ids externes
-standard.fields.imagePath: Chemin de l'image
+standard.fields.external_ids: Ids externes
+standard.fields.image_path: Chemin de l'image
 standard.fields.timezone: Fuseau horaire
 standard.fields.locale: Langue
 standard.fields.currency: Devise
 standard.fields.position: Position
 standard.fields.started_at: Commencé à
 standard.fields.ended_at: Terminé à
-standard.fields.Status: Statut
-standard.fields.external_ids: Id externes
-standard.fields.last_update_dates: Dates de dernière mise à jour
+standard.fields.status: Statut
+standard.fields.type: Type
+standard.fields.value: Valeur
+standard.fields.street: Adresse
+standard.fields.street_complement: Complément d'adresse
+standard.fields.postal_code: Code postal
+standard.fields.city: Ville
+standard.fields.state: Etat/Région
+standard.fields.country: Pays
+standard.fields.phone: Téléphone
+standard.fields.mobile_phone: Téléphone mobile
+standard.fields.fax: Fax
+standard.fields.website: Website
+standard.fields.last_import_dates: Dates des derniers import
+standard.fields.available_locales: Langue disponibles
 
 # Standard Associations
 standard.associations.created_by: Créé par
 standard.associations.updated_by: Modifié par
 standard.associations.owner: Responsable
+standard.associations.user: Utilisateur
+standard.associations.organization: Organisation
+standard.associations.profile: Profil
+standard.associations.groups: Groupes
 
 # Group
 group.name: Groupe
@@ -66,3 +82,11 @@ sharing.fields.identity_name: Nom de l'identité
 # User
 user.name: Utilisateur
 user.name.plural: Utilisateurs
+user.fields.username: Nom d'utilisateur
+user.fields.password: Mot de passe
+
+# Profile
+profile.name: Profil
+profile.name.plural: Profils
+profile.fields.first_name: Prénom
+profile.fields.last_name: Nom
