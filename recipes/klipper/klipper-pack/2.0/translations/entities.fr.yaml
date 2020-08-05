@@ -20,8 +20,8 @@ standard.fields.ended_at: Terminé à
 standard.fields.status: Statut
 standard.fields.type: Type
 standard.fields.value: Valeur
-standard.fields.street: Adresse
-standard.fields.street_complement: Complément d'adresse
+standard.fields.street: Rue
+standard.fields.street_complement: Complément de rue
 standard.fields.postal_code: Code postal
 standard.fields.city: Ville
 standard.fields.state: Etat/Région
