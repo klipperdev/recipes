@@ -90,3 +90,20 @@ profile.name: Profile
 profile.name.plural: Profiles
 profile.fields.first_name: First name
 profile.fields.last_name: Last name
+
+# Oauth Client
+oauth_client.name: Oauth client
+oauth_client.name.plural: Oauth clients
+oauth_client.fields.client_id: Client Id
+oauth_client.fields.secret: Secret
+oauth_client.fields.redirect_uri: Redirect URI
+oauth_client.fields.grant_types: Grant types
+
+# Choice
+choice.name: Choice
+choice.name.plural: Choices
+
+# List View
+list_view.name: View
+list_view.name.plural: Views
+list_view.fields.filters: Filters

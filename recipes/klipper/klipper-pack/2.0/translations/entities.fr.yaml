@@ -90,3 +90,20 @@ profile.name: Profil
 profile.name.plural: Profils
 profile.fields.first_name: Prénom
 profile.fields.last_name: Nom
+
+# Oauth Client
+oauth_client.name: Client Oauth
+oauth_client.name.plural: Clients Oauth
+oauth_client.fields.client_id: Id client
+oauth_client.fields.secret: Secret
+oauth_client.fields.redirect_uri: URI de redirection
+oauth_client.fields.grant_types: Types de subvention
+
+# Choice
+choice.name: Choix
+choice.name.plural: Choix
+
+# List View
+list_view.name: Vue
+list_view.name.plural: Vues
+list_view.fields.filters: Filtres
