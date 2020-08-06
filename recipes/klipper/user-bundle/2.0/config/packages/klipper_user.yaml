@@ -2,4 +2,4 @@
 doctrine:
     orm:
         resolve_target_entities:
-            Klipper\Component\User\Model\ProfileInterface: App\Entity\Profile
+            Klipper\Component\User\Model\Traits\ProfileableInterface: App\Entity\User

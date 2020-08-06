@@ -2,8 +2,8 @@
 klipper_content:
     uploader:
         configurations:
-            user_profile_image:
-                path: '%env(resolve:CONTENT_BASE_PATH)%/profiles'
+            user_image:
+                path: '%env(resolve:CONTENT_BASE_PATH)%/users'
                 max_size: 5 Mb
                 namer: uuid
             organization_image:

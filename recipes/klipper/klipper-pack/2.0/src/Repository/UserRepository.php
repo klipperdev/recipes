@@ -40,8 +40,7 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
     public function findByUsernames(array $usernames): array
     {
         $qb = $this->createQueryBuilder('u')
-            ->select('u, p, o, g')
-            ->leftJoin('u.profile', 'p')
+            ->select('u, o, g')
             ->leftJoin('u.organization', 'o')
             ->leftJoin('u.groups', 'g')
             ->andWhere('u.username IN (:usernames)')
@@ -57,8 +56,7 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
     public function findByUsernameOrHavingEmails(array $usernames): array
     {
         $qb = $this->createQueryBuilder('u')
-            ->select('u, p, o, g')
-            ->leftJoin('u.profile', 'p')
+            ->select('u, o, g')
             ->leftJoin('u.organization', 'o')
             ->leftJoin('u.groups', 'g')
             ->andWhere('u.username IN (:usernames) OR u.email IN (:usernames)')

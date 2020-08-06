@@ -13,6 +13,7 @@ use Klipper\Component\Model\Traits\EmailableInterface;
 use Klipper\Component\Model\Traits\EmailableTrait;
 use Klipper\Component\Model\Traits\IdInterface;
 use Klipper\Component\Model\Traits\IdTrait;
+use Klipper\Component\Model\Traits\ImagePathTrait;
 use Klipper\Component\Model\Traits\LocaleableInterface;
 use Klipper\Component\Model\Traits\OrganizationalRequiredInterface;
 use Klipper\Component\Model\Traits\OrganizationalRequiredTrait;
@@ -98,6 +99,7 @@ class User implements
     use RoleableTrait;
     use TimestampableTrait;
     use ProfileableTrait;
+    use ImagePathTrait;
 
     /**
      * @ORM\OneToOne(
@@ -152,6 +154,19 @@ class User implements
      * @Assert\NotBlank(groups={"edit"})
      */
     protected ?string $password = null;
+
+    /**
+     * @ORM\Column(type="string", length=255, nullable=true)
+     *
+     * @Assert\Type(type="string")
+     * @Assert\Length(max=255)
+     *
+     * @Serializer\Expose
+     * @Serializer\ReadOnly
+     * @Serializer\SerializedName("image_url")
+     * @Serializer\Type("Url<'klipper_apiuser_connecteduser_downloadprofileimage', 'organization=`user`', 'id=`{{id}}`', 'ext=`{{preferredImageExtension}}`'>")
+     */
+    protected ?string $imagePath = null;
 
     /**
      * @see LocaleableInterface::getLocale()

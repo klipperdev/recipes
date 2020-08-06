@@ -39,7 +39,6 @@ standard.associations.updated_by: Modifié par
 standard.associations.owner: Responsable
 standard.associations.user: Utilisateur
 standard.associations.organization: Organisation
-standard.associations.profile: Profil
 standard.associations.groups: Groupes
 
 # Group
@@ -84,12 +83,10 @@ user.name: Utilisateur
 user.name.plural: Utilisateurs
 user.fields.username: Nom d'utilisateur
 user.fields.password: Mot de passe
-
-# Profile
-profile.name: Profil
-profile.name.plural: Profils
-profile.fields.first_name: Prénom
-profile.fields.last_name: Nom
+user.fields.first_name: Prénom
+user.fields.last_name: Nom
+user.fields.full_name: Nom complet
+user.fields.initital: Initial
 
 # Oauth Client
 oauth_client.name: Client Oauth

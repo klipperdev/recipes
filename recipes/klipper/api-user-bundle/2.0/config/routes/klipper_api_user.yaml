@@ -4,12 +4,6 @@ klipper_api_user_user:
     defaults:
         _priority: 500
 
-klipper_api_user_profile:
-    resource: '@KlipperApiUserBundle/Controller/ProfileController.php'
-    type: annotation
-    defaults:
-        _priority: 500
-
 klipper_api_user_organization:
     resource: '@KlipperApiUserBundle/Controller/OrganizationController.php'
     type: annotation
