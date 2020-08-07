@@ -53,6 +53,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @KlipperMetadata\MetadataObject(
  *     availableContexts={"organization"},
  *     formType="Klipper\Bundle\ApiUserBundle\Form\Type\OrganizationUserType",
+ *     defaultSortable="user.first_name:ASC, user.last_name:ASC",
+ *     deepSearchPaths={"user"},
  *     actions={
  *         @KlipperMetadata\MetadataAction(
  *             name="list",
