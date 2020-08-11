@@ -3,7 +3,9 @@ klipper_translation:
         codes:
             JMS\Serializer\Exception\UnsupportedFormatException: 400
             Klipper\Component\Metadata\Exception\ObjectMetadataNotFoundException: 404
+            Klipper\Component\Resource\Exception\InvalidConverterException: 400
         messages:
             JMS\Serializer\Exception\UnsupportedFormatException: 'unsupported_format'
             Symfony\Component\HttpKernel\Exception\BadRequestHttpException: true
             Klipper\Component\Metadata\Exception\ObjectMetadataNotFoundException: 'metadata_not_found'
+            Klipper\Component\Resource\Exception\InvalidConverterException: true
