@@ -23,6 +23,7 @@ use Klipper\Component\Model\Traits\TranslatableTrait;
 use Klipper\Component\Security\Annotation as KlipperSecurity;
 use Klipper\Component\Security\Model\OrganizationInterface;
 use Klipper\Component\Security\Model\RoleHierarchicalInterface;
+use Klipper\Component\Security\Model\RoleInterface;
 use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
 use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Symfony\Component\Validator\Constraints as Assert;
@@ -125,4 +126,26 @@ class Role implements
      * )
      */
     protected ?Collection $translations = null;
+
+    /**
+     * @var null|Collection|RoleInterface[]
+     *
+     * @ORM\ManyToMany(
+     *     targetEntity="Klipper\Component\Security\Model\RoleInterface",
+     *     inversedBy="parents"
+     * )
+     * @ORM\JoinTable(
+     *     name="role_children",
+     *     joinColumns={
+     *         @ORM\JoinColumn(onDelete="CASCADE")
+     *     },
+     *     inverseJoinColumns={
+     *         @ORM\JoinColumn(onDelete="CASCADE", name="children_role_id")
+     *     }
+     * )
+     *
+     * @Serializer\Expose
+     * @Serializer\MaxDepth(1)
+     */
+    protected ?Collection $children = null;
 }
