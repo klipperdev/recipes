@@ -17,6 +17,15 @@ use Klipper\Component\SecurityOauth\Model\Traits\OauthAccessTokenTrait;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OauthAccessTokenRepository")
  *
+ * @ORM\Table(
+ *     indexes={
+ *         @ORM\Index(name="idx_oauth_access_token_created_at", columns={"created_at"}),
+ *         @ORM\Index(name="idx_oauth_access_token_updated_at", columns={"updated_at"}),
+ *         @ORM\Index(name="idx_oauth_access_token_expires_at", columns={"expires_at"}),
+ *         @ORM\Index(name="idx_oauth_access_token_token", columns={"token"})
+ *     }
+ * )
+ *
  * @Serializer\ExclusionPolicy("all")
  */
 class OauthAccessToken implements

@@ -25,6 +25,13 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity(repositoryClass="App\Repository\ChoiceRepository")
  *
  * @ORM\Table(
+ *     indexes={
+ *         @ORM\Index(name="idx_choice_created_at", columns={"created_at"}),
+ *         @ORM\Index(name="idx_choice_updated_at", columns={"updated_at"}),
+ *         @ORM\Index(name="idx_choice_type", columns={"type"}),
+ *         @ORM\Index(name="idx_choice_label", columns={"label"}),
+ *         @ORM\Index(name="idx_choice_value", columns={"value"})
+ *     },
  *     uniqueConstraints={
  *         @ORM\UniqueConstraint(name="uniq_choice_organization_value", columns={"organization_id", "type", "value"})
  *     }

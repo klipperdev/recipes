@@ -32,6 +32,12 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity(repositoryClass="App\Repository\RoleRepository")
  *
  * @ORM\Table(
+ *     indexes={
+ *         @ORM\Index(name="idx_role_created_at", columns={"created_at"}),
+ *         @ORM\Index(name="idx_role_updated_at", columns={"updated_at"}),
+ *         @ORM\Index(name="idx_role_name", columns={"name"}),
+ *         @ORM\Index(name="idx_role_label", columns={"label"})
+ *     },
  *     uniqueConstraints={
  *         @ORM\UniqueConstraint(name="uniq_role_organization_name", columns={"organization_id", "name"})
  *     }

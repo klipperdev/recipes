@@ -27,7 +27,13 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OrganizationUserRepository")
+ *
  * @ORM\Table(
+ *     indexes={
+ *         @ORM\Index(name="idx_organization_user_created_at", columns={"created_at"}),
+ *         @ORM\Index(name="idx_organization_user_updated_at", columns={"updated_at"}),
+ *         @ORM\Index(name="idx_organization_user_enabled", columns={"enabled"})
+ *     },
  *     uniqueConstraints={
  *         @ORM\UniqueConstraint(name="uniq_organization_user", columns={"organization_id", "user_id"})
  *     }

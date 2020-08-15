@@ -17,6 +17,15 @@ use Klipper\Component\SecurityOauth\Model\Traits\OauthRefreshTokenTrait;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OauthRefreshTokenRepository")
  *
+ * @ORM\Table(
+ *     indexes={
+ *         @ORM\Index(name="idx_oauth_refresh_token_created_at", columns={"created_at"}),
+ *         @ORM\Index(name="idx_oauth_refresh_token_updated_at", columns={"updated_at"}),
+ *         @ORM\Index(name="idx_oauth_refresh_token_expires_at", columns={"expires_at"}),
+ *         @ORM\Index(name="idx_oauth_refresh_token_token", columns={"token"})
+ *     }
+ * )
+ *
  * @Serializer\ExclusionPolicy("all")
  */
 class OauthRefreshToken implements

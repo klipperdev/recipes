@@ -33,6 +33,16 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\OrganizationRepository")
  *
+ * @ORM\Table(
+ *     indexes={
+ *         @ORM\Index(name="idx_organization_created_at", columns={"created_at"}),
+ *         @ORM\Index(name="idx_organization_updated_at", columns={"updated_at"}),
+ *         @ORM\Index(name="idx_organization_name", columns={"name"}),
+ *         @ORM\Index(name="idx_organization_label", columns={"label"}),
+ *         @ORM\Index(name="idx_organization_enabled", columns={"enabled"})
+ *     }
+ * )
+ *
  * @KlipperAssert\UniqueEntity(
  *     fields={"name"},
  *     repositoryMethod="findByInsensitive",

@@ -29,6 +29,13 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity(repositoryClass="App\Repository\OauthClientRepository")
  *
  * @ORM\Table(
+ *     indexes={
+ *         @ORM\Index(name="idx_oauth_client_created_at", columns={"created_at"}),
+ *         @ORM\Index(name="idx_oauth_client_updated_at", columns={"updated_at"}),
+ *         @ORM\Index(name="idx_oauth_client_name", columns={"name"}),
+ *         @ORM\Index(name="idx_oauth_client_label", columns={"label"}),
+ *         @ORM\Index(name="idx_oauth_client_enabled", columns={"enabled"})
+ *     },
  *     uniqueConstraints={
  *         @ORM\UniqueConstraint(name="uniq_oauth_client_organization_name", columns={"organization_id", "name"}),
  *         @ORM\UniqueConstraint(name="uniq_oauth_client_organization_client_id", columns={"client_id"})

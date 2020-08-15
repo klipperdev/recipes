@@ -37,6 +37,19 @@ use Symfony\Component\Validator\Constraints as Assert;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\UserRepository")
  *
+ * @ORM\Table(
+ *     indexes={
+ *         @ORM\Index(name="idx_user_created_at", columns={"created_at"}),
+ *         @ORM\Index(name="idx_user_updated_at", columns={"updated_at"}),
+ *         @ORM\Index(name="idx_user_username", columns={"username"}),
+ *         @ORM\Index(name="idx_user_email", columns={"email"}),
+ *         @ORM\Index(name="idx_user_first_name", columns={"first_name"}),
+ *         @ORM\Index(name="idx_user_last_name", columns={"last_name"}),
+ *         @ORM\Index(name="idx_user_initial", columns={"initial"}),
+ *         @ORM\Index(name="idx_user_alias", columns={"alias"})
+ *     }
+ * )
+ *
  * @ORM\AssociationOverrides({
  *     @ORM\AssociationOverride(
  *         name="groups",

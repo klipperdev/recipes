@@ -25,6 +25,13 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @ORM\Entity(repositoryClass="App\Repository\ListViewRepository")
  *
  * @ORM\Table(
+ *     indexes={
+ *         @ORM\Index(name="idx_list_view_created_at", columns={"created_at"}),
+ *         @ORM\Index(name="idx_list_view_updated_at", columns={"updated_at"}),
+ *         @ORM\Index(name="idx_list_view_name", columns={"name"}),
+ *         @ORM\Index(name="idx_list_view_label", columns={"label"}),
+ *         @ORM\Index(name="idx_list_view_type", columns={"type"})
+ *     },
  *     uniqueConstraints={
  *         @ORM\UniqueConstraint(name="uniq_list_view_organization_value", columns={"organization_id", "type", "name"})
  *     }
