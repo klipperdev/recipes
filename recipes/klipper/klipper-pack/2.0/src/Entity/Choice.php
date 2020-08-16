@@ -18,6 +18,7 @@ use Klipper\Component\Model\Traits\TimestampableTrait;
 use Klipper\Component\Model\Traits\TranslatableInterface;
 use Klipper\Component\Model\Traits\TranslatableTrait;
 use Klipper\Component\Security\Model\OrganizationInterface;
+use Klipper\Component\SecurityExtra\Annotation as KlipperSecurityExtra;
 use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Symfony\Component\Validator\Constraints as Assert;
 
@@ -45,6 +46,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     ignoreNull=false,
  *     allFilters=true
  * )
+ *
+ * @KlipperSecurityExtra\OrganizationalFilterOptionalAllFilterClass
  *
  * @KlipperMetadata\MetadataObject
  *
