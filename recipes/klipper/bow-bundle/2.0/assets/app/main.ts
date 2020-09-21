@@ -23,7 +23,10 @@ const app = createApp<RootState>({
                 path: '/:org([\\w-]+)/home',
                 name: 'home',
                 meta: {requiresAuth: true},
-                component: () => import(/* webpackChunkName: "views-home" */ '@app/views/Home.vue'),
+                components: {
+                    default: () => import(/* webpackChunkName: "views-home" */ '@app/views/Home.vue'),
+                    toolbar: () => import(/* webpackChunkName: "views-home" */ '@app/views/home/HomeToolbar.vue'),
+                },
             },
         ],
     },

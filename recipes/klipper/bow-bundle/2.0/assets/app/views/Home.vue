@@ -1,24 +1,20 @@
 <template>
-    <v-container fill-height>
-        <v-row no-gutters justify="center" align="center">
-            <div class="text-center">
-                <v-subheader></v-subheader>
-                <h3 class="mb-5 text--secondary">{{ $t('views.home.title') }}</h3>
-            </div>
-        </v-row>
-    </v-container>
+    <user-home v-if="'user' === $route.params.org"></user-home>
+
+    <org-home v-else></org-home>
 </template>
 
 <script lang="ts">
-    import {MetaInfo} from 'vue-meta';
     import {Component, Vue} from 'vue-property-decorator';
+    import UserHome from '@app/views/home/UserHome.vue';
+    import OrgHome from '@app/views/home/OrgHome.vue';
 
-    @Component
+    @Component({
+        components: {
+            OrgHome,
+            UserHome,
+        },
+    })
     export default class Home extends Vue {
-        public metaInfo(): MetaInfo {
-            return {
-                title: this.$t('views.home.title') as string,
-            };
-        }
     }
 </script>
