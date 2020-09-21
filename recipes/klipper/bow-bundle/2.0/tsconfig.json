@@ -10,6 +10,7 @@
         "assets/app/**/*.vue"
     ],
     "exclude": [
+        "assets/app/**/*.d.ts",
         "bin",
         "config",
         "public",
