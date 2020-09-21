@@ -160,6 +160,15 @@ class User implements
     protected array $roles = [];
 
     /**
+     * @ORM\Column(type="string", length=50, nullable=true)
+     *
+     * @Assert\Length(max=50)
+     *
+     * @Serializer\Expose
+     */
+    protected ?string $alias = null;
+
+    /**
      * @var null|string The hashed password
      *
      * @ORM\Column(type="string")
@@ -195,5 +204,17 @@ class User implements
     public function getTimezone(): ?string
     {
         return null;
+    }
+
+    public function setAlias(?string $alias): self
+    {
+        $this->alias = $alias;
+
+        return $this;
+    }
+
+    public function getAlias(): ?string
+    {
+        return $this->alias;
     }
 }
