@@ -4,3 +4,11 @@ doctrine:
         resolve_target_entities:
             Klipper\Component\Portal\Model\PortalInterface: App\Entity\Portal
             Klipper\Component\Portal\Model\PortalUserInterface: App\Entity\PortalUser
+
+# Klipper Portal
+klipper_portal:
+    context:
+        security:
+            expression:
+                functions:
+                    is_portal: true
