@@ -4,6 +4,10 @@ doctrine:
         resolve_target_entities:
             Klipper\Component\Portal\Model\PortalInterface: App\Entity\Portal
             Klipper\Component\Portal\Model\PortalUserInterface: App\Entity\PortalUser
+        filters:
+            portal:
+                class: Klipper\Component\Portal\Security\Doctrine\Filter\PortalFilter
+                enabled: true
 
 # Klipper Portal
 klipper_portal:
