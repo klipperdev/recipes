@@ -1,0 +1,7 @@
+# Doctrine
+doctrine:
+    orm:
+        resolve_target_entities:
+            Klipper\Module\PartnerBundle\Model\AccountInterface: App\Entity\Account
+            Klipper\Module\PartnerBundle\Model\ContactInterface: App\Entity\Contact
+            Klipper\Module\PartnerBundle\Model\PartnerAddressInterface: App\Entity\PartnerAddress
