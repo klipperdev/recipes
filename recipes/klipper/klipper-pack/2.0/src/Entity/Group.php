@@ -49,7 +49,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @Gedmo\TranslationEntity(class="App\Entity\GroupTranslation")
  *
  * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
- *     fields={"name"},
+ *     fields={"organization", "name"},
  *     repositoryMethod="findByInsensitive",
  *     ignoreNull=false,
  *     allFilters=true

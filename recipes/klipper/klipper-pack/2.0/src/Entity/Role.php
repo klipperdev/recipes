@@ -54,7 +54,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @Gedmo\TranslationEntity(class="App\Entity\RoleTranslation")
  *
  * @KlipperSecurityDoctrineAssert\RoleUniqueEntity(
- *     fields={"name"},
+ *     fields={"organization", "name"},
  *     repositoryMethod="findByInsensitive",
  *     ignoreNull=false,
  *     allFilters=true
