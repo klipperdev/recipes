@@ -1,0 +1,6 @@
+klipper_api_intl_intl:
+    resource: '@KlipperApiIntlBundle/Controller/IntlController.php'
+    type: annotation
+    prefix: '/{organization}'
+    requirements:
+        organization: 'user|[\w\.\-\_]+'
