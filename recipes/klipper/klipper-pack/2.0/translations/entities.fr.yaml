@@ -4,7 +4,7 @@ standard.fields.created_at: Créé le
 standard.fields.updated_at: Modifié le
 standard.fields.deleted_at: Supprimé le
 standard.fields.name: Nom
-standard.fields.label: Etiquette
+standard.fields.label: Libéllé
 standard.fields.description: Description
 standard.fields.email: Email
 standard.fields.roles: Rôles
