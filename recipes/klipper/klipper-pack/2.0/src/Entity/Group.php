@@ -104,7 +104,7 @@ class Group implements
     /**
      * @ORM\Column(type="json")
      *
-     * @KlipperDoctrineExtensionsExtraAssert\EntityChoice("App\Entity\Role", multiple=true)
+     * @KlipperDoctrineExtensionsExtraAssert\EntityChoice("App\Entity\Role", multiple=true, namePath="name")
      *
      * @Serializer\Expose
      */
