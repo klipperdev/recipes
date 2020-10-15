@@ -1,0 +1,7 @@
+# Doctrine
+doctrine:
+    orm:
+        resolve_target_entities:
+            Klipper\Module\ProductBundle\Model\BrandInterface: App\Entity\Brand
+            Klipper\Module\ProductBundle\Model\ProductInterface: App\Entity\Product
+            Klipper\Module\ProductBundle\Model\ProductRangeInterface: App\Entity\ProductRange
