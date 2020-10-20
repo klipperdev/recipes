@@ -8,3 +8,4 @@ doctrine:
             Klipper\Module\ProductBundle\Model\ProductInterface: App\Entity\Product
             Klipper\Module\ProductBundle\Model\ProductRangeInterface: App\Entity\ProductRange
             Klipper\Module\ProductBundle\Model\ProductSupplierInterface: App\Entity\ProductSupplier
+            Klipper\Module\ProductBundle\Model\ProductCombinationInterface: App\Entity\ProductCombination
