@@ -3,6 +3,8 @@ doctrine:
     orm:
         resolve_target_entities:
             Klipper\Module\ProductBundle\Model\BrandInterface: App\Entity\Brand
+            Klipper\Module\ProductBundle\Model\AttributeInterface: App\Entity\Attribute
+            Klipper\Module\ProductBundle\Model\AttributeItemInterface: App\Entity\AttributeItem
             Klipper\Module\ProductBundle\Model\ProductInterface: App\Entity\Product
             Klipper\Module\ProductBundle\Model\ProductRangeInterface: App\Entity\ProductRange
             Klipper\Module\ProductBundle\Model\ProductSupplierInterface: App\Entity\ProductSupplier
