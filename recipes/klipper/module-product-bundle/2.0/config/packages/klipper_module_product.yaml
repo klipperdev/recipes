@@ -9,3 +9,5 @@ doctrine:
             Klipper\Module\ProductBundle\Model\ProductRangeInterface: App\Entity\ProductRange
             Klipper\Module\ProductBundle\Model\ProductSupplierInterface: App\Entity\ProductSupplier
             Klipper\Module\ProductBundle\Model\ProductCombinationInterface: App\Entity\ProductCombination
+            Klipper\Module\ProductBundle\Model\PriceListInterface: App\Entity\PriceList
+            Klipper\Module\ProductBundle\Model\PriceListRuleInterface: App\Entity\PriceListRule
