@@ -1,0 +1,5 @@
+# Doctrine
+doctrine:
+    orm:
+        resolve_target_entities:
+            Klipper\Module\DeviceBundle\Model\DeviceInterface: App\Entity\Device
