@@ -1,0 +1,7 @@
+# Doctrine
+doctrine:
+    orm:
+        resolve_target_entities:
+            Klipper\Module\CarrierBundle\Model\CarrierInterface: App\Entity\Carrier
+            Klipper\Module\CarrierBundle\Model\AccountCarrierInterface: App\Entity\AccountCarrier
+            Klipper\Module\CarrierBundle\Model\ShippingInterface: App\Entity\Shipping
