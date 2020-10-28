@@ -8,3 +8,4 @@ doctrine:
             Klipper\Module\RepairBundle\Model\RepairCommentInterface: App\Entity\RepairComment
             Klipper\Module\RepairBundle\Model\RepairHistoryInterface: App\Entity\RepairHistory
             Klipper\Module\RepairBundle\Model\RepairItemInterface: App\Entity\RepairItem
+            Klipper\Module\RepairBundle\Model\CouponInterface: App\Entity\Coupon
