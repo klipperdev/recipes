@@ -3,6 +3,7 @@ doctrine:
     orm:
         resolve_target_entities:
             Klipper\Module\RepairBundle\Model\BreakdownInterface: App\Entity\Breakdown
+            Klipper\Module\RepairBundle\Model\RepairModuleInterface: App\Entity\RepairModule
             Klipper\Module\RepairBundle\Model\RepairPlaceInterface: App\Entity\RepairPlace
             Klipper\Module\RepairBundle\Model\RepairInterface: App\Entity\Repair
             Klipper\Module\RepairBundle\Model\RepairCommentInterface: App\Entity\RepairComment
