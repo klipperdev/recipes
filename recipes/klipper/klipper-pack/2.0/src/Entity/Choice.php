@@ -49,7 +49,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @KlipperSecurityExtra\OrganizationalFilterOptionalAllFilterClass
  *
- * @KlipperMetadata\MetadataObject
+ * @KlipperMetadata\MetadataObject(
+ *     defaultSortable="position:asc, label:asc"
+ * )
  *
  * @Serializer\ExclusionPolicy("all")
  */
