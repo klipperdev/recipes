@@ -20,6 +20,7 @@ use Klipper\Component\Portal\Model\Traits\PortalUserTrait;
 use Klipper\Component\Security\Annotation as KlipperSecurity;
 use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Symfony\Component\Security\Core\User\UserInterface;
+use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * @ORM\Entity(repositoryClass=PortalUserRepository::class)
@@ -90,6 +91,11 @@ class PortalUser implements
      *     cascade={"persist"}
      * )
      * @ORM\JoinColumn(onDelete="CASCADE")
+     *
+     * @Assert\NotNull
+     *
+     * @Serializer\Expose
+     * @Serializer\ReadOnly
      */
     protected ?UserInterface $user = null;
 }
