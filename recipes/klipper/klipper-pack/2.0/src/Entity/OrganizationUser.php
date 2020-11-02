@@ -114,7 +114,7 @@ class OrganizationUser implements
     /**
      * @ORM\ManyToOne(
      *     targetEntity="Klipper\Component\Security\Model\UserInterface",
-     *     fetch="EXTRA_LAZY",
+     *     fetch="EAGER",
      *     inversedBy="userOrganizations",
      *     cascade={"persist"}
      * )
@@ -130,6 +130,7 @@ class OrganizationUser implements
     /**
      * @ORM\ManyToMany(
      *     targetEntity="Klipper\Component\Security\Model\GroupInterface",
+     *     fetch="EAGER",
      *     cascade={"persist"}
      * )
      * @ORM\JoinTable(

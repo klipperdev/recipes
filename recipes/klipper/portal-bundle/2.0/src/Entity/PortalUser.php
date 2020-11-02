@@ -81,13 +81,17 @@ class PortalUser implements
      *     fetch="EXTRA_LAZY"
      * )
      * @ORM\JoinColumn(onDelete="CASCADE", nullable=false)
+     *
+     * @Serializer\Type("AssociationId")
+     * @Serializer\Expose
+     * @Serializer\ReadOnly
      */
     protected ?PortalInterface $portal = null;
 
     /**
      * @ORM\ManyToOne(
      *     targetEntity="Klipper\Component\Security\Model\UserInterface",
-     *     fetch="EXTRA_LAZY",
+     *     fetch="EAGER",
      *     cascade={"persist"}
      * )
      * @ORM\JoinColumn(onDelete="CASCADE")
