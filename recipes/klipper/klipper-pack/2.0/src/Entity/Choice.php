@@ -90,7 +90,7 @@ class Choice implements
      *
      * @Gedmo\SortableGroup
      *
-     * @Serializer\Type("Relation")
+     * @Serializer\Type("AssociationId")
      * @Serializer\Expose
      * @Serializer\ReadOnly
      */

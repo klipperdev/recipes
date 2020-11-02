@@ -105,7 +105,7 @@ class OrganizationUser implements
      * )
      * @ORM\JoinColumn(onDelete="CASCADE", nullable=false)
      *
-     * @Serializer\Type("Relation")
+     * @Serializer\Type("AssociationId")
      * @Serializer\Expose
      * @Serializer\ReadOnly
      */

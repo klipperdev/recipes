@@ -125,7 +125,7 @@ class User implements
      *
      * @Assert\Valid
      *
-     * @Serializer\Type("Relation")
+     * @Serializer\Type("AssociationId")
      * @Serializer\Expose
      * @Serializer\ReadOnly
      */
