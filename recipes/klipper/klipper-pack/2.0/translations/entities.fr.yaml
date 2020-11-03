@@ -21,7 +21,7 @@ standard.fields.status: Statut
 standard.fields.type: Type
 standard.fields.value: Valeur
 standard.fields.street: Rue
-standard.fields.street_complement: Complément de rue
+standard.fields.street_complement: Complément d'adresse
 standard.fields.postal_code: Code postal
 standard.fields.city: Ville
 standard.fields.state: Etat/Région
@@ -67,8 +67,8 @@ permission.associations.sharing_entries: Entrées de partage
 # Role
 role.name: Rôle
 role.name.plural: Rôles
-role.associations.parents: Parents du rôle
-role.associations.children: Enfants du rôles
+role.associations.parents: Rôles héritant
+role.associations.children: Rôles hérités
 
 # Sharing
 sharing.name: Partage

@@ -21,7 +21,7 @@ standard.fields.status: Status
 standard.fields.type: Type
 standard.fields.value: Value
 standard.fields.street: Street
-standard.fields.street_complement: Street complement
+standard.fields.street_complement: Address complement
 standard.fields.postal_code: Postal code
 standard.fields.city: City
 standard.fields.state: State
@@ -67,7 +67,7 @@ permission.associations.sharing_entries: Sharing entries
 # Role
 role.name: Role
 role.name.plural: Roles
-role.associations.parents: Parents of role
+role.associations.parents: Roles inheriting
 role.associations.children: Children of role
 
 # Sharing
