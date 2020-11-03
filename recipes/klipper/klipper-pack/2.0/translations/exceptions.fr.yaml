@@ -1,4 +1,4 @@
-bad_request: 'La demande ne peut être satisfaite en raison de la mauvaise syntaxe ou parce que la requête est incomplète'
+bad_request: 'La demande ne peut être satisfaite, veuillez vérifier les messages d''erreur'
 unauthorized: 'L''authentification est requise'
 forbidden: 'Vous n''êtes pas autorisé à accèder à cette ressource'
 not_found: 'Cette ressource n’est pas disponible'
