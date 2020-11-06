@@ -10,7 +10,7 @@ use Klipper\Component\DoctrineExtensionsExtra\Validator\Constraints as KlipperDo
 use Klipper\Component\Model\Traits\EditGroupableInterface;
 use Klipper\Component\Model\Traits\EditGroupableTrait;
 use Klipper\Component\Model\Traits\EmailableInterface;
-use Klipper\Component\Model\Traits\EmailableTrait;
+use Klipper\Component\Model\Traits\EmailableRequiredTrait;
 use Klipper\Component\Model\Traits\IdInterface;
 use Klipper\Component\Model\Traits\IdTrait;
 use Klipper\Component\Model\Traits\ImagePathTrait;
@@ -105,7 +105,7 @@ class User implements
 {
     use IdTrait;
     use UserTrait;
-    use EmailableTrait;
+    use EmailableRequiredTrait;
     use EditGroupableTrait;
     use OrganizationalRequiredTrait;
     use UserOrganizationUsersTrait;
