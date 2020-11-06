@@ -17,6 +17,7 @@ use Klipper\Module\PartnerBundle\Model\AbstractPartnerAddress;
  *         @ORM\Index(name="idx_partner_address_created_at", columns={"created_at"}),
  *         @ORM\Index(name="idx_partner_address_updated_at", columns={"updated_at"}),
  *         @ORM\Index(name="idx_partner_address_label", columns={"label"}),
+ *         @ORM\Index(name="idx_partner_address_reference", columns={"reference"}),
  *         @ORM\Index(name="idx_partner_address_street", columns={"street"}),
  *         @ORM\Index(name="idx_partner_address_street_complement", columns={"street_complement"}),
  *         @ORM\Index(name="idx_partner_address_postal_code", columns={"postal_code"}),
