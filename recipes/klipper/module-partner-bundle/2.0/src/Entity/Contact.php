@@ -27,7 +27,8 @@ use Klipper\Module\PartnerBundle\Model\AbstractContact;
  * )
  *
  * @KlipperMetadata\MetadataObject(
- *     defaultSortable="updated_at:desc"
+ *     defaultSortable="updated_at:desc",
+ *     fieldLabel="full_name"
  * )
  *
  * @Serializer\ExclusionPolicy("all")
