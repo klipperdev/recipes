@@ -8,6 +8,13 @@
     translations:
         fr: { label: Utilisateur }
 
+-   name:  ROLE_ORGANIZATION_USER
+    label: Organization user
+    children:
+        -   ROLE_USER
+    translations:
+        fr: { label: Utilisateur de l'organisation }
+
 -   name:  ROLE_ADMIN
     label: Administrator
     children:
