@@ -24,6 +24,7 @@ use Klipper\Module\RepairBundle\Model\AbstractCoupon;
  * )
  *
  * @KlipperMetadata\MetadataObject(
+ *     pluralName="coupons",
  *     defaultSortable="created_at:desc"
  * )
  *
