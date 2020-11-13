@@ -66,6 +66,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     actions={
  *         @KlipperMetadata\MetadataAction(name="list"),
  *         @KlipperMetadata\MetadataAction(name="create"),
+ *         @KlipperMetadata\MetadataAction(name="update"),
  *         @KlipperMetadata\MetadataAction(name="view"),
  *         @KlipperMetadata\MetadataAction(name="delete")
  *     }
