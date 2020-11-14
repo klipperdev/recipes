@@ -17,6 +17,23 @@ const app = createApp<RootState>({
     rootRedirectRoute: {name: 'home', params: {org: '_'}},
     rootRoute: {name: 'home', params: {org: '_'}},
     userContextRedirectRoute: {name: 'home', params: {org: '_'}},
+    drawer: {
+        contextItems: {
+            user: [
+                (new TextDrawerItem('my-organizations'))
+                    .setIcon('fa fa-fw fa-home')
+                    .setColor('primary')
+                    .setRoute((vue: Vue) => ({name: 'home', params: {org: vue.$org}})),
+            ],
+            organization: [
+                (new TextDrawerItem())
+                    .setText('views.home.title')
+                    .setIcon('fa fa-fw fa-home')
+                    .setColor('primary')
+                    .setRoute((vue: Vue) => ({name: 'home', params: {org: vue.$org}})),
+            ],
+        },
+    },
     router: {
         routes: [
             {
