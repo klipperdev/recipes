@@ -29,9 +29,7 @@ use Klipper\Module\ProductBundle\Model\AbstractProductCombination;
  *     )
  * })
  *
- * @KlipperMetadata\MetadataObject(
- *     defaultSortable="created_at:asc"
- * )
+ * @KlipperMetadata\MetadataObject
  *
  * @Serializer\ExclusionPolicy("all")
  */
