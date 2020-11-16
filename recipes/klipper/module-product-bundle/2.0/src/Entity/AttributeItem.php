@@ -27,7 +27,9 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @Gedmo\TranslationEntity(class="App\Entity\AttributeItemTranslation")
  *
- * @KlipperMetadata\MetadataObject
+ * @KlipperMetadata\MetadataObject(
+ *     deepSearchPaths={"attribute"},
+ * )
  *
  * @Serializer\ExclusionPolicy("all")
  */
