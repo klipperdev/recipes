@@ -22,6 +22,7 @@ use Klipper\Module\RepairBundle\Model\AbstractRepair;
  * )
  *
  * @KlipperMetadata\MetadataObject(
+ *     fieldLabel="reference",
  *     defaultSortable="created_at:desc"
  * )
  *
