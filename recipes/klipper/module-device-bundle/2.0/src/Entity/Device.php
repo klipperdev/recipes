@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
 use Klipper\Component\DoctrineExtensionsExtra\Mapping\Annotation as KlipperMetadata;
 use Klipper\Component\Model\Traits\IdTrait;
+use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Klipper\Module\DeviceBundle\Model\AbstractDevice;
 
 /**
@@ -20,10 +21,22 @@ use Klipper\Module\DeviceBundle\Model\AbstractDevice;
  *         @ORM\Index(name="idx_device_imei", columns={"imei"}),
  *         @ORM\Index(name="idx_device_imei2", columns={"imei2"}),
  *         @ORM\Index(name="idx_device_terminated_at", columns={"terminated_at"})
+ *     },
+ *     uniqueConstraints={
+ *         @ORM\UniqueConstraint(name="uniq_device_organization_value", columns={"organization_id", "serial_number", "imei"})
  *     }
  * )
  *
+ * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
+ *     fields={"organization", "serialNumber", "imei"},
+ *     repositoryMethod="findBy",
+ *     ignoreNull=false,
+ *     allFilters=true
+ * )
+ *
  * @KlipperMetadata\MetadataObject(
+ *     fieldLabel="label",
+ *     deepSearchPaths={"product"},
  *     defaultSortable="updated_at:desc"
  * )
  *
