@@ -23,7 +23,7 @@ use Klipper\Module\RepairBundle\Model\AbstractRepair;
  *
  * @KlipperMetadata\MetadataObject(
  *     fieldLabel="reference",
- *     defaultSortable="created_at:desc"
+ *     defaultSortable="status.position:asc, updated_at:desc"
  * )
  *
  * @Serializer\ExclusionPolicy("all")
