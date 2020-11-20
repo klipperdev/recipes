@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
 use Klipper\Component\DoctrineExtensionsExtra\Mapping\Annotation as KlipperMetadata;
 use Klipper\Component\Model\Traits\IdTrait;
+use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Klipper\Module\RepairBundle\Model\AbstractRepairModule;
 
 /**
@@ -26,6 +27,12 @@ use Klipper\Module\RepairBundle\Model\AbstractRepairModule;
  *         @ORM\Index(name="idx_repair_module_repair_time_in_day", columns={"repair_time_in_day"}),
  *         @ORM\Index(name="idx_repair_module_warranty_length_in_month", columns={"warranty_length_in_month"})
  *     }
+ * )
+ *
+ * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
+ *     fields={"organization", "account"},
+ *     ignoreNull=false,
+ *     allFilters=true
  * )
  *
  * @KlipperMetadata\MetadataObject(
