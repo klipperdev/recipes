@@ -20,7 +20,15 @@ use Klipper\Module\ProductBundle\Model\AbstractPriceListRule;
  * )
  *
  * @KlipperMetadata\MetadataObject(
- *     defaultSortable="position:asc"
+ *     defaultSortable="position:asc",
+ *     actions={
+ *         @KlipperMetadata\MetadataAction(
+ *             name="list",
+ *             defaults={
+ *                 "_method_repository": "createQueryBuilderForPriceManager"
+ *             }
+ *         )
+ *     }
  * )
  *
  * @Serializer\ExclusionPolicy("all")
