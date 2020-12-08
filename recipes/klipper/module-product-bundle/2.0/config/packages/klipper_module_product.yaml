@@ -11,3 +11,12 @@ doctrine:
             Klipper\Module\ProductBundle\Model\ProductCombinationInterface: App\Entity\ProductCombination
             Klipper\Module\ProductBundle\Model\PriceListInterface: App\Entity\PriceList
             Klipper\Module\ProductBundle\Model\PriceListRuleInterface: App\Entity\PriceListRule
+
+# Klipper Content
+klipper_content:
+    uploader:
+        configurations:
+            product_image:
+                path: '%env(resolve:CONTENT_BASE_PATH)%/products'
+                max_size: 5 Mb
+                namer: uuid

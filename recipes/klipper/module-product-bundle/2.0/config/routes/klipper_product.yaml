@@ -1,0 +1,6 @@
+klipper_product_product:
+    resource: '@KlipperProductBundle/Controller/ApiProductController.php'
+    type: annotation
+    prefix: '/{organization}'
+    requirements:
+        organization: 'user|[\w\.\-\_]+'
