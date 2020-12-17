@@ -86,7 +86,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  * )
  *
  * @KlipperMetadata\MetadataObject(
- *     buildDefaultActions=false
+ *     buildDefaultActions=false,
+ *     fieldLabel="full_name"
  * )
  *
  * @Serializer\ExclusionPolicy("all")
@@ -154,8 +155,7 @@ class User implements
      * )
      *
      * @Serializer\Expose
-     * @Serializer\ReadOnly
-     * @Serializer\Groups({"ROLE_ADMIN_PLATFORM", "CurrentUser"})
+     * @Serializer\Groups({"ROLE_ADMIN", "CurrentUser"})
      */
     protected array $roles = [];
 
