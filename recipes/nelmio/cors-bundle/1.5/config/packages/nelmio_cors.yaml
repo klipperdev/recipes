@@ -16,6 +16,7 @@ nelmio_cors:
             - 'X-Object'
             - 'X-Objects'
             - 'X-Query'
+            - 'X-Query-Fields'
             - 'X-Search'
             - 'X-Sort'
             - 'X-Timezone'
