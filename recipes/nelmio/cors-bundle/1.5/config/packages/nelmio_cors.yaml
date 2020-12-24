@@ -18,6 +18,7 @@ nelmio_cors:
             - 'X-Query'
             - 'X-Query-Fields'
             - 'X-Search'
+            - 'X-Search-Fields'
             - 'X-Sort'
             - 'X-Timezone'
             - 'X-Transactional'
