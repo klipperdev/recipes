@@ -19,7 +19,7 @@ use Klipper\Module\RepairBundle\Model\AbstractRepairModule;
  *         @ORM\Index(name="idx_repair_module_updated_at", columns={"updated_at"}),
  *         @ORM\Index(name="idx_repair_module_enabled", columns={"enabled"}),
  *         @ORM\Index(name="idx_repair_module_internal_contract_reference", columns={"internal_contract_reference"}),
- *         @ORM\Index(name="idx_repair_module_customer_reference", columns={"customer_reference"}),
+ *         @ORM\Index(name="idx_repair_module_supplier_reference", columns={"supplier_reference"}),
  *         @ORM\Index(name="idx_repair_module_type", columns={"type"}),
  *         @ORM\Index(name="idx_repair_module_swap", columns={"swap"}),
  *         @ORM\Index(name="idx_repair_module_identifier_type", columns={"identifier_type"}),
