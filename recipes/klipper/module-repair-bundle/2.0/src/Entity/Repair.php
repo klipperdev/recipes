@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
 use Klipper\Component\DoctrineExtensionsExtra\Mapping\Annotation as KlipperMetadata;
 use Klipper\Component\Model\Traits\IdTrait;
+use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Klipper\Module\RepairBundle\Model\AbstractRepair;
 
 /**
@@ -21,9 +22,15 @@ use Klipper\Module\RepairBundle\Model\AbstractRepair;
  *     }
  * )
  *
+ * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
+ *     fields={"organization", "usedCoupon"},
+ *     ignoreNull=false,
+ *     allFilters=true
+ * )
+ *
  * @KlipperMetadata\MetadataObject(
  *     fieldLabel="reference",
- *     defaultSortable="status.position:asc, updated_at:desc"
+ *     defaultSortable="receipted_at:desc, status.position:asc"
  * )
  *
  * @Serializer\ExclusionPolicy("all")
