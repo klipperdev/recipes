@@ -22,6 +22,7 @@ use Klipper\Module\CarrierBundle\Model\AbstractShipping;
  * )
  *
  * @KlipperMetadata\MetadataObject(
+ *     pluralName="shipments",
  *     defaultSortable="created_at:desc"
  * )
  *
