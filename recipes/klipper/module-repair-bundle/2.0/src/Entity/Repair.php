@@ -23,7 +23,7 @@ use Klipper\Module\RepairBundle\Model\AbstractRepair;
  * )
  *
  * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
- *     fields={"organization", "usedCoupon"},
+ *     fields={"usedCoupon"},
  *     ignoreNull=true,
  *     allFilters=true
  * )
