@@ -88,22 +88,13 @@ class Organization implements
 {
     use EnableTrait;
     use IdTrait;
+    use ImagePathTrait;
     use LabelableTrait;
-    use OrganizationTrait;
     use OrganizationGroupsTrait;
     use OrganizationRolesTrait;
+    use OrganizationTrait;
     use RoleableTrait;
     use TimestampableTrait;
-    use ImagePathTrait;
-
-    /**
-     * @ORM\Column(type="boolean")
-     *
-     * @Assert\Type(type="boolean")
-     *
-     * @Serializer\Expose
-     */
-    protected bool $enabled = true;
 
     /**
      * @ORM\Column(type="json")
