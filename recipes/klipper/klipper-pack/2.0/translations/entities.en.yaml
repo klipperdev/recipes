@@ -11,6 +11,7 @@ standard.fields.roles: Roles
 standard.fields.enabled: Enabled
 standard.fields.external_ids: External Ids
 standard.fields.image_path: Image path
+standard.fields.file_path: File path
 standard.fields.timezone: Timezone
 standard.fields.locale: Locale
 standard.fields.currency: Currency
