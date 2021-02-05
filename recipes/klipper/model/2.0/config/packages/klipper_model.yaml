@@ -1,3 +1,0 @@
-services:
-    Klipper\Component\Model\Doctrine\Listener\LabelableSubscriber:
-        tags: ['doctrine.event_subscriber']
