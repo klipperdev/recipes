@@ -1,0 +1,6 @@
+klipper_api_import_download:
+    resource: '@KlipperApiImportBundle/Controller/ImportController.php'
+    type: annotation
+    prefix: '/{organization}'
+    requirements:
+        organization: 'user|[\w\.\-\_]+'

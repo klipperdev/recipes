@@ -1,0 +1,14 @@
+# Doctrine
+doctrine:
+    orm:
+        resolve_target_entities:
+            Klipper\Component\Import\Model\ImportInterface: App\Entity\Import
+
+# Klipper Content
+klipper_content:
+    uploader:
+        configurations:
+            import:
+                path: '%env(resolve:CONTENT_BASE_PATH)%/imports'
+                max_size: 512 Mb
+                namer: uuid
