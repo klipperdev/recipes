@@ -3,13 +3,19 @@
 namespace App\Entity;
 
 use App\Repository\PortalUserRepository;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
 use Klipper\Component\DoctrineExtensionsExtra\Mapping\Annotation as KlipperMetadata;
+use Klipper\Component\DoctrineExtensionsExtra\Validator\Constraints as KlipperDoctrineExtensionsExtraAssert;
+use Klipper\Component\Model\Traits\EditGroupableInterface;
+use Klipper\Component\Model\Traits\EditGroupableTrait;
 use Klipper\Component\Model\Traits\EnableTrait;
 use Klipper\Component\Model\Traits\IdTrait;
 use Klipper\Component\Model\Traits\OrganizationalRequiredInterface;
 use Klipper\Component\Model\Traits\OrganizationalRequiredTrait;
+use Klipper\Component\Model\Traits\RoleableInterface;
+use Klipper\Component\Model\Traits\RoleableTrait;
 use Klipper\Component\Model\Traits\TimestampableInterface;
 use Klipper\Component\Model\Traits\TimestampableTrait;
 use Klipper\Component\Model\Traits\UserTrackableInterface;
@@ -36,6 +42,13 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     }
  * )
  *
+ * @ORM\AssociationOverrides({
+ *     @ORM\AssociationOverride(
+ *         name="groups",
+ *         joinTable=@ORM\JoinTable(name="portal_user_group")
+ *     )
+ * })
+ *
  * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
  *     fields={"organization", "portal", "user"},
  *     ignoreNull=false,
@@ -48,6 +61,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @KlipperMetadata\MetadataObject(
  *     availableContexts={"organization"},
+ *     formType="Klipper\Bundle\ApiPortalBundle\Form\Type\PortalUserType",
  *     defaultSortable="user.first_name:asc, user.last_name:asc",
  *     deepSearchPaths={"user"},
  *     actions={
@@ -63,15 +77,19 @@ use Symfony\Component\Validator\Constraints as Assert;
  * @Serializer\ExclusionPolicy("all")
  */
 class PortalUser implements
+    EditGroupableInterface,
     PortalUserInterface,
     OrganizationalRequiredInterface,
+    RoleableInterface,
     TimestampableInterface,
     UserTrackableInterface
 {
-    use IdTrait;
+    use EditGroupableTrait;
     use EnableTrait;
+    use IdTrait;
     use OrganizationalRequiredTrait;
     use PortalUserTrait;
+    use RoleableTrait;
     use TimestampableTrait;
     use UserTrackableTrait;
 
@@ -102,4 +120,32 @@ class PortalUser implements
      * @Serializer\ReadOnly
      */
     protected ?UserInterface $user = null;
+
+    /**
+     * @ORM\Column(type="json")
+     *
+     * @KlipperDoctrineExtensionsExtraAssert\EntityChoice("App\Entity\Role", namePath="name", multiple=true)
+     *
+     * @Serializer\Expose
+     */
+    protected array $roles = [];
+
+    /**
+     * @ORM\ManyToMany(
+     *     targetEntity="Klipper\Component\Security\Model\GroupInterface",
+     *     fetch="EAGER",
+     *     cascade={"persist"}
+     * )
+     * @ORM\JoinTable(
+     *     joinColumns={
+     *         @ORM\JoinColumn(onDelete="CASCADE")
+     *     },
+     *     inverseJoinColumns={
+     *         @ORM\JoinColumn(onDelete="CASCADE", name="group_id")
+     *     }
+     * )
+     *
+     * @Serializer\Expose
+     */
+    protected ?Collection $groups = null;
 }
