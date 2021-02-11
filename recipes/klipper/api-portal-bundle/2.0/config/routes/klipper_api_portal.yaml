@@ -1,0 +1,8 @@
+klipper_api_portal_portal_user:
+    resource: '@KlipperApiPortalBundle/Controller/PortalUserController.php'
+    type: annotation
+    prefix: '/{organization}'
+    defaults:
+        _organizational_type: org
+    requirements:
+        organization: '[\w\.\-\_]+'
