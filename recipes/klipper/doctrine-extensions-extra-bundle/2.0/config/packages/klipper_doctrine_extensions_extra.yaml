@@ -17,7 +17,10 @@ doctrine:
 
         dql:
             datetime_functions:
+                day: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\SimpleFunction
+                month: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\SimpleFunction
                 timestamp: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\SimpleFunction
+                year: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\SimpleFunction
             string_functions:
                 cast: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\Cast
                 unaccent: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\Unaccent
