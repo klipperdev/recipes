@@ -9,6 +9,7 @@ standard.fields.description: Description
 standard.fields.email: Email
 standard.fields.roles: Rôles
 standard.fields.enabled: Activé
+standard.fields.external_id: Id externe
 standard.fields.external_ids: Ids externes
 standard.fields.image_path: Chemin de l'image
 standard.fields.file_path: Chemin du fichier
