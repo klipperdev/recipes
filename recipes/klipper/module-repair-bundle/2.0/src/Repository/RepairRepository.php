@@ -28,7 +28,7 @@ class RepairRepository extends ServiceEntityRepository
             ->addSelect('pc')
             ->addSelect('ur')
             ->addSelect('iAddr')
-            ->addSelect('rp')
+            ->addSelect('wc')
             ->addSelect('ship')
             ->leftJoin($alias.'.account', 'a')
             ->leftJoin($alias.'.product', 'p')
@@ -36,7 +36,7 @@ class RepairRepository extends ServiceEntityRepository
             ->leftJoin($alias.'.status', 'cs')
             ->leftJoin($alias.'.repairer', 'ur')
             ->leftJoin($alias.'.invoiceAddress', 'iAddr')
-            ->leftJoin($alias.'.repairPlace', 'rp')
+            ->leftJoin($alias.'.workcenter', 'wc')
             ->leftJoin($alias.'.shipping', 'ship')
         ;
     }
