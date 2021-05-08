@@ -1,0 +1,6 @@
+{
+    "env": {
+        "KLIPPER_PDF_GENERATOR_CHROME_BIN": "/usr/bin/google-chrome",
+        "# KLIPPER_PDF_GENERATOR_CHROME_BIN": "C:/Program Files (x86)/Google/Chrome/Application/chrome.exe"
+    }
+}
