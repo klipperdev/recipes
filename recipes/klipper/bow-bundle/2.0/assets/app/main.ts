@@ -1,6 +1,7 @@
 import Vue from 'vue';
 import App from '@app/components/App.vue';
 import appLocaleEn from '@app/translations/en';
+import appLocaleEs from '@app/translations/es';
 import appLocaleFr from '@app/translations/fr';
 import {RootState} from '@app/store/RootState';
 import {createApp} from '@klipper/bow/bow';
@@ -11,6 +12,7 @@ const app = createApp<RootState>({
     i18n: {
         messages: {
             en: appLocaleEn,
+            es: appLocaleEs,
             fr: appLocaleFr,
         },
     },
