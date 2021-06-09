@@ -30,7 +30,7 @@ use Klipper\Module\DeviceBundle\Model\AbstractDevice;
  * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
  *     fields={"organization", "serialNumber", "imei"},
  *     repositoryMethod="findBy",
- *     ignoreNull=false,
+ *     ignoreNull=true,
  *     allFilters=true
  * )
  *
