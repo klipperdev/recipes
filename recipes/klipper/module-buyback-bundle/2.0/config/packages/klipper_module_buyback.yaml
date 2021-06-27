@@ -3,7 +3,4 @@ doctrine:
     orm:
         resolve_target_entities:
             Klipper\Module\BuybackBundle\Model\AuditConditionInterface: App\Entity\AuditCondition
-            Klipper\Module\BuybackBundle\Model\AuditStepInterface: App\Entity\AuditStep
-            Klipper\Module\BuybackBundle\Model\AuditWorkflowInterface: App\Entity\AuditWorkflow
-            Klipper\Module\BuybackBundle\Model\AuditWorkflowStepInterface: App\Entity\AuditWorkflowStep
             Klipper\Module\BuybackBundle\Model\BuybackModuleInterface: App\Entity\BuybackModule
