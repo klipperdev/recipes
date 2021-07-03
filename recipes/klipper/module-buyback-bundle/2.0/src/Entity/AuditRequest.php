@@ -11,7 +11,10 @@ use Klipper\Module\BuybackBundle\Model\AbstractAuditRequest;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AuditRequestRepository")
  *
- * @KlipperMetadata\MetadataObject
+ * @KlipperMetadata\MetadataObject(
+ *     fieldLabel="reference",
+ *     defaultSortable="created_at:desc"
+ * )
  *
  * @Serializer\ExclusionPolicy("all")
  */
