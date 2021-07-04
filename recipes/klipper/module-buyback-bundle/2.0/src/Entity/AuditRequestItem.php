@@ -11,6 +11,12 @@ use Klipper\Module\BuybackBundle\Model\AbstractAuditRequestItem;
 /**
  * @ORM\Entity(repositoryClass="App\Repository\AuditRequestItemRepository")
  *
+ * @ORM\Table(
+ *     uniqueConstraints={
+ *         @ORM\UniqueConstraint(name="uniq_audit_request_item_product_product_combination", columns={"organization_id", "product_id", "product_combination_id"})
+ *     }
+ * )
+ *
  * @KlipperMetadata\MetadataObject
  *
  * @Serializer\ExclusionPolicy("all")
