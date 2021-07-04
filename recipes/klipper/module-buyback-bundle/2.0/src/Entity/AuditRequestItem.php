@@ -13,7 +13,7 @@ use Klipper\Module\BuybackBundle\Model\AbstractAuditRequestItem;
  *
  * @ORM\Table(
  *     uniqueConstraints={
- *         @ORM\UniqueConstraint(name="uniq_audit_request_item_product_product_combination", columns={"organization_id", "product_id", "product_combination_id"})
+ *         @ORM\UniqueConstraint(name="uniq_audit_request_item_product_product_combination", columns={"organization_id", "audit_request_id", "product_id", "product_combination_id"})
  *     }
  * )
  *
