@@ -24,6 +24,7 @@ doctrine:
             string_functions:
                 cast: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\Cast
                 concat_ws: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\ConcatWs
+                group_concat: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\GroupConcat
                 unaccent: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\Unaccent
                 json_get: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\JsonGet
                 find_in_set: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\FindInSet
