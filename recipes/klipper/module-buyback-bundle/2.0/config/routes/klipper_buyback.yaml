@@ -1,5 +1,12 @@
-klipper_repair_coupon:
+klipper_buyback_audit_item:
     resource: '@KlipperBuybackBundle/Controller/ApiAuditItemController.php'
+    type: annotation
+    prefix: '/{organization}'
+    requirements:
+        organization: 'user|[\w\.\-\_]+'
+
+klipper_buyback_buyback_offer:
+    resource: '@KlipperBuybackBundle/Controller/ApiBuybackOfferController.php'
     type: annotation
     prefix: '/{organization}'
     requirements:
