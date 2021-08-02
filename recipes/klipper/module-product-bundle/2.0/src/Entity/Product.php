@@ -11,6 +11,7 @@ use Klipper\Component\DoctrineExtensionsExtra\Mapping\Annotation as KlipperMetad
 use Klipper\Component\Model\Traits\IdTrait;
 use Klipper\Component\Model\Traits\TranslatableInterface;
 use Klipper\Component\Model\Traits\TranslatableTrait;
+use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Klipper\Module\ProductBundle\Model\AbstractProduct;
 use Klipper\Module\RepairBundle\Model\Traits\ProductBreakdownableInterface;
 use Klipper\Module\RepairBundle\Model\Traits\ProductBreakdownableTrait;
@@ -30,10 +31,21 @@ use Symfony\Component\Validator\Constraints as Assert;
  *         @ORM\Index(name="idx_product_can_be_sell", columns={"can_be_sell"}),
  *         @ORM\Index(name="idx_product_can_be_sell", columns={"can_be_sell"}),
  *         @ORM\Index(name="idx_product_price", columns={"price"})
+ *     },
+ *     uniqueConstraints={
+ *         @ORM\UniqueConstraint(name="uniq_product_reference", columns={"organization_id", "reference"})
  *     }
  * )
  *
  * @Gedmo\TranslationEntity(class="App\Entity\ProductTranslation")
+ *
+ * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
+ *     fields={"organization", "reference"},
+ *     errorPath="reference",
+ *     repositoryMethod="findBy",
+ *     ignoreNull=true,
+ *     allFilters=true
+ * )
  *
  * @KlipperMetadata\MetadataObject(
  *     defaultSortable="updated_at:desc"

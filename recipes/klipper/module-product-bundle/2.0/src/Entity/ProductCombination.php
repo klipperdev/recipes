@@ -7,6 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
 use Klipper\Component\DoctrineExtensionsExtra\Mapping\Annotation as KlipperMetadata;
 use Klipper\Component\Model\Traits\IdTrait;
+use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Klipper\Module\ProductBundle\Model\AbstractProductCombination;
 
 /**
@@ -19,6 +20,9 @@ use Klipper\Module\ProductBundle\Model\AbstractProductCombination;
  *         @ORM\Index(name="idx_product_combination_reference", columns={"reference"}),
  *         @ORM\Index(name="idx_product_combination_code_ean13", columns={"code_ean13"}),
  *         @ORM\Index(name="idx_product_combination_code_upc", columns={"code_upc"})
+ *     },
+ *     uniqueConstraints={
+ *         @ORM\UniqueConstraint(name="uniq_product_combination_reference", columns={"organization_id", "reference"})
  *     }
  * )
  *
@@ -30,6 +34,14 @@ use Klipper\Module\ProductBundle\Model\AbstractProductCombination;
  * })
  *
  * @KlipperMetadata\MetadataObject
+ *
+ * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
+ *     fields={"organization", "reference"},
+ *     errorPath="reference",
+ *     repositoryMethod="findBy",
+ *     ignoreNull=true,
+ *     allFilters=true
+ * )
  *
  * @Serializer\ExclusionPolicy("all")
  */

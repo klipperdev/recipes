@@ -37,7 +37,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *
  * @KlipperSecurityDoctrineAssert\OrganizationalUniqueEntity(
  *     fields={"organization", "reference"},
- *     ignoreNull=false
+ *     ignoreNull=true
  * )
  *
  * @KlipperMetadata\MetadataObject(
