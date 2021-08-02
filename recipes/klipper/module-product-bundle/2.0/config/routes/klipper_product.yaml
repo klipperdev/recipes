@@ -4,3 +4,10 @@ klipper_product_product:
     prefix: '/{organization}'
     requirements:
         organization: 'user|[\w\.\-\_]+'
+
+klipper_product_product_combination:
+    resource: '@KlipperProductBundle/Controller/ApiProductCombinationController.php'
+    type: annotation
+    prefix: '/{organization}'
+    requirements:
+        organization: 'user|[\w\.\-\_]+'
