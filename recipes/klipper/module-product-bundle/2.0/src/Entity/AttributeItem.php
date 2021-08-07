@@ -76,7 +76,7 @@ class AttributeItem extends AbstractAttributeItem implements SingleExternalableI
      *
      * @Serializer\Type("AssociationId")
      * @Serializer\Expose
-     * @Serializer\ReadOnly
+     * @Serializer\ReadOnlyProperty
      */
     protected ?OrganizationInterface $organization = null;
 

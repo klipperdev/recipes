@@ -128,7 +128,7 @@ class User implements
      *
      * @Serializer\Type("AssociationId")
      * @Serializer\Expose
-     * @Serializer\ReadOnly
+     * @Serializer\ReadOnlyProperty
      */
     protected ?OrganizationInterface $organization = null;
 
@@ -184,7 +184,7 @@ class User implements
      * @Assert\Length(max=255)
      *
      * @Serializer\Expose
-     * @Serializer\ReadOnly
+     * @Serializer\ReadOnlyProperty
      * @Serializer\SerializedName("image_url")
      * @Serializer\Type("Url<'klipper_apiuser_connecteduser_downloadprofileimage', 'organization=`user`', 'id=`{{id}}`', 'ext=`{{preferredImageExtension}}`'>")
      */

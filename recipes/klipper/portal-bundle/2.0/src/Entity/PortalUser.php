@@ -102,7 +102,7 @@ class PortalUser implements
      *
      * @Serializer\Type("AssociationId")
      * @Serializer\Expose
-     * @Serializer\ReadOnly
+     * @Serializer\ReadOnlyProperty
      */
     protected ?PortalInterface $portal = null;
 
@@ -117,7 +117,7 @@ class PortalUser implements
      * @Assert\NotNull
      *
      * @Serializer\Expose
-     * @Serializer\ReadOnly
+     * @Serializer\ReadOnlyProperty
      */
     protected ?UserInterface $user = null;
 

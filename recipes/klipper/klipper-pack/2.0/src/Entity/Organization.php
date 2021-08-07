@@ -102,7 +102,7 @@ class Organization implements
      * @KlipperDoctrineExtensionsExtraAssert\EntityChoice("App\Entity\Role", namePath="name", multiple=true)
      *
      * @Serializer\Expose
-     * @Serializer\ReadOnly
+     * @Serializer\ReadOnlyProperty
      * @Serializer\Groups({"ROLE_ADMIN_PLATFORM"})
      */
     protected array $roles = [];
@@ -114,7 +114,7 @@ class Organization implements
      * @Assert\Length(max=255)
      *
      * @Serializer\Expose
-     * @Serializer\ReadOnly
+     * @Serializer\ReadOnlyProperty
      * @Serializer\SerializedName("image_url")
      * @Serializer\Type("OrgUrl<'klipper_apiuser_organization_downloadimage', 'organization=`{{name}}`', 'ext=`{{preferredImageExtension}}`'>")
      */

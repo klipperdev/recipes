@@ -107,7 +107,7 @@ class OrganizationUser implements
      *
      * @Serializer\Type("AssociationId")
      * @Serializer\Expose
-     * @Serializer\ReadOnly
+     * @Serializer\ReadOnlyProperty
      */
     protected ?OrganizationInterface $organization = null;
 
@@ -123,7 +123,7 @@ class OrganizationUser implements
      * @Assert\NotNull
      *
      * @Serializer\Expose
-     * @Serializer\ReadOnly
+     * @Serializer\ReadOnlyProperty
      */
     protected ?UserInterface $user = null;
 

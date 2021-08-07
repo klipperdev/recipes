@@ -85,7 +85,7 @@ class ListView implements
      *
      * @Serializer\Type("AssociationId")
      * @Serializer\Expose
-     * @Serializer\ReadOnly
+     * @Serializer\ReadOnlyProperty
      */
     protected ?OrganizationInterface $organization = null;
 
