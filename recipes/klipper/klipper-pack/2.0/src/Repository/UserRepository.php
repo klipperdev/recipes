@@ -27,40 +27,45 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
         parent::__construct($registry, User::class);
     }
 
-    public function loadUserByUsername($username): ?UserInterface
+    public function loadUserByUsername(string $username): ?UserInterface
     {
-        $res = $this->findByUsernameOrHavingEmails([$username]);
+        return $this->loadUserByIdentifier($username);
+    }
+
+    public function loadUserByIdentifier(string $identifier): ?UserInterface
+    {
+        $res = $this->findByUserIdentifierOrHavingEmails([$identifier]);
 
         return 1 === \count($res) ? $res[0] : null;
     }
 
     /**
-     * @see UserRepositoryInterface::findByUsernames
+     * @see UserRepositoryInterface::findByUserIdentifiers
      */
-    public function findByUsernames(array $usernames): array
+    public function findByUserIdentifiers(array $userIdentifiers): array
     {
         $qb = $this->createQueryBuilder('u')
             ->select('u, o, g')
             ->leftJoin('u.organization', 'o')
             ->leftJoin('u.groups', 'g')
             ->andWhere('u.username IN (:usernames)')
-            ->setParameter('usernames', $usernames)
+            ->setParameter('usernames', $userIdentifiers)
         ;
 
         return $qb->getQuery()->getResult();
     }
 
     /**
-     * @see UserRepositoryInterface::findByUsernameOrHavingEmails
+     * @see UserRepositoryInterface::findByUserIdentifierOrHavingEmails
      */
-    public function findByUsernameOrHavingEmails(array $usernames): array
+    public function findByUserIdentifierOrHavingEmails(array $userIdentifiers): array
     {
         $qb = $this->createQueryBuilder('u')
             ->select('u, o, g')
             ->leftJoin('u.organization', 'o')
             ->leftJoin('u.groups', 'g')
             ->andWhere('u.username IN (:usernames) OR u.email IN (:usernames)')
-            ->setParameter('usernames', $usernames)
+            ->setParameter('usernames', $userIdentifiers)
         ;
 
         return $qb->getQuery()->getResult();
