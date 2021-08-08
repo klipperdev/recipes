@@ -32,6 +32,7 @@ use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSec
 use Klipper\Component\SecurityExtra\Validator\Constraints as KlipperSecurityAssert;
 use Klipper\Component\User\Model\Traits\ProfileableInterface;
 use Klipper\Component\User\Model\Traits\ProfileableTrait;
+use Symfony\Component\Security\Core\User\PasswordAuthenticatedUserInterface;
 use Symfony\Component\Validator\Constraints as Assert;
 
 /**
@@ -99,21 +100,22 @@ class User implements
     EditGroupableInterface,
     LocaleableInterface,
     OrganizationalRequiredInterface,
+    PasswordAuthenticatedUserInterface,
     TimestampableInterface,
     TimezoneableInterface,
     ProfileableInterface,
     UserOrganizationUsersInterface
 {
-    use IdTrait;
-    use UserTrait;
-    use EmailableRequiredTrait;
     use EditGroupableTrait;
+    use EmailableRequiredTrait;
+    use IdTrait;
+    use ImagePathTrait;
     use OrganizationalRequiredTrait;
-    use UserOrganizationUsersTrait;
+    use ProfileableTrait;
     use RoleableTrait;
     use TimestampableTrait;
-    use ProfileableTrait;
-    use ImagePathTrait;
+    use UserOrganizationUsersTrait;
+    use UserTrait;
 
     /**
      * @ORM\OneToOne(
