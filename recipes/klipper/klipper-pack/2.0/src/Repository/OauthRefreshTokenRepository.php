@@ -16,8 +16,7 @@ use Klipper\Component\SecurityOauth\Repository\OauthRefreshTokenRepositoryInterf
  * @method OauthRefreshToken[]    findAll()
  * @method OauthRefreshToken[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class OauthRefreshTokenRepository extends ServiceEntityRepository implements
-    OauthRefreshTokenRepositoryInterface
+class OauthRefreshTokenRepository extends ServiceEntityRepository implements OauthRefreshTokenRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
     {

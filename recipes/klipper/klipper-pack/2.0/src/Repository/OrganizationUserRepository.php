@@ -27,8 +27,10 @@ class OrganizationUserRepository extends ServiceEntityRepository implements Orga
     public function createQueryForList(string $alias = 'o'): QueryBuilder
     {
         return $this->createQueryBuilder($alias)
-            ->select($alias.', u')
+            ->addSelect('u')
             ->join($alias.'.user', 'u')
+            ->addSelect('og')
+            ->leftJoin($alias.'.groups', 'og')
         ;
     }
 }

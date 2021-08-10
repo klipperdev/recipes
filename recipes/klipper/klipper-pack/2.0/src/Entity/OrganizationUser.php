@@ -67,6 +67,42 @@ use Symfony\Component\Validator\Constraints as Assert;
  *             defaults={
  *                 "_method_repository": "createQueryForList"
  *             }
+ *         ),
+ *         @KlipperMetadata\MetadataAction(
+ *            name="create",
+ *            defaults = {
+ *                "_disable_filters" = "organization, organization_only, role"
+ *            }
+ *         ),
+ *         @KlipperMetadata\MetadataAction(
+ *            name="creates",
+ *            defaults = {
+ *                "_disable_filters" = "organization, organization_only, role"
+ *            }
+ *         ),
+ *         @KlipperMetadata\MetadataAction(
+ *            name="update",
+ *            defaults = {
+ *                "_disable_filters" = "organization, organization_only, role"
+ *            }
+ *         ),
+ *         @KlipperMetadata\MetadataAction(
+ *            name="updates",
+ *            defaults = {
+ *                "_disable_filters" = "organization, organization_only, role"
+ *            }
+ *         ),
+ *         @KlipperMetadata\MetadataAction(
+ *            name="upsert",
+ *            defaults = {
+ *                "_disable_filters" = "organization, organization_only, role"
+ *            }
+ *         ),
+ *         @KlipperMetadata\MetadataAction(
+ *            name="upserts",
+ *            defaults = {
+ *                "_disable_filters" = "organization, organization_only, role"
+ *            }
  *         )
  *     }
  * )
@@ -130,7 +166,7 @@ class OrganizationUser implements
     /**
      * @ORM\ManyToMany(
      *     targetEntity="Klipper\Component\Security\Model\GroupInterface",
-     *     fetch="EAGER",
+     *     fetch="LAZY",
      *     cascade={"persist"}
      * )
      * @ORM\JoinTable(

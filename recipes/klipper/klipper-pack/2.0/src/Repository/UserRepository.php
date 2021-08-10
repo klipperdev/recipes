@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\User;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Klipper\Component\DoctrineExtensions\Util\SqlFilterUtil;
 use Klipper\Component\DoctrineExtensionsExtra\Entity\Repository\Traits\InsensitiveTrait;
 use Klipper\Component\Security\Model\UserInterface;
 use Klipper\Component\SecurityExtra\Entity\Repository\Traits\UserRepositoryTrait;
@@ -19,17 +20,12 @@ use Symfony\Bridge\Doctrine\Security\User\UserLoaderInterface;
  */
 class UserRepository extends ServiceEntityRepository implements UserRepositoryInterface, UserLoaderInterface
 {
-    use UserRepositoryTrait;
     use InsensitiveTrait;
+    use UserRepositoryTrait;
 
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, User::class);
-    }
-
-    public function loadUserByUsername(string $username): ?UserInterface
-    {
-        return $this->loadUserByIdentifier($username);
     }
 
     public function loadUserByIdentifier(string $identifier): ?UserInterface
@@ -60,6 +56,8 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
      */
     public function findByUserIdentifierOrHavingEmails(array $userIdentifiers): array
     {
+        $filters = SqlFilterUtil::disableFilters($this->getEntityManager(), ['organization_only']);
+
         $qb = $this->createQueryBuilder('u')
             ->select('u, o, g')
             ->leftJoin('u.organization', 'o')
@@ -68,7 +66,10 @@ class UserRepository extends ServiceEntityRepository implements UserRepositoryIn
             ->setParameter('usernames', $userIdentifiers)
         ;
 
-        return $qb->getQuery()->getResult();
+        $res = $qb->getQuery()->getResult();
+        SqlFilterUtil::enableFilters($this->getEntityManager(), $filters);
+
+        return $res;
     }
 
     /**

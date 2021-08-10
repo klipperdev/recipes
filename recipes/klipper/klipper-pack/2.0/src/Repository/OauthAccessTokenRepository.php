@@ -17,8 +17,7 @@ use Klipper\Component\SecurityOauth\Repository\OauthAccessTokenRepositoryInterfa
  * @method OauthAccessToken[]    findAll()
  * @method OauthAccessToken[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class OauthAccessTokenRepository extends ServiceEntityRepository implements
-    OauthAccessTokenRepositoryInterface
+class OauthAccessTokenRepository extends ServiceEntityRepository implements OauthAccessTokenRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
     {

@@ -17,8 +17,7 @@ use Klipper\Component\SecurityOauth\Repository\OauthAuthCodeRepositoryInterface;
  * @method OauthAuthCode[]    findAll()
  * @method OauthAuthCode[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class OauthAuthCodeRepository extends ServiceEntityRepository implements
-    OauthAuthCodeRepositoryInterface
+class OauthAuthCodeRepository extends ServiceEntityRepository implements OauthAuthCodeRepositoryInterface
 {
     public function __construct(ManagerRegistry $registry)
     {
