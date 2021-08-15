@@ -1,3 +1,4 @@
+import {TextDrawerItem} from '@klipper/bow/drawer/TextDrawerItem';
 import Vue from 'vue';
 import App from '@app/components/App.vue';
 import appLocaleEn from '@app/translations/en';
@@ -23,14 +24,13 @@ const app = createApp<RootState>({
         contextItems: {
             user: [
                 (new TextDrawerItem('my-organizations'))
-                    .setIcon('fa fa-fw fa-home')
-                    .setColor('primary')
+                    .setIcon('fa-fw fa-home')
                     .setRoute((vue: Vue) => ({name: 'home', params: {org: vue.$org}})),
             ],
             organization: [
                 (new TextDrawerItem())
                     .setText('views.home.title')
-                    .setIcon('fa fa-fw fa-home')
+                    .setIcon('fa-fw fa-home')
                     .setColor('primary')
                     .setRoute((vue: Vue) => ({name: 'home', params: {org: vue.$org}})),
             ],
