@@ -65,7 +65,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *         @KlipperMetadata\MetadataAction(
  *             name="list",
  *             defaults={
- *                 "_method_repository": "createQueryForList"
+ *                 "_repository_method": "createQueryForList"
  *             }
  *         ),
  *         @KlipperMetadata\MetadataAction(

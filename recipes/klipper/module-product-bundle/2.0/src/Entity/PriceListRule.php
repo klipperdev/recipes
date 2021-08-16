@@ -25,7 +25,7 @@ use Klipper\Module\ProductBundle\Model\AbstractPriceListRule;
  *         @KlipperMetadata\MetadataAction(
  *             name="list",
  *             defaults={
- *                 "_method_repository": "createQueryBuilderForPriceManager"
+ *                 "_repository_method": "createQueryBuilderForPriceManager"
  *             }
  *         )
  *     }
