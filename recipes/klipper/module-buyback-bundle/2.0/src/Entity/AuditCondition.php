@@ -56,8 +56,8 @@ class AuditCondition extends AbstractAuditCondition implements TranslatableInter
     /**
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\AuditConditionTranslation",
-     *     mappedBy="object",
      *     fetch="EXTRA_LAZY",
+     *     mappedBy="object",
      *     orphanRemoval=true,
      *     cascade={"persist"}
      * )

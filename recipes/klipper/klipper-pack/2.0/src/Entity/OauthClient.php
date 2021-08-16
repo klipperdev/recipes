@@ -97,8 +97,8 @@ class OauthClient implements
     /**
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\OauthClientTranslation",
-     *     mappedBy="object",
      *     fetch="EXTRA_LAZY",
+     *     mappedBy="object",
      *     orphanRemoval=true,
      *     cascade={"persist"}
      * )

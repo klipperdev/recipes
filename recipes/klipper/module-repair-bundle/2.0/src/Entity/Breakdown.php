@@ -55,8 +55,8 @@ class Breakdown extends AbstractBreakdown implements
     /**
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\BreakdownTranslation",
-     *     mappedBy="object",
      *     fetch="EXTRA_LAZY",
+     *     mappedBy="object",
      *     orphanRemoval=true,
      *     cascade={"persist"}
      * )

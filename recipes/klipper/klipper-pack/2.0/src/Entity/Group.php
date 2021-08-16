@@ -113,7 +113,6 @@ class Group implements
     /**
      * @ORM\ManyToOne(
      *     targetEntity="App\Entity\Organization",
-     *     fetch="EXTRA_LAZY",
      *     inversedBy="organizationGroups"
      * )
      * @ORM\JoinColumn(onDelete="CASCADE")
@@ -127,8 +126,8 @@ class Group implements
     /**
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\GroupTranslation",
-     *     mappedBy="object",
      *     fetch="EXTRA_LAZY",
+     *     mappedBy="object",
      *     orphanRemoval=true,
      *     cascade={"persist"}
      * )

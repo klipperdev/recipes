@@ -55,8 +55,7 @@ class Attribute extends AbstractAttribute implements
 
     /**
      * @ORM\ManyToOne(
-     *     targetEntity="App\Entity\Organization",
-     *     fetch="EXTRA_LAZY"
+     *     targetEntity="App\Entity\Organization"
      * )
      * @ORM\JoinColumn(onDelete="CASCADE")
      *
@@ -71,8 +70,8 @@ class Attribute extends AbstractAttribute implements
     /**
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\AttributeTranslation",
-     *     mappedBy="object",
      *     fetch="EXTRA_LAZY",
+     *     mappedBy="object",
      *     orphanRemoval=true,
      *     cascade={"persist"}
      * )

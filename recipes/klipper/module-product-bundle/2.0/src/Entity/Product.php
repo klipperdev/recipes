@@ -87,8 +87,8 @@ class Product extends AbstractProduct implements ProductBreakdownableInterface, 
     /**
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\ProductTranslation",
-     *     mappedBy="object",
      *     fetch="EXTRA_LAZY",
+     *     mappedBy="object",
      *     orphanRemoval=true,
      *     cascade={"persist"}
      * )

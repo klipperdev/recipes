@@ -111,7 +111,6 @@ class Role implements
     /**
      * @ORM\ManyToOne(
      *     targetEntity="App\Entity\Organization",
-     *     fetch="EXTRA_LAZY",
      *     inversedBy="organizationRoles"
      * )
      * @ORM\JoinColumn(onDelete="CASCADE")
@@ -125,8 +124,8 @@ class Role implements
     /**
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\RoleTranslation",
-     *     mappedBy="object",
      *     fetch="EXTRA_LAZY",
+     *     mappedBy="object",
      *     orphanRemoval=true,
      *     cascade={"persist"}
      * )

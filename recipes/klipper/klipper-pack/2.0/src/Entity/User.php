@@ -121,7 +121,6 @@ class User implements
      * @ORM\OneToOne(
      *     targetEntity="App\Entity\Organization",
      *     mappedBy="user",
-     *     fetch="EAGER",
      *     orphanRemoval=true,
      *     cascade={"persist", "remove"}
      * )

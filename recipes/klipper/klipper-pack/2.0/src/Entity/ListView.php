@@ -78,8 +78,7 @@ class ListView implements
 
     /**
      * @ORM\ManyToOne(
-     *     targetEntity="App\Entity\Organization",
-     *     fetch="EXTRA_LAZY"
+     *     targetEntity="App\Entity\Organization"
      * )
      * @ORM\JoinColumn(onDelete="CASCADE")
      *
@@ -92,8 +91,8 @@ class ListView implements
     /**
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\ListViewTranslation",
-     *     mappedBy="object",
      *     fetch="EXTRA_LAZY",
+     *     mappedBy="object",
      *     orphanRemoval=true,
      *     cascade={"persist"}
      * )

@@ -55,8 +55,8 @@ class ProductRange extends AbstractProductRange implements TranslatableInterface
     /**
      * @ORM\OneToMany(
      *     targetEntity="App\Entity\ProductRangeTranslation",
-     *     mappedBy="object",
      *     fetch="EXTRA_LAZY",
+     *     mappedBy="object",
      *     orphanRemoval=true,
      *     cascade={"persist"}
      * )

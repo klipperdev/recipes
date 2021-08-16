@@ -95,8 +95,7 @@ class PortalUser implements
 
     /**
      * @ORM\ManyToOne(
-     *     targetEntity="Klipper\Component\Portal\Model\PortalInterface",
-     *     fetch="EXTRA_LAZY"
+     *     targetEntity="Klipper\Component\Portal\Model\PortalInterface"
      * )
      * @ORM\JoinColumn(onDelete="CASCADE", nullable=false)
      *
@@ -109,7 +108,6 @@ class PortalUser implements
     /**
      * @ORM\ManyToOne(
      *     targetEntity="Klipper\Component\Security\Model\UserInterface",
-     *     fetch="EAGER",
      *     cascade={"persist"}
      * )
      * @ORM\JoinColumn(onDelete="CASCADE")
@@ -133,7 +131,7 @@ class PortalUser implements
     /**
      * @ORM\ManyToMany(
      *     targetEntity="Klipper\Component\Security\Model\GroupInterface",
-     *     fetch="EAGER",
+     *     fetch="EXTRA_LAZY",
      *     cascade={"persist"}
      * )
      * @ORM\JoinTable(
