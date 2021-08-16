@@ -5,6 +5,7 @@ namespace App\Repository;
 use App\Entity\AttributeItem;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface;
 use Doctrine\ORM\EntityManagerInterface;
+use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ManagerRegistry;
 use Gedmo\Sortable\Entity\Repository\SortableRepository;
 use Klipper\Component\DoctrineExtensionsExtra\Entity\Repository\Traits\TranslatableRepositoryInterface;
@@ -36,5 +37,13 @@ class AttributeItemRepository extends SortableRepository implements
         }
 
         parent::__construct($manager, $manager->getClassMetadata($entityClass));
+    }
+
+    public function createQueryBuilderForList(string $alias, ?string $indexBy = null): QueryBuilder
+    {
+        return $this->createQueryBuilder($alias, $indexBy)
+            ->addSelect('a')
+            ->leftJoin($alias.'.attribute', 'a')
+        ;
     }
 }

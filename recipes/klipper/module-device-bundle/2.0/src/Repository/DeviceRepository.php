@@ -20,9 +20,9 @@ class DeviceRepository extends ServiceEntityRepository
         parent::__construct($registry, Device::class);
     }
 
-    public function createQueryBuilder($alias, $indexBy = null): QueryBuilder
+    public function createQueryBuilderForList(string $alias, ?string $indexBy = null): QueryBuilder
     {
-        return parent::createQueryBuilder($alias, $indexBy)
+        return $this->createQueryBuilder($alias, $indexBy)
             ->addSelect('p')
             ->addSelect('s')
             ->leftJoin($alias.'.product', 'p')

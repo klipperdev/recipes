@@ -63,46 +63,40 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     deepSearchPaths={"user"},
  *     actions={
  *         @KlipperMetadata\MetadataAction(
- *             name="list",
+ *             name="create",
  *             defaults={
- *                 "_repository_method": "createQueryForList"
+ *                 "_disable_filters": "organization, organization_only, role"
  *             }
  *         ),
  *         @KlipperMetadata\MetadataAction(
- *            name="create",
- *            defaults = {
- *                "_disable_filters" = "organization, organization_only, role"
- *            }
+ *             name="creates",
+ *             defaults={
+ *                 "_disable_filters": "organization, organization_only, role"
+ *             }
  *         ),
  *         @KlipperMetadata\MetadataAction(
- *            name="creates",
- *            defaults = {
- *                "_disable_filters" = "organization, organization_only, role"
- *            }
+ *             name="update",
+ *             defaults={
+ *                 "_disable_filters": "organization, organization_only, role"
+ *             }
  *         ),
  *         @KlipperMetadata\MetadataAction(
- *            name="update",
- *            defaults = {
- *                "_disable_filters" = "organization, organization_only, role"
- *            }
+ *             name="updates",
+ *             defaults={
+ *                 "_disable_filters": "organization, organization_only, role"
+ *             }
  *         ),
  *         @KlipperMetadata\MetadataAction(
- *            name="updates",
- *            defaults = {
- *                "_disable_filters" = "organization, organization_only, role"
- *            }
+ *             name="upsert",
+ *             defaults={
+ *                 "_disable_filters": "organization, organization_only, role"
+ *             }
  *         ),
  *         @KlipperMetadata\MetadataAction(
- *            name="upsert",
- *            defaults = {
- *                "_disable_filters" = "organization, organization_only, role"
- *            }
- *         ),
- *         @KlipperMetadata\MetadataAction(
- *            name="upserts",
- *            defaults = {
- *                "_disable_filters" = "organization, organization_only, role"
- *            }
+ *             name="upserts",
+ *             defaults={
+ *                 "_disable_filters": "organization, organization_only, role"
+ *             }
  *         )
  *     }
  * )

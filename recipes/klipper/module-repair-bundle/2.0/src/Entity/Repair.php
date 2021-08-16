@@ -30,6 +30,7 @@ use Klipper\Module\RepairBundle\Model\AbstractRepair;
  *
  * @KlipperMetadata\MetadataObject(
  *     fieldLabel="reference",
+ *     deepSearchPaths={"device", "account"},
  *     defaultSortable="receipted_at:desc, status.position:asc"
  * )
  *

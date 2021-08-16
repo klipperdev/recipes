@@ -20,21 +20,28 @@ class AuditItemRepository extends ServiceEntityRepository
         parent::__construct($registry, AuditItem::class);
     }
 
-    public function createQueryBuilder($alias, $indexBy = null): QueryBuilder
+    public function createQueryBuilderForList($alias, $indexBy = null): QueryBuilder
     {
-        return parent::createQueryBuilder($alias, $indexBy)
+        return $this->createQueryBuilder($alias, $indexBy)
             ->addSelect('ar')
             ->addSelect('p')
             ->addSelect('pc')
+            ->addSelect('pcai')
+            ->addSelect('pcaia')
             ->addSelect('pb')
             ->addSelect('d')
             ->addSelect('cs')
+            ->addSelect('ac')
             ->leftJoin($alias.'.auditRequest', 'ar')
             ->leftJoin($alias.'.product', 'p')
             ->leftJoin($alias.'.productCombination', 'pc')
+            ->leftJoin('pc.attributeItems', 'pcai')
+            ->leftJoin('pcai.attribute', 'pcaia')
+
             ->leftJoin('p.brand', 'pb')
             ->leftJoin($alias.'.device', 'd')
             ->leftJoin($alias.'.status', 'cs')
+            ->leftJoin($alias.'.auditCondition', 'ac')
         ;
     }
 }

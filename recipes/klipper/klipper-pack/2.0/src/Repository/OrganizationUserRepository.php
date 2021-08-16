@@ -24,9 +24,9 @@ class OrganizationUserRepository extends ServiceEntityRepository implements Orga
         parent::__construct($registry, OrganizationUser::class);
     }
 
-    public function createQueryForList(string $alias = 'o'): QueryBuilder
+    public function createQueryBuilderForList(string $alias, ?string $indexBy = null): QueryBuilder
     {
-        return $this->createQueryBuilder($alias)
+        return $this->createQueryBuilder($alias, $indexBy)
             ->addSelect('u')
             ->join($alias.'.user', 'u')
             ->addSelect('og')

@@ -63,15 +63,7 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     availableContexts={"organization"},
  *     formType="Klipper\Bundle\ApiPortalBundle\Form\Type\PortalUserType",
  *     defaultSortable="user.first_name:asc, user.last_name:asc",
- *     deepSearchPaths={"user"},
- *     actions={
- *         @KlipperMetadata\MetadataAction(
- *             name="list",
- *             defaults={
- *                 "_repository_method": "createQueryForList"
- *             }
- *         )
- *     }
+ *     deepSearchPaths={"user"}
  * )
  *
  * @Serializer\ExclusionPolicy("all")

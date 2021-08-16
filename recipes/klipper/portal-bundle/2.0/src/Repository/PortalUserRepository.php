@@ -24,9 +24,9 @@ class PortalUserRepository extends ServiceEntityRepository implements PortalUser
         parent::__construct($registry, PortalUser::class);
     }
 
-    public function createQueryForList(string $alias = 'pu'): QueryBuilder
+    public function createQueryBuilderForList(string $alias, ?string $indexBy = null): QueryBuilder
     {
-        return $this->createQueryBuilder($alias)
+        return $this->createQueryBuilder($alias, $indexBy)
             ->select($alias.', u')
             ->join($alias.'.user', 'u')
         ;
