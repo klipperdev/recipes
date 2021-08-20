@@ -28,6 +28,7 @@ doctrine:
                 unaccent: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\Unaccent
                 json_get: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\JsonGet
                 find_in_set: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\FindInSet
+                first: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\String\First
             numeric_functions:
                 convert_surface: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\Numeric\ConvertSurface
 
