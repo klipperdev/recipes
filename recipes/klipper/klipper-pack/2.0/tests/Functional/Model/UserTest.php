@@ -25,7 +25,7 @@ final class UserTest extends WebTestCase
     public function testUserEmail(): void
     {
         $this->loadFixtures([
-            LoadUserData::class,
+            new LoadUserData(),
         ]);
 
         $user = $this->findOneBy(User::class, ['email' => 'user@test.tld']);
