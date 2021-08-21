@@ -13,7 +13,7 @@ namespace App\Tests\Functional\Model;
 
 use App\Entity\User;
 use App\Tests\Fixtures\Entity\LoadUserData;
-use Klipper\Bundle\FunctionalTestBundle\Tests\WebTestCase;
+use Klipper\Bundle\FunctionalTestBundle\Test\WebTestCase;
 
 /**
  * Model user tests.

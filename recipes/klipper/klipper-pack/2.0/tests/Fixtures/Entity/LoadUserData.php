@@ -4,8 +4,8 @@ namespace App\Tests\Fixtures\Entity;
 
 use App\Entity\User;
 use Doctrine\Persistence\ObjectManager;
-use Klipper\Bundle\FunctionalTestBundle\Tests\DefaultAuthenticationInterface;
-use Klipper\Bundle\FunctionalTestBundle\Tests\DefaultAuthenticationTrait;
+use Klipper\Bundle\FunctionalTestBundle\Test\DefaultAuthenticationInterface;
+use Klipper\Bundle\FunctionalTestBundle\Test\DefaultAuthenticationTrait;
 use Doctrine\Common\DataFixtures\FixtureInterface;
 
 /**
