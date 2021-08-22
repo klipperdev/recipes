@@ -13,6 +13,7 @@ namespace App\Tests\Functional\Model;
 
 use App\Entity\User;
 use App\Tests\Fixtures\Entity\LoadUserData;
+use Klipper\Bundle\FunctionalTestBundle\Test\Fixtures\Init\LoadInitPlatformData;
 use Klipper\Bundle\FunctionalTestBundle\Test\WebTestCase;
 
 /**
@@ -25,6 +26,7 @@ final class UserTest extends WebTestCase
     public function testUserEmail(): void
     {
         $this->loadFixtures([
+            new LoadInitPlatformData(),
             new LoadUserData(),
         ]);
 
