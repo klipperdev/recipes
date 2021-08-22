@@ -1,19 +1,19 @@
 <?php
 
-namespace App\Tests\Fixtures\Entity;
+namespace App\Tests\DataFixtures;
 
 use App\Entity\User;
-use Doctrine\Common\DataFixtures\FixtureInterface;
+use Doctrine\Bundle\FixturesBundle\Fixture;
 use Doctrine\Persistence\ObjectManager;
-use Klipper\Bundle\FunctionalTestBundle\Test\DefaultAuthenticationInterface;
-use Klipper\Bundle\FunctionalTestBundle\Test\DefaultAuthenticationTrait;
+use Klipper\Bundle\FunctionalTestBundle\Test\DataFixtures\FixtureDefaultAuthenticationInterface;
+use Klipper\Bundle\FunctionalTestBundle\Test\DataFixtures\FixtureDefaultAuthenticationTrait;
 
 /**
  * Fixtures for user.
  */
-class LoadUserData implements FixtureInterface, DefaultAuthenticationInterface
+class UserFixtures extends Fixture implements FixtureDefaultAuthenticationInterface
 {
-    use DefaultAuthenticationTrait;
+    use FixtureDefaultAuthenticationTrait;
 
     public function load(ObjectManager $manager): void
     {
