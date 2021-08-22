@@ -25,21 +25,21 @@ final class UserTest extends WebTestCase
 {
     public function testUserEmail(): void
     {
-        $this->loadFixtures([
+        static::loadFixtures([
             new LoadInitPlatformData(),
             new LoadUserData(),
         ]);
 
-        $user = $this->findOneBy(User::class, ['email' => 'user@test.tld']);
+        $user = static::findOneBy(User::class, ['email' => 'user@test.tld']);
 
         static::assertSame('user@test.tld', $user->getEmail());
 
         $test = new User();
         $test->setEmail('test@test.tld');
         $test->setPassword('test');
-        $this->create($test);
+        static::create($test);
 
-        $test2 = $this->findOneBy(User::class, ['id' => $test->getId()]);
+        $test2 = static::findOneBy(User::class, ['id' => $test->getId()]);
         static::assertSame($test->getEmail(), $test2->getEmail());
     }
 }
