@@ -1,5 +1,8 @@
 {
     "copy-from-recipe": {
+        "src/": "%SRC_DIR%/",
+        "tests/": "tests/",
+        "translations/": "translations/",
         "config/": "%CONFIG_DIR%/"
     }
 }

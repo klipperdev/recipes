@@ -1,0 +1,5 @@
+# Doctrine
+doctrine:
+    orm:
+        resolve_target_entities:
+            Klipper\Component\ListView\Model\ListViewInterface: App\Entity\ListView
