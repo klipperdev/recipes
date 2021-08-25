@@ -73,10 +73,10 @@ class OauthClient implements
     TimestampableInterface,
     TranslatableInterface
 {
-    use IdTrait;
-    use NameableTrait;
-    use LabelableTrait;
     use EnableTrait;
+    use IdTrait;
+    use LabelableTrait;
+    use NameableTrait;
     use OauthClientTrait;
     use OrganizationalRequiredTrait;
     use TimestampableTrait;

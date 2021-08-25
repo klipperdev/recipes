@@ -36,8 +36,8 @@ class OauthAuthCode implements
     TimestampableInterface
 {
     use IdTrait;
+    use OauthAuthCodeTrait;
     use OrganizationalRequiredTrait;
     use OwnerableTrait;
     use TimestampableTrait;
-    use OauthAuthCodeTrait;
 }

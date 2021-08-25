@@ -35,8 +35,8 @@ class OauthRefreshToken implements
     TimestampableInterface
 {
     use IdTrait;
+    use OauthRefreshTokenTrait;
     use OrganizationalRequiredTrait;
     use OwnerableTrait;
     use TimestampableTrait;
-    use OauthRefreshTokenTrait;
 }

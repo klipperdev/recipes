@@ -91,8 +91,8 @@ class Role implements
     use IdTrait;
     use LabelableTrait;
     use OrganizationalOptionalTrait;
-    use RoleTrait;
     use RoleHierarchicalTrait;
+    use RoleTrait;
     use TimestampableTrait;
     use TranslatableTrait;
 

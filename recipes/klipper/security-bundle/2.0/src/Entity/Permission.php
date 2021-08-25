@@ -37,7 +37,7 @@ class Permission implements
 {
     use IdTrait;
     use LabelableTrait;
-    use PermissionTrait;
     use PermissionSharingEntryTrait;
+    use PermissionTrait;
     use TranslationDomainTrait;
 }

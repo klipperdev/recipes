@@ -35,8 +35,8 @@ class OauthAccessToken implements
     TimestampableInterface
 {
     use IdTrait;
+    use OauthAccessTokenTrait;
     use OrganizationalRequiredTrait;
     use OwnerableTrait;
     use TimestampableTrait;
-    use OauthAccessTokenTrait;
 }

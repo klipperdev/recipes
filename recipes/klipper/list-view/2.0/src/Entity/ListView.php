@@ -57,8 +57,8 @@ class ListView implements
     TimestampableInterface,
     TranslatableInterface
 {
-    use ListViewTrait;
     use IdTrait;
+    use ListViewTrait;
     use OrganizationalOptionalTrait;
     use TimestampableTrait;
     use TranslatableTrait;
