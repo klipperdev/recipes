@@ -21,6 +21,7 @@ doctrine:
             Klipper\Component\Security\Model\RoleInterface: App\Entity\Role
             Klipper\Component\Security\Model\GroupInterface: App\Entity\Group
             Klipper\Component\Security\Model\OrganizationInterface: App\Entity\Organization
+            Klipper\Component\Security\Model\OrganizationHierarchicalInterface: App\Entity\Organization
             Klipper\Component\Security\Model\OrganizationUserInterface: App\Entity\OrganizationUser
             Klipper\Component\Security\Model\PermissionInterface: App\Entity\Permission
             Klipper\Component\Security\Model\SharingInterface: App\Entity\Sharing

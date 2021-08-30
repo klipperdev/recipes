@@ -50,6 +50,8 @@ group.name.plural: Groups
 # Organization
 organization.name: Organization
 organization.name.plural: Organizations
+organization.associations.parent: Parent organization
+organization.associations.children: Sub organizations
 organization.associations.organization_roles: Roles
 organization.associations.organization_groups: Groups
 
