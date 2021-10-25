@@ -32,6 +32,9 @@ doctrine:
             numeric_functions:
                 convert_surface: Klipper\Component\DoctrineExtensionsExtra\ORM\Query\AST\Functions\Numeric\ConvertSurface
 
+        resolve_target_entities:
+            Klipper\Component\DoctrineExtensionsExtra\AutoNumberable\Model\AutoNumberConfigInterface: App\Entity\AutoNumberConfig
+
 # Klipper Doctrine Extensions Extra
 klipper_doctrine_extensions_extra:
     locale_fallback: '%locale_fallback%'
