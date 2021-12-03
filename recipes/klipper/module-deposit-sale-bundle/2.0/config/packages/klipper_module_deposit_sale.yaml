@@ -1,0 +1,6 @@
+# Doctrine
+doctrine:
+    orm:
+        resolve_target_entities:
+            Klipper\Module\DepositSaleBundle\Model\DepositSaleModuleInterface: App\Entity\DepositSaleModule
+            Klipper\Module\DepositSaleBundle\Model\DepositSaleInterface: App\Entity\DepositSale
