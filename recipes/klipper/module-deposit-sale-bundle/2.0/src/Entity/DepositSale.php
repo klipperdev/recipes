@@ -8,9 +8,6 @@ use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
 use Klipper\Component\DoctrineExtensionsExtra\Mapping\Annotation as KlipperMetadata;
 use Klipper\Component\Model\Traits\IdTrait;
-use Klipper\Component\Model\Traits\SingleExternalableInterface;
-use Klipper\Component\Model\Traits\SingleExternalableTrait;
-use Klipper\Component\Portal\Model\Traits\PortalableInterface;
 use Klipper\Component\SecurityExtra\Doctrine\Validator\Constraints as KlipperSecurityDoctrineAssert;
 use Klipper\Module\DepositSaleBundle\Model\AbstractDepositSale;
 
@@ -42,11 +39,7 @@ use Klipper\Module\DepositSaleBundle\Model\AbstractDepositSale;
  *
  * @Serializer\ExclusionPolicy("all")
  */
-class DepositSale extends AbstractDepositSale implements
-    SingleExternalableInterface,
-    PortalableInterface
+class DepositSale extends AbstractDepositSale
 {
-    use AccountPortalableTrait;
     use IdTrait;
-    use SingleExternalableTrait;
 }

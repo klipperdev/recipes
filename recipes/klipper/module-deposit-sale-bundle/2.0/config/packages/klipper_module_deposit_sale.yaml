@@ -4,3 +4,30 @@ doctrine:
         resolve_target_entities:
             Klipper\Module\DepositSaleBundle\Model\DepositSaleModuleInterface: App\Entity\DepositSaleModule
             Klipper\Module\DepositSaleBundle\Model\DepositSaleInterface: App\Entity\DepositSale
+            Klipper\Module\DepositSaleBundle\Model\DepositSaleAttachmentInterface: App\Entity\DepositSaleAttachment
+
+klipper_content:
+    uploader:
+        configurations:
+            deposit_sale_attachment:
+                path: '%env(resolve:CONTENT_BASE_PATH)%/deposit_sale_attachment'
+                max_size: 100 Mb
+                namer: uuid
+                attachment_class: App\Entity\DepositSaleAttachment
+
+services:
+    # Deposit Sale Attachment
+    app.doctrine_delete_content_config.deposit_sale_attachment:
+        tags: ['klipper_content.doctrine_delete_config']
+        class: Klipper\Component\Content\Doctrine\DeleteContentConfig
+        arguments:
+            - 'deposit_sale_attachment'
+            - App\Entity\DepositSaleAttachment
+            - 'getFilePath'
+
+    app.uploader_name_config.deposit_sale_attachment:
+        tags: ['klipper_content.uploader_name_config']
+        class: Klipper\Component\Content\Config\UploaderNameConfig
+        arguments:
+            - 'deposit_sale_attachment'
+            - App\Entity\DepositSaleAttachment
