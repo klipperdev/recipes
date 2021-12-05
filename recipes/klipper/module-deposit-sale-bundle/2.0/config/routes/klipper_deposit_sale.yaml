@@ -1,0 +1,6 @@
+klipper_deposit_sale_deposit_sale_attachment:
+    resource: '@KlipperDepositSaleBundle/Controller/ApiDepositSaleAttachmentController.php'
+    type: annotation
+    prefix: '/{organization}'
+    requirements:
+        organization: 'user|[\w\.\-\_]+'
