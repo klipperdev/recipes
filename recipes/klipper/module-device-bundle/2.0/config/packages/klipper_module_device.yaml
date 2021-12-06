@@ -3,3 +3,4 @@ doctrine:
     orm:
         resolve_target_entities:
             Klipper\Module\DeviceBundle\Model\DeviceInterface: App\Entity\Device
+            Klipper\Module\DeviceBundle\Model\DeviceAttachmentInterface: App\Entity\DeviceAttachment
