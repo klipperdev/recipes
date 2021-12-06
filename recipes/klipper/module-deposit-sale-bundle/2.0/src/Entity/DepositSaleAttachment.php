@@ -21,7 +21,7 @@ use Klipper\Module\DepositSaleBundle\Model\AbstractDepositSaleAttachment;
  * )
  *
  * @KlipperMetadata\MetadataObject(
- *     fieldLabel="reference",
+ *     fieldLabel="name",
  *     defaultSortable="name:asc",
  *     excludedDefaultActions={
  *         "create",
