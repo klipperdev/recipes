@@ -1,0 +1,6 @@
+klipper_device_dedevice_attachment:
+    resource: '@KlipperDeviceBundle/Controller/ApiDeviceAttachmentController.php'
+    type: annotation
+    prefix: '/{organization}'
+    requirements:
+        organization: 'user|[\w\.\-\_]+'
