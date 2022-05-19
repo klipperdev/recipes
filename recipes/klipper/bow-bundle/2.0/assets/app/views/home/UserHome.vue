@@ -3,14 +3,13 @@
 </template>
 
 <script lang="ts">
-    import {Component, Vue} from 'vue-property-decorator';
-    import OrganizationList from '@klipper/bow/views/organizations/OrganizationList.vue';
+import OrganizationList from '@klipper/bow/views/organizations/OrganizationList/OrganizationList.vue';
+import {defineComponent} from '@vue/composition-api';
 
-    @Component({
-        components: {
-            OrganizationList,
-        },
-    })
-    export default class UserHome extends Vue {
+export default defineComponent({
+    name: 'UserHome',
+    components: {
+        OrganizationList,
     }
+});
 </script>

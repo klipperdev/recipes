@@ -1,5 +1,5 @@
 <template>
-    <div class="v-toolbar--content" v-if="'user' === $route.params.org">
+    <div class="v-toolbar--content" v-if="'user' === self.$route.params.org">
         <v-spacer></v-spacer>
 
         <k-search-field prefix="toolbar-search"></k-search-field>
@@ -15,12 +15,20 @@
 </template>
 
 <script lang="ts">
-    import {Component, Vue} from 'vue-property-decorator';
+import {selfable} from '@klipper/bow/composables/mixins/selfable';
+import {defineComponent} from '@vue/composition-api';
 
-    @Component
-    export default class HomeToolbar extends Vue {
-        public refresh(): void {
+export default defineComponent({
+    name: 'HomeToolbar',
+
+    mixins: [
+        selfable,
+    ],
+
+    methods: {
+        refresh(): void {
             this.$root.$emit('toolbar-search-request-refresh');
-        }
-    }
+        },
+    },
+});
 </script>

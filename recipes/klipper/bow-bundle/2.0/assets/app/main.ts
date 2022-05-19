@@ -45,7 +45,7 @@ const app = createApp<RootState>({
                 components: {
                     default: () => import(/* webpackChunkName: "views-home" */ '@app/views/Home.vue'),
                     toolbar: () => import(/* webpackChunkName: "views-home" */ '@app/views/home/HomeToolbar.vue'),
-                    fab: () => import(/* webpackChunkName: "views-home" */ '@klipper/bow/views/organizations/OrganizationFabCreate.vue'),
+                    fab: () => import(/* webpackChunkName: "views-home" */ '@klipper/bow/views/organizations/OrganizationFabCreate/OrganizationFabCreate.vue'),
                 },
             },
         ],
