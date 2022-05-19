@@ -10,10 +10,10 @@
         "lint": "vue-cli-service lint"
     },
     "dependencies": {
-        "@klipper/bow": "github:klipperdev/bow#master"
+        "@klipper/bow": "github:klipperdev/bow#2.0"
     },
     "devDependencies": {
-        "@klipper/bow-dev-pack": "github:klipperdev/bow-dev-pack#master",
+        "@klipper/bow-dev-pack": "github:klipperdev/bow-dev-pack#2.0",
         "@vue/cli-plugin-pwa": "*",
         "@vue/cli-plugin-typescript": "*",
         "vue-cli-plugin-vuetify": "*",
