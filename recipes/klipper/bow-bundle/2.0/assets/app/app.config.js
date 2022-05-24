@@ -1,4 +1,3 @@
-// Extend the '@klipper/bow/app.config.js' file
-module.exports = {
+module.exports = require('lodash.merge')(require('@klipper/bow/app.config.js'), {
     name: 'Klipper',
-};
+});
