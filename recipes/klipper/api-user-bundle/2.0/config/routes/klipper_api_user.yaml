@@ -28,3 +28,10 @@ klipper_api_user_connected_user:
     prefix: '/{organization}'
     requirements:
         organization: 'user|[\w\.\-\_]+'
+
+klipper_api_user_public_user:
+    resource: '@KlipperApiUserBundle/Controller/PublicUserController.php'
+    type: annotation
+    prefix: '/{organization}'
+    requirements:
+        organization: 'user|[\w\.\-\_]+'
