@@ -187,7 +187,7 @@ class User implements
      * @Serializer\Expose
      * @Serializer\ReadOnlyProperty
      * @Serializer\SerializedName("image_url")
-     * @Serializer\Type("Url<'klipper_apiuser_connecteduser_downloadprofileimage', 'organization=`user`', 'id=`{{id}}`', 'ext=`{{preferredImageExtension}}`'>")
+     * @Serializer\Type("Url<'klipper_apiuser_publicuser_downloadprofileimage', 'organization=`user`', 'id=`{{id}}`', 'ext=`{{preferredImageExtension}}`'>")
      */
     protected ?string $imagePath = null;
 
