@@ -22,7 +22,7 @@ services:
         arguments:
             - 'device_attachment'
             - App\Entity\DeviceAttachment
-            - 'getFilePath'
+            - 'filePath'
 
     app.uploader_name_config.device_attachment:
         tags: ['klipper_content.uploader_name_config']

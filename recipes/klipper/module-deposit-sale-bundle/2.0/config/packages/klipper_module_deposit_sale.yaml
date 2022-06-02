@@ -23,7 +23,7 @@ services:
         arguments:
             - 'deposit_sale_attachment'
             - App\Entity\DepositSaleAttachment
-            - 'getFilePath'
+            - 'filePath'
 
     app.uploader_name_config.deposit_sale_attachment:
         tags: ['klipper_content.uploader_name_config']
