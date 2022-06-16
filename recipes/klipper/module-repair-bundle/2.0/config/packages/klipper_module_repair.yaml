@@ -6,6 +6,7 @@ doctrine:
             Klipper\Module\RepairBundle\Model\RepairModuleInterface: App\Entity\RepairModule
             Klipper\Module\RepairBundle\Model\RepairModuleProductInterface: App\Entity\RepairModuleProduct
             Klipper\Module\RepairBundle\Model\RepairInterface: App\Entity\Repair
+            Klipper\Module\RepairBundle\Model\RepairStatusInterface: App\Entity\RepairStatus
             Klipper\Module\RepairBundle\Model\RepairCommentInterface: App\Entity\RepairComment
             Klipper\Module\RepairBundle\Model\RepairHistoryInterface: App\Entity\RepairHistory
             Klipper\Module\RepairBundle\Model\RepairItemInterface: App\Entity\RepairItem
