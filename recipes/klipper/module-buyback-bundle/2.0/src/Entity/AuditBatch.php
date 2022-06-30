@@ -6,10 +6,10 @@ use Doctrine\ORM\Mapping as ORM;
 use JMS\Serializer\Annotation as Serializer;
 use Klipper\Component\DoctrineExtensionsExtra\Mapping\Annotation as KlipperMetadata;
 use Klipper\Component\Model\Traits\IdTrait;
-use Klipper\Module\BuybackBundle\Model\AbstractAuditRequest;
+use Klipper\Module\BuybackBundle\Model\AbstractAuditBatch;
 
 /**
- * @ORM\Entity(repositoryClass="App\Repository\AuditRequestRepository")
+ * @ORM\Entity(repositoryClass="App\Repository\AuditBatchRepository")
  *
  * @KlipperMetadata\MetadataObject(
  *     fieldLabel="reference",
@@ -18,7 +18,7 @@ use Klipper\Module\BuybackBundle\Model\AbstractAuditRequest;
  *
  * @Serializer\ExclusionPolicy("all")
  */
-class AuditRequest extends AbstractAuditRequest
+class AuditBatch extends AbstractAuditBatch
 {
     use IdTrait;
 }

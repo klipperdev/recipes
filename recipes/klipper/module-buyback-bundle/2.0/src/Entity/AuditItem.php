@@ -12,7 +12,7 @@ use Klipper\Module\BuybackBundle\Model\AbstractAuditItem;
  * @ORM\Entity(repositoryClass="App\Repository\AuditItemRepository")
  *
  * @KlipperMetadata\MetadataObject(
- *     deepSearchPaths={"audit_request", "device", "product"}
+ *     deepSearchPaths={"audit_batch", "device", "product"}
  * )
  *
  * @Serializer\ExclusionPolicy("all")

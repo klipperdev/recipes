@@ -32,7 +32,7 @@ class AuditItemRepository extends ServiceEntityRepository
             ->addSelect('d')
             ->addSelect('cs')
             ->addSelect('ac')
-            ->leftJoin($alias.'.auditRequest', 'ar')
+            ->leftJoin($alias.'.auditBatch', 'ar')
             ->leftJoin($alias.'.product', 'p')
             ->leftJoin($alias.'.productCombination', 'pc')
             ->leftJoin('pc.attributeItems', 'pcai')
