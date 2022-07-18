@@ -21,8 +21,8 @@ use Symfony\Component\Validator\Constraints as Assert;
  *     indexes={
  *         @ORM\Index(name="idx_product_range_created_at", columns={"created_at"}),
  *         @ORM\Index(name="idx_product_range_updated_at", columns={"updated_at"}),
- *         @ORM\Index(name="idx_product_name", columns={"name"}),
- *         @ORM\Index(name="idx_product_label", columns={"label"})
+ *         @ORM\Index(name="idx_product_range_name", columns={"name"}),
+ *         @ORM\Index(name="idx_product_range_label", columns={"label"})
  *     }
  * )
  *
