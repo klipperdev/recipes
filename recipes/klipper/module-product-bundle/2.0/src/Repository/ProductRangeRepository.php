@@ -5,6 +5,8 @@ namespace App\Repository;
 use App\Entity\ProductRange;
 use Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepository;
 use Doctrine\Persistence\ManagerRegistry;
+use Klipper\Component\DoctrineExtensionsExtra\Entity\Repository\Traits\TranslatableRepositoryInterface;
+use Klipper\Component\DoctrineExtensionsExtra\Entity\Repository\Traits\TranslatableRepositoryTrait;
 
 /**
  * @method null|ProductRange find($id, $lockMode = null, $lockVersion = null)
@@ -12,8 +14,10 @@ use Doctrine\Persistence\ManagerRegistry;
  * @method ProductRange[]    findAll()
  * @method ProductRange[]    findBy(array $criteria, array $orderBy = null, $limit = null, $offset = null)
  */
-class ProductRangeRepository extends ServiceEntityRepository
+class ProductRangeRepository extends ServiceEntityRepository implements TranslatableRepositoryInterface
 {
+    use TranslatableRepositoryTrait;
+
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, ProductRange::class);
