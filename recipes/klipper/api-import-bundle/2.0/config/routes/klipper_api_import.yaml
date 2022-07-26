@@ -1,3 +1,10 @@
+klipper_api_import_metadata_download:
+    resource: '@KlipperApiImportBundle/Controller/ImportMetadataController.php'
+    type: annotation
+    prefix: '/{organization}'
+    requirements:
+        organization: 'user|[\w\.\-\_]+'
+
 klipper_api_import_download:
     resource: '@KlipperApiImportBundle/Controller/ImportController.php'
     type: annotation
