@@ -30,7 +30,7 @@ doctrine:
 klipper_security:
     host_role:
         enabled: true
-    anonymous_role:
+    public_role:
         enabled: true
     object_filter:
         enabled: true

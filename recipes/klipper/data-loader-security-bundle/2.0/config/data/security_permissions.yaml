@@ -77,7 +77,7 @@ permission_classes:
     App\Entity\Organization:
         permissions:
             view:     [ROLE_USER]
-            create:   [ROLE_USER, ROLE_ANONYMOUS]
+            create:   [ROLE_USER, ROLE_PUBLIC]
             update:   [ROLE_ADMIN]
             delete:   [ROLE_ADMIN]
         fields:
@@ -118,7 +118,7 @@ permission_classes:
     App\Entity\User:
         permissions:
             view:     [ROLE_USER]
-            create:   [ROLE_ADMIN_PLATFORM, ROLE_ADMIN, ROLE_ANONYMOUS]
+            create:   [ROLE_ADMIN_PLATFORM, ROLE_ADMIN, ROLE_PUBLIC]
             update:   [ROLE_USER]
             delete:   [ROLE_USER]
         fields:

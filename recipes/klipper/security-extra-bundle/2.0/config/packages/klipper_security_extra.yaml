@@ -34,7 +34,7 @@ klipper_security_extra:
         excluded_roles:
             - ROLE_SUPER_ADMIN
             - ROLE_ADMIN_PLATFORM
-            - ROLE_ANONYMOUS
+            - ROLE_PUBLIC
 
     organizational_filter:
         optional_all_filter_classes:

@@ -22,10 +22,10 @@ security:
             form_permission_checker: true
             http_basic:     true
             stateless:      true
-            anonymous:      true
-            anonymous_role: true
+            public_role:    true
             org_context:    ~
             oauth:          true
+            entry_point:    http_basic
 
         oauth:
             pattern:        '^/oauth'
@@ -37,16 +37,15 @@ security:
             form_permission_checker: true
             http_basic:     true
             stateless:      true
-            anonymous:      true
-            anonymous_role: true
+            public_role:    true
             org_context:    ~
             oauth:          true
+            entry_point:    http_basic
 
         main:
             provider:       users
-            anonymous:      true
             lazy:           true
-            anonymous_role: true
+            public_role:    true
             locale_session: true
             org_context:    ~
 

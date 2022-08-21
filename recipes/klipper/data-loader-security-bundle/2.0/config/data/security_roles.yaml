@@ -1,7 +1,7 @@
--   name:  ROLE_ANONYMOUS
-    label: Anonymous
+-   name:  ROLE_PUBLIC
+    label: Public
     translations:
-        fr: { label: Anonyme }
+        fr: { label: Public }
 
 -   name:  ROLE_USER
     label: User
