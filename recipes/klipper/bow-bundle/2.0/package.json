@@ -6,8 +6,13 @@
     "private": true,
     "scripts": {
         "serve": "vue-cli-service serve",
+        "inspect": "vue-cli-service inspect",
         "build": "vue-cli-service build",
         "lint": "vue-cli-service lint"
+    },
+    "resolutions": {
+        "vue": "2.6.14",
+        "vue-template-compiler": "2.6.14"
     },
     "dependencies": {
         "@babel/core": "^7.18.0",
@@ -22,7 +27,8 @@
         "i18n-iso-countries": "^7.4.0",
         "moment": "^2.29.1",
         "quill": "^1.3.7",
-        "vue": "^2.6.14",
+        "regenerator-runtime": "*",
+        "vue": "^2.6.14 & <2.7.0",
         "vue-i18n": "^8.27.1",
         "vue-json-component": "^0.4.1",
         "vue-meta": "^2.4.0",
@@ -39,8 +45,8 @@
         "lodash.merge": "^4.6.2",
         "typescript": "^4.6.4",
         "vue-cli-plugin-vuetify": "^2.4.8",
-        "vue-template-compiler": "^2.6.14",
-        "vuetify-loader": "^1.7.3",
+        "vue-template-compiler": "^2.6.14 & <2.7.0",
+        "vuetify-loader": "^1.7.3 & < 1.9.0",
         "webpack": "^5.71"
     }
 }
