@@ -1,26 +1,32 @@
-import {TextDrawerItem} from '@klipper/bow/drawer/TextDrawerItem';
 import Vue from 'vue';
 import App from '@app/components/App.vue';
+import VueCompositionAPI from '@vue/composition-api';
+import {TextDrawerItem} from '@klipper/bow/drawer/TextDrawerItem';
+import {RootState} from '@app/store/RootState';
+import {createApp} from '@klipper/bow/bow';
+import {deepMerge} from '@klipper/bow/utils/object';
 import appLocaleEn from '@app/translations/en';
 import appLocaleEs from '@app/translations/es';
 import appLocaleFr from '@app/translations/fr';
+import bowLocaleEs from '@klipper/bow/translations/es';
+import bowLocaleFr from '@klipper/bow/translations/fr';
 import vuetifyLocaleEs from 'vuetify/src/locale/es';
 import vuetifyLocaleFr from 'vuetify/src/locale/fr';
 import countryEs from 'i18n-iso-countries/langs/es.json';
 import countryFr from 'i18n-iso-countries/langs/fr.json';
 import uploaderEs from '@uppy/locales/src/es_ES';
 import uploaderFr from '@uppy/locales/src/fr_FR';
-import {RootState} from '@app/store/RootState';
-import {createApp} from '@klipper/bow/bow';
 import '@app/styles/fonts.scss';
 import '@app/styles/app.scss';
+
+Vue.use(VueCompositionAPI);
 
 const app = createApp<RootState>({
     i18n: {
         messages: {
             en: appLocaleEn,
-            es: appLocaleEs,
-            fr: appLocaleFr,
+            es: deepMerge({}, bowLocaleEs, appLocaleEs),
+            fr: deepMerge({}, bowLocaleFr, appLocaleFr),
         },
     },
     i18nExtra: {
