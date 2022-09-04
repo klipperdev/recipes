@@ -23,14 +23,6 @@ const app = createApp<RootState>({
             fr: appLocaleFr,
         },
     },
-    vuetifyPreset: {
-        lang: {
-            locales: {
-                es: vuetifyLocaleEs,
-                fr: vuetifyLocaleFr,
-            },
-        },
-    },
     i18nExtra: {
         countryFormatter: {
             locales: {
@@ -43,6 +35,14 @@ const app = createApp<RootState>({
         locales: {
             es: uploaderEs,
             fr: uploaderFr,
+        },
+    },
+    vuetifyPreset: {
+        lang: {
+            locales: {
+                es: vuetifyLocaleEs,
+                fr: vuetifyLocaleFr,
+            },
         },
     },
     rootRedirectRoute: {name: 'home', params: {org: '_'}},
