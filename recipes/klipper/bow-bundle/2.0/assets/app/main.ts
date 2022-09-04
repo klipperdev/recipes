@@ -6,6 +6,8 @@ import appLocaleEs from '@app/translations/es';
 import appLocaleFr from '@app/translations/fr';
 import vuetifyLocaleEs from 'vuetify/src/locale/es';
 import vuetifyLocaleFr from 'vuetify/src/locale/fr';
+import countryEs from 'i18n-iso-countries/langs/es.json';
+import countryFr from 'i18n-iso-countries/langs/fr.json';
 import {RootState} from '@app/store/RootState';
 import {createApp} from '@klipper/bow/bow';
 import '@app/styles/fonts.scss';
@@ -24,6 +26,14 @@ const app = createApp<RootState>({
             locales: {
                 es: vuetifyLocaleEs,
                 fr: vuetifyLocaleFr,
+            },
+        },
+    },
+    i18nExtra: {
+        countryFormatter: {
+            locales: {
+                es: countryEs,
+                fr: countryFr,
             },
         },
     },
