@@ -8,6 +8,8 @@ import vuetifyLocaleEs from 'vuetify/src/locale/es';
 import vuetifyLocaleFr from 'vuetify/src/locale/fr';
 import countryEs from 'i18n-iso-countries/langs/es.json';
 import countryFr from 'i18n-iso-countries/langs/fr.json';
+import uploaderEs from '@uppy/locales/src/es_ES';
+import uploaderFr from '@uppy/locales/src/fr_FR';
 import {RootState} from '@app/store/RootState';
 import {createApp} from '@klipper/bow/bow';
 import '@app/styles/fonts.scss';
@@ -35,6 +37,12 @@ const app = createApp<RootState>({
                 es: countryEs,
                 fr: countryFr,
             },
+        },
+    },
+    uploader: {
+        locales: {
+            es: uploaderEs,
+            fr: uploaderFr,
         },
     },
     rootRedirectRoute: {name: 'home', params: {org: '_'}},
